@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanna Bony</title>
+  <meta name="description" content="Hanna Bony — PhD candidate in Economics, Université Gustave Eiffel (Érudite). Intimate partner violence, social norms, development economics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="galerie.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23ece6db'/><path d='M0 22 L10 14 L16 8 L22 14 L32 20 V32 H0Z' fill='%236b2317'/><path d='M0 26 L10 19 L16 14 L22 19 L32 24 V32 H0Z' fill='%23c98a2b'/><path d='M0 29 L10 24 L16 20 L22 24 L32 28 V32 H0Z' fill='%23141210'/></svg>">
+</head>
+<body data-view="home">
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ================= NAVIGATION (onglets) ================= -->
+<header class="nav">
+  <a href="#home" class="nav-brand mono">Hanna Bony</a>
+  <nav class="nav-links mono" aria-label="Sections">
+    <a href="#home" data-tab="home"><span lang="en">Home</span><span lang="fr">Accueil</span></a>
+    <a href="#research" data-tab="research"><span lang="en">Research</span><span lang="fr">Recherche</span></a>
+    <a href="#teaching" data-tab="teaching"><span lang="en">Teaching</span><span lang="fr">Enseignement</span></a>
+    <a href="#cv" data-tab="cv">CV</a>
+    <a href="#contact" data-tab="contact">Contact</a>
+  </nav>
+  <div class="nav-ctrl mono">
+    <button id="lang-toggle" aria-label="Switch language"><span class="on">EN</span> / <span>FR</span></button>
+    <button id="theme-toggle" aria-label="Toggle dark mode"><span class="theme-dot"></span></button>
+  </div>
+</header>
+
+<!-- ================= EN-TÊTE STRATES ================= -->
+<section class="stage" aria-label="Header">
+  <canvas id="strata" aria-hidden="true"></canvas>
+
+  <!-- Accueil -->
+  <div class="stage-home">
+    <div class="hero-label mono">
+      <span class="label-n">N° 001</span>
+      <span>Hanna Bony</span>
+      <span class="it"><span lang="en">Third-year PhD candidate in Economics</span><span lang="fr">Doctorante en économie, 3ᵉ année</span></span>
+      <span>Université Gustave Eiffel — Érudite</span>
+      <span class="label-rule"></span>
+      <span class="dim"><span lang="en">Medium: survey data, causal inference, fieldwork</span><span lang="fr">Technique : données d'enquête, inférence causale, terrain</span></span>
+    </div>
+    <h1 class="hero-name">
+      <span class="line"><span>Hanna</span></span>
+      <span class="line"><span><em>Bony</em></span></span>
+    </h1>
+  </div>
+
+  <!-- Titre des autres onglets -->
+  <div class="stage-page">
+    <h1 class="page-title" id="page-title"></h1>
+  </div>
+</section>
+
+<main>
+
+  <!-- ================================================= ACCUEIL -->
+  <section class="view" data-view="home">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="big" lang="en">
+          I am a third-year PhD candidate in Economics at the Université Gustave Eiffel <span class="dim">(Érudite)</span>, studying <em>gender-based violence</em>, and in particular <em>intimate partner violence</em> in developing countries.
+        </p>
+        <p class="big" lang="fr">
+          Je suis doctorante en troisième année d'économie à l'Université Gustave Eiffel <span class="dim">(Érudite)</span>. J'étudie les <em>violences fondées sur le genre</em>, en particulier les <em>violences conjugales</em> dans les pays en développement.
+        </p>
+
+        <div class="cols">
+          <p lang="en">
+            My thesis is supervised by
+            <a href="https://marinedetalance.weebly.com/" target="_blank">Marine de Talancé</a> (Univ. Gustave Eiffel — Érudite) and
+            <a href="https://www.catherinebros.com/" target="_blank">Catherine Bros</a> (Univ. de Tours — LÉO).
+            I am a Research Assistant for
+            <a href="https://annasanzdegaldeano.com/" target="_blank">Anna Sanz-de-Galdeano</a> and
+            <a href="https://www.jsmessina.com/" target="_blank">Julián Messina</a> (Universidad de Alicante), and previously for
+            <a href="https://sites.google.com/view/jgarciahombrados/" target="_blank">Jorge García-Hombrados</a> (Universidad Carlos III de Madrid).
+            In 2027, I will be a visiting researcher at the University of British Columbia, hosted by <a href="https://sites.google.com/view/siwan-anderson/home" target="_blank">Siwan Anderson</a>.
+          </p>
+          <p lang="fr">
+            Ma thèse est dirigée par
+            <a href="https://marinedetalance.weebly.com/" target="_blank">Marine de Talancé</a> (Univ. Gustave Eiffel — Érudite) et
+            <a href="https://www.catherinebros.com/" target="_blank">Catherine Bros</a> (Univ. de Tours — LÉO).
+            Je suis assistante de recherche pour
+            <a href="https://annasanzdegaldeano.com/" target="_blank">Anna Sanz-de-Galdeano</a> et
+            <a href="https://www.jsmessina.com/" target="_blank">Julián Messina</a> (Universidad de Alicante), et je l'ai été pour
+            <a href="https://sites.google.com/view/jgarciahombrados/" target="_blank">Jorge García-Hombrados</a> (Universidad Carlos III de Madrid).
+            En 2027, je serai chercheuse invitée à l’University of British Columbia, accueillie par <a href="https://sites.google.com/view/siwan-anderson/home" target="_blank">Siwan Anderson</a>.
+          </p>
+
+          <dl class="facts mono">
+            <dt lang="en">Fields</dt><dt lang="fr">Domaines</dt>
+            <dd>
+              <span lang="en">Development Economics, Applied Microeconomics, Impact Evaluation</span>
+              <span lang="fr">Économie du développement, microéconomie appliquée, évaluation d'impact</span>
+            </dd>
+            <dt lang="en">Topics</dt><dt lang="fr">Thèmes</dt>
+            <dd>
+              <span lang="en">Gender-Based Violence, Harmful Social Norms</span>
+              <span lang="fr">Violences de genre, normes sociales néfastes</span>
+            </dd>
+            <dt lang="en">Languages</dt><dt lang="fr">Langues</dt>
+            <dd>
+              <span lang="en">French, English, Spanish</span>
+              <span lang="fr">Français, anglais, espagnol</span>
+            </dd>
+          </dl>
+        </div>
+      </div>
+
+      <figure class="portrait">
+        <div class="portrait-frame">
+          <img src="photo.jpg" alt="Hanna Bony">
+        </div>
+        <figcaption class="mono">
+          <span>Hanna Bony</span>
+          <span class="dim"><span lang="en">Portrait, photograph</span><span lang="fr">Portrait, photographie</span></span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="block">
+      <h2 class="block-title"><span lang="en">Currently</span><span lang="fr">En ce moment</span></h2>
+      <ul class="now">
+        <li>
+          <span class="mono accent"><span lang="en">Working paper</span><span lang="fr">Document de travail</span></span>
+          <span lang="en"><em>Unseen Collateral: The Links Between Political and Intimate Partner Violence</em> — coming soon</span>
+          <span lang="fr"><em>Unseen Collateral: The Links Between Political and Intimate Partner Violence</em> — bientôt disponible</span>
+        </li>
+        <li>
+          <span class="mono accent"><span lang="en">Working paper</span><span lang="fr">Document de travail</span></span>
+          <span lang="en"><em>Leaving Home, Changing Lives? Internal Migration and Women’s Trajectories in Ghana</em> (with Marine de Talancé) — coming soon</span>
+          <span lang="fr"><em>Leaving Home, Changing Lives? Internal Migration and Women’s Trajectories in Ghana</em> (avec Marine de Talancé) — bientôt disponible</span>
+        </li>
+        <li>
+          <span class="mono accent"><span lang="en">2027</span><span lang="fr">2027</span></span>
+          <span lang="en">Visiting researcher at the University of British Columbia (Vancouver), hosted by <a href="https://sites.google.com/view/siwan-anderson/home" target="_blank">Siwan Anderson</a></span>
+          <span lang="fr">Chercheuse invitée à l’University of British Columbia (Vancouver), accueillie par <a href="https://sites.google.com/view/siwan-anderson/home" target="_blank">Siwan Anderson</a></span>
+        </li>
+        <li>
+          <span class="mono accent"><span lang="en">Organising</span><span lang="fr">Organisation</span></span>
+          <span lang="en">AFEDEV Doctoral Development Days 2026</span>
+          <span lang="fr">Journées doctorales AFEDEV 2026</span>
+        </li>
+        <li>
+          <span class="mono accent"><span lang="en">Board</span><span lang="fr">Conseil</span></span>
+          <span lang="en">Elected member of the ERUDITE research board (since 2025)</span>
+          <span lang="fr">Membre élue du conseil de laboratoire de l'ERUDITE (depuis 2025)</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <div class="block-head">
+        <h2 class="block-title"><span lang="en">Works in progress</span><span lang="fr">Travaux en cours</span></h2>
+        <a class="mono more" href="#research"><span lang="en">All research</span><span lang="fr">Toute la recherche</span> →</a>
+      </div>
+      <p class="block-intro"><span lang="en">Four essays on the causes and prevention of intimate partner violence in developing countries — and related projects on social norms.</span><span lang="fr">Quatre essais sur les causes et la prévention des violences conjugales dans les pays en développement, et des projets connexes sur les normes sociales.</span></p>
+      <div class="wall">
+        <a class="frame" href="#research" data-open="0">
+          <canvas data-map="dhs" data-seed="31" data-frame="tall"></canvas>
+          <span class="mono accent">Fig. I</span>
+          <span class="frame-title">Unseen Collateral</span>
+          <span class="mono dim"><span lang="en">38 countries</span><span lang="fr">38 pays</span></span>
+        </a>
+        <a class="frame" href="#research" data-open="1">
+          <canvas data-map="ghana" data-seed="82" data-frame="tall"></canvas>
+          <span class="mono accent">Fig. II</span>
+          <span class="frame-title">Leaving Home, Changing Lives? Internal Migration and Women’s Trajectories in Ghana</span>
+          <span class="mono dim"><span lang="en">Ghana</span><span lang="fr">Ghana</span></span>
+        </a>
+        <a class="frame" href="#research" data-open="2">
+          <canvas data-map="ssa" data-seed="48" data-frame="tall"></canvas>
+          <span class="mono accent">Fig. III</span>
+          <span class="frame-title">Fast-Internet and Cultural Change</span>
+          <span class="mono dim"><span lang="en">Sub-Saharan Africa</span><span lang="fr">Afrique subsaharienne</span></span>
+        </a>
+        <a class="frame" href="#research" data-open="3">
+          <canvas data-map="ssa" data-seed="65" data-frame="tall"></canvas>
+          <span class="mono accent">Fig. IV</span>
+          <span class="frame-title">How Religious Leaders Shape Social Norms</span>
+          <span class="mono dim"><span lang="en">Sub-Saharan Africa</span><span lang="fr">Afrique subsaharienne</span></span>
+        </a>
+        <a class="frame" href="#research" data-open="4">
+          <canvas data-map="nigeria" data-seed="99" data-frame="tall"></canvas>
+          <span class="mono accent">Fig. V</span>
+          <span class="frame-title">Fertility Control Access and Intimate Partner Violence</span>
+          <span class="mono dim"><span lang="en">Nigeria</span><span lang="fr">Nigeria</span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="block duo">
+      <div>
+        <h2 class="block-title"><span lang="en">Teaching</span><span lang="fr">Enseignement</span></h2>
+        <p class="lead-note"><span lang="en">Six courses, from first-year undergraduate to Master's level, at the Université Gustave Eiffel.</span><span lang="fr">Six cours, de la L1 au M2, à l'Université Gustave Eiffel.</span></p>
+        <p class="mono dim tags-line">Macro I · Macro II · <span lang="en">Development Economics</span><span lang="fr">Économie du développement</span> · <span lang="en">Supervised projects</span><span lang="fr">Projets tutorés</span> · <span lang="en">Microeconomics of Development</span><span lang="fr">Microéconomie du développement</span> · <span lang="en">Local Development Policies</span><span lang="fr">Politiques de développement local</span></p>
+      </div>
+      <div>
+        <h2 class="block-title"><span lang="en">Institutions &amp; roles</span><span lang="fr">Institutions et rôles</span></h2>
+        <ul class="simple">
+          <li><span>Université Gustave Eiffel — ERUDITE</span><span class="mono dim"><span lang="en">PhD</span><span lang="fr">Doctorat</span></span></li>
+          <li><span><span lang="en">OMI doctoral school</span><span lang="fr">École doctorale OMI</span></span><span class="mono dim"><span lang="en">Fellowship</span><span lang="fr">Contrat doctoral</span></span></li>
+          <li><span><span lang="en">French Association for Development Economics (AFEDEV)</span><span lang="fr">Association française d'économie du développement (AFEDEV)</span></span><span class="mono dim"><span lang="en">Web &amp; social media</span><span lang="fr">Web et réseaux</span></span></li>
+          <li><span>University of British Columbia</span><span class="mono dim"><span lang="en">Visiting, 2027</span><span lang="fr">Invitée, 2027</span></span></li>
+          <li><span>Universidad de Alicante</span><span class="mono dim"><span lang="en">Research assistant</span><span lang="fr">Assistante de recherche</span></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <nav class="doors" aria-label="Explore">
+      <a href="#research"><span class="mono">→</span><span lang="en">Research</span><span lang="fr">Recherche</span></a>
+      <a href="#teaching"><span class="mono">→</span><span lang="en">Teaching</span><span lang="fr">Enseignement</span></a>
+      <a href="#cv"><span class="mono">→</span>CV</a>
+      <a href="#contact"><span class="mono">→</span>Contact</a>
+    </nav>
+  </section>
+
+  <!-- ================================================= RECHERCHE -->
+  <section class="view" data-view="research" data-title-en="Research" data-title-fr="Recherche">
+
+    <div class="block thesis">
+      <h2 class="block-title"><span lang="en">Doctoral thesis</span><span lang="fr">Thèse de doctorat</span></h2>
+      <p class="thesis-title">“Four essays on the causes and prevention of intimate partner violence in developing countries”</p>
+      <p class="mono dim">
+        <span lang="en">Supervised by</span><span lang="fr">Sous la direction de</span>
+        Marine de Talancé &amp; Catherine Bros — Université Gustave Eiffel, 2024 —
+      </p>
+    </div>
+
+    <div class="block">
+      <div class="block-head">
+        <h2 class="block-title"><span lang="en">Work in progress</span><span lang="fr">Travaux en cours</span></h2>
+        <div class="filters mono">
+          <button class="filter active" data-filter="all"><span lang="en">All</span><span lang="fr">Tout</span> <sup>5</sup></button>
+          <button class="filter" data-filter="ipv"><span lang="en">Intimate partner violence</span><span lang="fr">Violences conjugales</span> <sup>3</sup></button>
+          <button class="filter" data-filter="norms"><span lang="en">Social norms</span><span lang="fr">Normes sociales</span> <sup>2</sup></button>
+        </div>
+      </div>
+
+      <div class="works">
+        <article class="work" data-tags="ipv">
+          <button class="work-row" aria-expanded="false">
+            <span class="work-n mono">I</span>
+            <span class="work-title">Unseen Collateral: The Links Between Political and Intimate Partner Violence</span>
+            <span class="work-who mono"><span lang="en">Solo</span><span lang="fr">Seule autrice</span></span>
+            <span class="work-status mono hot"><span lang="en">WP soon</span><span lang="fr">DT bientôt</span></span>
+            <span class="work-plus" aria-hidden="true"></span>
+          </button>
+          <div class="work-body"><div class="work-inner">
+            <figure class="work-art">
+              <canvas data-map="dhs" data-seed="78"></canvas>
+              <figcaption class="mono"><span>Fig. I</span><span class="dim"><span lang="en">38 countries</span><span lang="fr">38 pays</span></span></figcaption>
+            </figure>
+            <dl class="work-meta mono">
+              <dt lang="en">Setting</dt><dt lang="fr">Terrain</dt>
+              <dd><span lang="en">38 low- and middle-income countries — Africa, Middle East, Asia</span><span lang="fr">38 pays à revenu faible et intermédiaire — Afrique, Moyen-Orient, Asie</span></dd>
+              <dt lang="en">Data</dt><dt lang="fr">Données</dt>
+              <dd><span lang="en">81 geolocated Demographic and Health Surveys (2003–2023) matched with ACLED battles, riots and violence against civilians within 10 km of each cluster</span><span lang="fr">81 Enquêtes démographiques et de santé géolocalisées (2003–2023), appariées aux batailles, émeutes et violences contre les civils recensées par ACLED dans un rayon de 10 km</span></dd>
+              <dt lang="en">Method</dt><dt lang="fr">Méthode</dt>
+              <dd><span lang="en">Sharp Regression Discontinuity in Time — women interviewed just before vs. just after a nearby event, within a one-year window</span><span lang="fr">Régression sur discontinuité temporelle — femmes interrogées juste avant ou juste après un événement proche, sur une fenêtre d’un an</span></dd>
+              <dt>JEL</dt>
+              <dd>D74 · J12 · J16 · Q34</dd>
+              <dt lang="en">Status</dt><dt lang="fr">Statut</dt>
+              <dd><span lang="en">Working paper coming soon</span><span lang="fr">Document de travail bientôt disponible</span></dd>
+              <dt lang="en">Abstract</dt><dt lang="fr">Résumé</dt>
+              <dd class="abstract">
+                <p lang="en">This paper examines the short-term effects of conflict events on intimate partner violence (IPV) in low- and middle-income countries. Using geolocated data from 81 Demographic and Health Surveys matched with conflict events from the Armed Conflict Location and Event Data (ACLED) project, I exploit variation in the timing of women’s interviews relative to nearby conflict events through a Regression Discontinuity in Time design. The results show that exposure to a single conflict event—particularly battles and riots—leads to a significant increase in the probability of experiencing physical and emotional IPV in the months that follow. No significant effect is found for sexual violence or for attitudes justifying IPV. Analysis of potential mechanisms suggests that these effects may be driven by increased relational control, stress linked to media exposure, and conflict-induced shifts in household economic roles. These findings highlight how even isolated episodes of violence can have spillover effects within households, reinforcing the need to incorporate IPV prevention into conflict response strategies.</p>
+                <p lang="fr">Cet article examine les effets à court terme des événements conflictuels sur les violences conjugales dans les pays à revenu faible et intermédiaire. À partir de données géolocalisées issues de 81 Enquêtes démographiques et de santé (EDS), appariées aux événements conflictuels du projet Armed Conflict Location and Event Data (ACLED), j’exploite la variation du moment des entretiens des femmes par rapport aux événements conflictuels proches, au moyen d’un design de régression sur discontinuité temporelle. Les résultats montrent que l’exposition à un seul événement conflictuel — en particulier les batailles et les émeutes — entraîne une hausse significative de la probabilité de subir des violences conjugales physiques et émotionnelles dans les mois qui suivent. Aucun effet significatif n’apparaît pour les violences sexuelles ni pour les attitudes justifiant ces violences. L’analyse des mécanismes possibles suggère que ces effets pourraient s’expliquer par un contrôle accru au sein du couple, un stress lié à l’exposition médiatique et des changements de rôles économiques dans le ménage induits par le conflit. Ces résultats montrent que même des épisodes de violence isolés peuvent avoir des effets de débordement au sein des ménages, et soulignent la nécessité d’intégrer la prévention des violences conjugales dans les stratégies de réponse aux conflits.</p>
+              </dd>
+              <dt lang="en">Countries</dt><dt lang="fr">Pays</dt>
+              <dd><ul class="countries"><li><span>Angola</span><span class="dim">2015</span></li><li><span>Benin</span><span class="dim">2017</span></li><li><span>Burkina Faso</span><span class="dim">2010, 2021</span></li><li><span>Burundi</span><span class="dim">2015</span></li><li><span>Cambodia</span><span class="dim">2014, 2021</span></li><li><span>Cameroon</span><span class="dim">2004, 2011, 2018</span></li><li><span>Chad</span><span class="dim">2014</span></li><li><span>DR Congo</span><span class="dim">2007, 2013</span></li><li><span>Côte d’Ivoire</span><span class="dim">2011, 2021</span></li><li><span>Egypt</span><span class="dim">2005, 2014</span></li><li><span>Ethiopia</span><span class="dim">2016</span></li><li><span>Gabon</span><span class="dim">2012, 2019</span></li><li><span>Gambia</span><span class="dim">2019</span></li><li><span>Ghana</span><span class="dim">2008, 2022</span></li><li><span>India</span><span class="dim">2015, 2019</span></li><li><span>Jordan</span><span class="dim">2017, 2023</span></li><li><span>Kenya</span><span class="dim">2003, 2008, 2014, 2022</span></li><li><span>Liberia</span><span class="dim">2007, 2019</span></li><li><span>Madagascar</span><span class="dim">2021</span></li><li><span>Malawi</span><span class="dim">2004, 2010, 2015</span></li><li><span>Mali</span><span class="dim">2006, 2012</span></li><li><span>Mauritania</span><span class="dim">—</span></li><li><span>Mozambique</span><span class="dim">2011, 2015, 2022</span></li><li><span>Myanmar</span><span class="dim">2015</span></li><li><span>Namibia</span><span class="dim">2013</span></li><li><span>Nepal</span><span class="dim">2011, 2016, 2022</span></li><li><span>Nigeria</span><span class="dim">2008, 2013, 2018</span></li><li><span>Pakistan</span><span class="dim">—</span></li><li><span>Philippines</span><span class="dim">2017, 2022</span></li><li><span>Rwanda</span><span class="dim">2005, 2010, 2014, 2019</span></li><li><span>Senegal</span><span class="dim">2018, 2019</span></li><li><span>Sierra Leone</span><span class="dim">2013, 2019</span></li><li><span>South Africa</span><span class="dim">2016</span></li><li><span>Tanzania</span><span class="dim">2010, 2015, 2022</span></li><li><span>Togo</span><span class="dim">—</span></li><li><span>Uganda</span><span class="dim">2006, 2011, 2016</span></li><li><span>Zambia</span><span class="dim">2007, 2013, 2018</span></li><li><span>Zimbabwe</span><span class="dim">2005, 2010, 2015</span></li></ul></dd>
+            </dl>
+          </div></div>
+        </article>
+
+        <article class="work" data-tags="ipv">
+          <button class="work-row" aria-expanded="false">
+            <span class="work-n mono">II</span>
+            <span class="work-title">Leaving Home, Changing Lives? Internal Migration and Women’s Trajectories in Ghana</span>
+            <span class="work-who mono"><span lang="en">with</span><span lang="fr">avec</span> M. de Talancé</span>
+            <span class="work-status mono hot"><span lang="en">WP soon</span><span lang="fr">DT bientôt</span></span>
+            <span class="work-plus" aria-hidden="true"></span>
+          </button>
+          <div class="work-body"><div class="work-inner">
+            <figure class="work-art">
+              <canvas data-map="ghana" data-seed="7"></canvas>
+              <figcaption class="mono"><span>Fig. II</span><span class="dim"><span lang="en">Ghana</span><span lang="fr">Ghana</span></span></figcaption>
+            </figure>
+            <dl class="work-meta mono">
+              <dt lang="en">Setting</dt><dt lang="fr">Terrain</dt>
+              <dd><span lang="en">Ghana</span><span lang="fr">Ghana</span></dd>
+              <dt lang="en">Co-author</dt><dt lang="fr">Co-autrice</dt>
+              <dd><a href="https://marinedetalance.weebly.com/" target="_blank">Marine de Talancé</a> — Université Gustave Eiffel</dd>
+              <dt lang="en">Data</dt><dt lang="fr">Données</dt>
+              <dd><span lang="en">Ghana Socioeconomic Panel Survey — four waves following the same individuals, GPS location of every household, retrospective migration histories</span><span lang="fr">Ghana Socioeconomic Panel Survey — quatre vagues suivant les mêmes individus, localisation GPS de chaque ménage, historiques migratoires rétrospectifs</span></dd>
+              <dt lang="en">Method</dt><dt lang="fr">Méthode</dt>
+              <dd><span lang="en">Interaction-weighted event study (Sun &amp; Abraham, 2021) with individual fixed effects, comparing migrants to women who never migrate</span><span lang="fr">Étude d’événements pondérée par interaction (Sun &amp; Abraham, 2021) avec effets fixes individuels, comparant les migrantes aux femmes qui ne migrent jamais</span></dd>
+              <dt>JEL</dt>
+              <dd>J12 · J16 · R23</dd>
+              <dt lang="en">Status</dt><dt lang="fr">Statut</dt>
+              <dd><span lang="en">Working paper coming soon</span><span lang="fr">Document de travail bientôt disponible</span></dd>
+              <dt lang="en">Abstract</dt><dt lang="fr">Résumé</dt>
+              <dd class="abstract">
+                <p lang="en">Internal migration is one of the largest, and increasingly feminized, population movements in the developing world, yet its consequences for the women who move remain poorly understood. This article investigates how internal migration reshapes women’s economic, marital and social trajectories in Ghana using a nationally representative panel survey with GPS-geolocated households and retrospective migration histories. We estimate dynamic treatment effects with an interaction-weighted event-study estimator that relies on individual fixed effects and is robust to staggered and heterogeneous treatment timing.</p>
+                <p lang="en">Migration durably improves women’s economic position, with effects that emerge within two years of migration and persist thereafter. It also raises the probability of marriage for previously single women. Although the characteristics of husbands (education, age, labor market outcomes) remain similar to those of non-migrant women, migrant women receive higher bride prices, likely reflecting both their own improved economic position and differences in bride price norms across destinations.</p>
+                <p lang="en">Yet despite these material gains, female migration does not shift gender-role attitudes, nor does it reduce intimate partner violence. Violence rises transiently around the time of the move, consistent with an observed disruption of protective social ties. These findings suggest that economic empowerment alone does not ensure women’s safety when embedded in unchanged gender norms.</p>
+                <p lang="fr">La migration interne est l’un des plus importants mouvements de population du monde en développement, et il se féminise de plus en plus ; pourtant, ses conséquences pour les femmes qui migrent restent mal connues. Cet article étudie comment la migration interne transforme les trajectoires économiques, matrimoniales et sociales des femmes au Ghana, à partir d’une enquête de panel représentative au niveau national, avec des ménages géolocalisés par GPS et des historiques migratoires rétrospectifs. Nous estimons des effets de traitement dynamiques à l’aide d’un estimateur d’étude d’événements pondéré par interaction, qui repose sur des effets fixes individuels et reste robuste à un calendrier de traitement échelonné et hétérogène.</p>
+                <p lang="fr">La migration améliore durablement la situation économique des femmes, avec des effets qui apparaissent dans les deux ans suivant la migration et persistent ensuite. Elle augmente aussi la probabilité de mariage des femmes auparavant célibataires. Si les caractéristiques des maris (éducation, âge, situation sur le marché du travail) restent semblables à celles des maris des non-migrantes, les migrantes reçoivent une dot (bride price) plus élevée, ce qui reflète sans doute à la fois l’amélioration de leur propre situation économique et des normes de dot différentes selon les destinations.</p>
+                <p lang="fr">Pourtant, malgré ces gains matériels, la migration féminine ne modifie pas les attitudes envers les rôles de genre et ne réduit pas les violences conjugales. Les violences augmentent temporairement autour du moment du départ, ce qui concorde avec la rupture observée des liens sociaux protecteurs. Ces résultats suggèrent que l’autonomisation économique ne suffit pas, à elle seule, à garantir la sécurité des femmes lorsque les normes de genre restent inchangées.</p>
+              </dd>
+            </dl>
+          </div></div>
+        </article>
+
+        <article class="work" data-tags="norms">
+          <button class="work-row" aria-expanded="false">
+            <span class="work-n mono">III</span>
+            <span class="work-title">Fast-Internet and Cultural Change</span>
+            <span class="work-who mono"><span lang="en">with</span><span lang="fr">avec</span> J. García-Hombrados</span>
+            <span class="work-status mono"><span lang="en">Ongoing</span><span lang="fr">En cours</span></span>
+            <span class="work-plus" aria-hidden="true"></span>
+          </button>
+          <div class="work-body"><div class="work-inner">
+            <figure class="work-art">
+              <canvas data-map="ssa" data-seed="2"></canvas>
+              <figcaption class="mono"><span>Fig. III</span><span class="dim"><span lang="en">Sub-Saharan Africa</span><span lang="fr">Afrique subsaharienne</span></span></figcaption>
+            </figure>
+            <dl class="work-meta mono">
+              <dt lang="en">Setting</dt><dt lang="fr">Terrain</dt>
+              <dd><span lang="en">Sub-Saharan Africa</span><span lang="fr">Afrique subsaharienne</span></dd>
+              <dt lang="en">Co-author</dt><dt lang="fr">Co-auteur</dt>
+              <dd><a href="https://sites.google.com/view/jgarciahombrados/" target="_blank">Jorge García-Hombrados</a> — Universidad Carlos III de Madrid (UC3M)</dd>
+              <dt lang="en">Abstract</dt><dt lang="fr">Résumé</dt>
+              <dd class="soon"><span lang="en">Coming soon.</span><span lang="fr">Bientôt disponible.</span></dd>
+            </dl>
+          </div></div>
+        </article>
+
+        <article class="work" data-tags="norms">
+          <button class="work-row" aria-expanded="false">
+            <span class="work-n mono">IV</span>
+            <span class="work-title">How Religious Leaders Shape Social Norms</span>
+            <span class="work-who mono"><span lang="en">with</span><span lang="fr">avec</span> J. García-Hombrados</span>
+            <span class="work-status mono"><span lang="en">Ongoing</span><span lang="fr">En cours</span></span>
+            <span class="work-plus" aria-hidden="true"></span>
+          </button>
+          <div class="work-body"><div class="work-inner">
+            <figure class="work-art">
+              <canvas data-map="ssa" data-seed="48"></canvas>
+              <figcaption class="mono"><span>Fig. IV</span><span class="dim"><span lang="en">Sub-Saharan Africa</span><span lang="fr">Afrique subsaharienne</span></span></figcaption>
+            </figure>
+            <dl class="work-meta mono">
+              <dt lang="en">Setting</dt><dt lang="fr">Terrain</dt>
+              <dd><span lang="en">Sub-Saharan Africa</span><span lang="fr">Afrique subsaharienne</span></dd>
+              <dt lang="en">Co-author</dt><dt lang="fr">Co-auteur</dt>
+              <dd><a href="https://sites.google.com/view/jgarciahombrados/" target="_blank">Jorge García-Hombrados</a> — Universidad Carlos III de Madrid (UC3M)</dd>
+              <dt lang="en">Abstract</dt><dt lang="fr">Résumé</dt>
+              <dd class="soon"><span lang="en">Coming soon.</span><span lang="fr">Bientôt disponible.</span></dd>
+            </dl>
+          </div></div>
+        </article>
+
+        <article class="work" data-tags="ipv">
+          <button class="work-row" aria-expanded="false">
+            <span class="work-n mono">V</span>
+            <span class="work-title">Fertility Control Access and Intimate Partner Violence</span>
+            <span class="work-who mono"><span lang="en">Solo</span><span lang="fr">Seule autrice</span></span>
+            <span class="work-status mono"><span lang="en">Ongoing</span><span lang="fr">En cours</span></span>
+            <span class="work-plus" aria-hidden="true"></span>
+          </button>
+          <div class="work-body"><div class="work-inner">
+            <figure class="work-art">
+              <canvas data-map="nigeria" data-seed="84"></canvas>
+              <figcaption class="mono"><span>Fig. V</span><span class="dim"><span lang="en">Nigeria</span><span lang="fr">Nigeria</span></span></figcaption>
+            </figure>
+            <dl class="work-meta mono">
+              <dt lang="en">Setting</dt><dt lang="fr">Terrain</dt>
+              <dd><span lang="en">Nigeria</span><span lang="fr">Nigeria</span></dd>
+              <dt lang="en">Abstract</dt><dt lang="fr">Résumé</dt>
+              <dd class="soon"><span lang="en">Coming soon.</span><span lang="fr">Bientôt disponible.</span></dd>
+            </dl>
+          </div></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2 class="block-title"><span lang="en">Presentations</span><span lang="fr">Présentations</span> <span class="mono dim">2025</span></h2>
+      <ul class="talks">
+        <li><span>Spanish Workshop on Development Economics</span><span class="mono dim">Madrid, <span lang="en">Spain</span><span lang="fr">Espagne</span></span></li>
+        <li><span>International Conference on Development Economics (ICDE)</span><span class="mono dim">Nanterre, France</span></li>
+        <li><span>Journées Louis-André Gérard-Varet (LAGV)</span><span class="mono dim">Marseille, France</span></li>
+        <li><span>Paris School of Economics seminar (PSE)</span><span class="mono dim">Paris, France</span></li>
+        <li><span>Nordic Conference in Development Economics (NCDE)</span><span class="mono dim">Oslo, <span lang="en">Norway</span><span lang="fr">Norvège</span></span></li>
+        <li><span>Erudite Workshop</span><span class="mono dim">Paris, France</span></li>
+        <li><span>German Development Economics Conference (GDE)</span><span class="mono dim">Frankfurt, <span lang="en">Germany</span><span lang="fr">Allemagne</span></span></li>
+        <li><span>EUDN PhD Workshop on Development Economics</span><span class="mono dim">Clermont-Ferrand, France</span></li>
+        <li><span>AFEDEV Doctoral Development Days</span><span class="mono dim">Strasbourg, France</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================================================= ENSEIGNEMENT -->
+  <section class="view" data-view="teaching" data-title-en="Teaching" data-title-fr="Enseignement">
+    <div class="block">
+      <p class="lead-note">
+        <span lang="en">Teaching Assistant at the Université Gustave Eiffel since 2024 — 64 hours per year.</span>
+        <span lang="fr">Chargée de TD à l'Université Gustave Eiffel depuis 2024 — 64 heures par an.</span>
+      </p>
+    </div>
+
+    <div class="block">
+      <h2 class="block-title">Master</h2>
+      <ol class="courses">
+        <li>
+          <span class="mono accent">M2</span>
+          <h3><span lang="en">Local Development Policies</span><span lang="fr">Politiques de développement local</span></h3>
+          <span class="mono dim"><span lang="en">MSc Development Economics, 2nd year</span><span lang="fr">M2 Économie du développement</span></span>
+        </li>
+        <li>
+          <span class="mono accent">M1</span>
+          <h3><span lang="en">Microeconomics of Development, Markets and Market Imperfections</span><span lang="fr">Microéconomie du développement, marchés et imperfections de marché</span></h3>
+          <span class="mono dim"><span lang="en">MSc Development Economics, 1st year</span><span lang="fr">M1 Économie du développement</span></span>
+        </li>
+      </ol>
+    </div>
+
+    <div class="block">
+      <h2 class="block-title">Licence <span class="mono dim">BSc</span></h2>
+      <ol class="courses">
+        <li>
+          <span class="mono accent">2025—26</span>
+          <h3><span lang="en">Development Economics</span><span lang="fr">Économie du développement</span></h3>
+          <span class="mono dim"><span lang="en">BSc Economics, 3rd year</span><span lang="fr">L3 Économie</span></span>
+        </li>
+        <li>
+          <span class="mono accent">2025—26</span>
+          <h3><span lang="en">Supervised Projects in Economics</span><span lang="fr">Projets tutorés en économie</span></h3>
+          <span class="mono dim"><span lang="en">BSc Economics, 3rd year</span><span lang="fr">L3 Économie</span></span>
+        </li>
+        <li>
+          <span class="mono accent">2024—26</span>
+          <h3><span lang="en">Macroeconomics II</span><span lang="fr">Macroéconomie II</span></h3>
+          <span class="mono dim"><span lang="en">BSc Economics &amp; Management, 2nd year</span><span lang="fr">L2 Économie-Gestion</span></span>
+        </li>
+        <li>
+          <span class="mono accent">2024—26</span>
+          <h3><span lang="en">Macroeconomics I</span><span lang="fr">Macroéconomie I</span></h3>
+          <span class="mono dim"><span lang="en">BSc Economics &amp; Management, 1st year</span><span lang="fr">L1 Économie-Gestion</span></span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================================================= CV -->
+  <section class="view" data-view="cv" data-title-en="Curriculum" data-title-fr="Parcours">
+    <div class="block cv-top">
+      <p class="lead-note">
+        <span lang="en">The full CV is available as a PDF.</span>
+        <span lang="fr">Le CV complet est disponible en PDF.</span>
+      </p>
+      <a class="pill mono" href="CV_BONY.pdf" target="_blank"><span lang="en">Open the CV (PDF)</span><span lang="fr">Ouvrir le CV (PDF)</span> ↗</a>
+    </div>
+
+    <div class="block">
+      <h2 class="block-title"><span lang="en">Education</span><span lang="fr">Formation</span></h2>
+      <ol class="entries">
+        <li>
+          <span class="mono accent">2024 —</span>
+          <div>
+            <h3><span lang="en">PhD in Economics</span><span lang="fr">Doctorat en économie</span></h3>
+            <p>Université Gustave Eiffel — ERUDITE</p>
+          </div>
+          <span class="mono dim">Paris</span>
+        </li>
+        <li>
+          <span class="mono accent">2023—24</span>
+          <div>
+            <h3><span lang="en">MSc Development Economics &amp; International Project Management</span><span lang="fr">Master Économie du développement &amp; gestion de projets internationaux</span></h3>
+            <p>Université Gustave Eiffel &amp; Université Paris-Est Créteil</p>
+          </div>
+          <span class="mono dim">Paris</span>
+        </li>
+        <li>
+          <span class="mono accent">2021—22</span>
+          <div>
+            <h3><span lang="en">MSc Economic Analysis</span><span lang="fr">Master Analyse économique</span></h3>
+            <p>CY Cergy Paris Université &amp; ESSEC Business School</p>
+          </div>
+          <span class="mono dim">Paris</span>
+        </li>
+        <li>
+          <span class="mono accent">2020—21</span>
+          <div>
+            <h3><span lang="en">MSc International Economic Studies</span><span lang="fr">Master Études économiques internationales</span></h3>
+            <p>Université Paris-Est Créteil (UPEC)</p>
+          </div>
+          <span class="mono dim">Paris</span>
+        </li>
+        <li>
+          <span class="mono accent">2017—20</span>
+          <div>
+            <h3><span lang="en">BSc Economics</span><span lang="fr">Licence d'économie</span></h3>
+            <p>Université Paris 1 Panthéon-Sorbonne — <span lang="en">Erasmus at Universidad Complutense de Madrid (2019–20)</span><span lang="fr">Erasmus à l'Universidad Complutense de Madrid (2019–20)</span></p>
+          </div>
+          <span class="mono dim">Paris · Madrid</span>
+        </li>
+      </ol>
+    </div>
+
+    <div class="block">
+      <h2 class="block-title"><span lang="en">Experience</span><span lang="fr">Expérience</span></h2>
+      <ol class="entries">
+        <li>
+          <span class="mono accent">2027</span>
+          <div>
+            <h3><span lang="en">Visiting Researcher</span><span lang="fr">Chercheuse invitée</span></h3>
+            <p>University of British Columbia — <span lang="en">hosted by</span><span lang="fr">accueillie par</span> <a href="https://sites.google.com/view/siwan-anderson/home" target="_blank">Siwan Anderson</a></p>
+          </div>
+          <span class="mono dim">Vancouver, Canada</span>
+        </li>
+        <li>
+          <span class="mono accent">2024 —</span>
+          <div>
+            <h3><span lang="en">Research Assistant</span><span lang="fr">Assistante de recherche</span></h3>
+            <p>Universidad de Alicante — Anna Sanz-de-Galdeano &amp; Julián Messina</p>
+            <p class="dim"><span lang="en">Migration, education, gender</span><span lang="fr">Migration, éducation, genre</span></p>
+          </div>
+          <span class="mono dim"><span lang="en">Remote</span><span lang="fr">À distance</span></span>
+        </li>
+        <li>
+          <span class="mono accent">2024</span>
+          <div>
+            <h3><span lang="en">Research Intern</span><span lang="fr">Stagiaire de recherche</span></h3>
+            <p>Université Gustave Eiffel — ERUDITE — Melika Ben Salem</p>
+            <p class="dim"><span lang="en">Intimate partner violence, impact evaluation</span><span lang="fr">Violences conjugales, évaluation d'impact</span></p>
+          </div>
+          <span class="mono dim">Champs-sur-Marne</span>
+        </li>
+        <li>
+          <span class="mono accent">2023—26</span>
+          <div>
+            <h3><span lang="en">Research Assistant</span><span lang="fr">Assistante de recherche</span></h3>
+            <p>Universidad Autónoma de Madrid — Jorge García-Hombrados</p>
+            <p class="dim"><span lang="en">Harmful social norms, gender-based violence, impact evaluation</span><span lang="fr">Normes sociales néfastes, violences de genre, évaluation d'impact</span></p>
+          </div>
+          <span class="mono dim"><span lang="en">Remote</span><span lang="fr">À distance</span></span>
+        </li>
+        <li>
+          <span class="mono accent">2023</span>
+          <div>
+            <h3><span lang="en">Economic Affairs Intern</span><span lang="fr">Stagiaire en affaires économiques</span></h3>
+            <p><span lang="en">United Nations Economic Commission for Latin America and the Caribbean (ECLAC)</span><span lang="fr">Commission économique des Nations unies pour l'Amérique latine et les Caraïbes (CEPALC)</span></p>
+            <p class="dim"><span lang="en">Human settlements and development</span><span lang="fr">Établissements humains et développement</span></p>
+          </div>
+          <span class="mono dim">Santiago, <span lang="en">Chile</span><span lang="fr">Chili</span></span>
+        </li>
+      </ol>
+    </div>
+
+    <div class="cv-grid">
+      <div class="block">
+        <h2 class="block-title"><span lang="en">Awards</span><span lang="fr">Bourses</span></h2>
+        <ul class="simple">
+          <li><span><span lang="en">PhD Fellowship (2024–2027), OMI doctoral school</span><span lang="fr">Contrat doctoral (2024–2027), école doctorale OMI</span></span><span class="mono dim">2024</span></li>
+          <li><span>DIGIS Graduate Program Grant</span><span class="mono dim">2024</span></li>
+        </ul>
+      </div>
+      <div class="block">
+        <h2 class="block-title"><span lang="en">Service</span><span lang="fr">Responsabilités</span></h2>
+        <ul class="simple">
+          <li><span><span lang="en">Co-coordinator of the website and social networks, French Association for Development Economics (AFEDEV)</span><span lang="fr">Co-coordinatrice du site web et des réseaux sociaux de l'Association française d'économie du développement (AFEDEV)</span></span><span class="mono dim">2024 —</span></li>
+          <li><span><span lang="en">Elected member of the ERUDITE research board</span><span lang="fr">Membre élue du conseil de laboratoire de l'ERUDITE</span></span><span class="mono dim">2025 —</span></li>
+          <li><span><span lang="en">Organiser, AFEDEV Doctoral Development Days</span><span lang="fr">Organisatrice des Journées doctorales AFEDEV</span></span><span class="mono dim">2026</span></li>
+          <li><span><span lang="en">Referee, Review of Economics of the Household</span><span lang="fr">Rapportrice, Review of Economics of the Household</span></span><span class="mono dim">&nbsp;</span></li>
+        </ul>
+      </div>
+      <div class="block">
+        <h2 class="block-title"><span lang="en">Skills</span><span lang="fr">Compétences</span></h2>
+        <ul class="simple">
+          <li><span><span lang="en">French (native), English (fluent), Spanish (advanced)</span><span lang="fr">Français (langue maternelle), anglais (courant), espagnol (avancé)</span></span></li>
+          <li><span><span lang="en">Stata (advanced), LaTeX (advanced), R (intermediate)</span><span lang="fr">Stata (avancé), LaTeX (avancé), R (intermédiaire)</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================= CONTACT -->
+  <section class="view" data-view="contact" data-title-en="Contact" data-title-fr="Contact">
+    <button id="copy-mail" class="mail" data-mail="hannabony@outlook.fr">
+      <span class="mail-text">hannabony<i>@</i>outlook.fr</span>
+      <span class="mail-hint mono"><span lang="en">Click to copy the address</span><span lang="fr">Cliquer pour copier l'adresse</span></span>
+    </button>
+
+    <div class="contact-grid mono">
+      <div>
+        <span class="dim"><span lang="en">Elsewhere</span><span lang="fr">Ailleurs</span></span>
+        <a href="https://bsky.app/profile/hannabony.bsky.social" target="_blank">Bluesky ↗</a>
+        <a href="http://www.linkedin.com/in/hanna-bony-2665b8172" target="_blank">LinkedIn ↗</a>
+        <a href="CV_BONY.pdf" target="_blank">CV (PDF) ↗</a>
+      </div>
+      <div>
+        <span class="dim"><span lang="en">Office</span><span lang="fr">Bureau</span></span>
+        <span>Université Gustave Eiffel — ERUDITE</span>
+        <span><span lang="en">Bois de l'Étang building, PhD office C239, 2nd floor</span><span lang="fr">Bâtiment Bois de l'Étang, bureau des doctorants C239, 2ᵉ étage</span></span>
+        <span>5 bd Descartes, Cité Descartes</span>
+        <span>77420 Champs-sur-Marne, France</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot mono">
+  <span>© 2026 Hanna Bony</span>
+  <a href="#top" id="to-top"><span lang="en">Back to top ↑</span><span lang="fr">Haut de page ↑</span></a>
+</footer>
+
+<div id="toast" class="mono" role="status"></div>
+
+<script src="galerie-maps.js"></script>
+<script src="galerie.js"></script>
+</body>
+</html>
