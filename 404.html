@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hanna Bony</title>
+  <meta name="robots" content="noindex">
+  <script>
+    // Anciennes adresses du site Google (hannabony.com/research, /cv…) → onglet correspondant
+    var p = location.pathname.replace(/\/+$/, "").toLowerCase();
+    var map = { "/home": "home", "/research": "research", "/teaching": "teaching", "/cv": "cv", "/contact": "contact" };
+    location.replace("/" + (map[p] ? "#" + map[p] : ""));
+  </script>
+</head>
+<body style="background:#ece6db;font-family:Georgia,serif;padding:40px">
+  <p><a href="/">hannabony.com</a></p>
+</body>
+</html>
