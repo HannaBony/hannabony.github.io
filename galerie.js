@@ -812,10 +812,26 @@
   if (document.fonts) document.fonts.ready.then(paintThumbs);
 
   /* ================= Sommaire des ressources ================= */
+  // Replier / deplier une rubrique
+  function openBlock(block, on) {
+    if (!block) return;
+    block.classList.toggle("open", on);
+    const t = block.querySelector(".res-toggle");
+    if (t) t.setAttribute("aria-expanded", on ? "true" : "false");
+  }
+  document.querySelectorAll(".res-block > .res-head").forEach(head => {
+    head.addEventListener("click", () => {
+      const block = head.parentElement;
+      openBlock(block, !block.classList.contains("open"));
+    });
+  });
+
   document.querySelectorAll("[data-jump]").forEach(a => a.addEventListener("click", e => {
     e.preventDefault();
     const t = document.getElementById(a.dataset.jump);
-    if (t) t.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+    if (!t) return;
+    openBlock(t.closest(".res-block"), true);      // une vignette ouvre sa rubrique
+    t.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
   }));
 
   /* ================= Ressources : filtre par public ================= */
@@ -859,6 +875,12 @@
         if (okT) shown++;
       }
       block.classList.toggle("is-empty", shown === 0);
+      const nEl = block.querySelector(".res-n");
+      if (nEl) {
+        // la rubrique des conferences compte ses lignes de tableau, pas « 1 tableau »
+        const rows = block.querySelectorAll(".res-table tbody tr").length;
+        nEl.textContent = rows ? (tbl && !tbl.hidden ? rows : 0) : shown;
+      }
       const jump = document.querySelector(`[data-jump="${block.id}"]`);
       if (jump) jump.hidden = shown === 0;
     });

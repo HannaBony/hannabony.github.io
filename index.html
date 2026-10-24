@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="galerie.css?v=20261024t">
+  <link rel="stylesheet" href="galerie.css?v=20261024x">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23ece6db'/><path d='M0 22 L10 14 L16 8 L22 14 L32 20 V32 H0Z' fill='%236b2317'/><path d='M0 26 L10 19 L16 14 L22 19 L32 24 V32 H0Z' fill='%23c98a2b'/><path d='M0 29 L10 24 L16 20 L22 24 L32 28 V32 H0Z' fill='%23141210'/></svg>">
 </head>
 <body data-view="home">
@@ -659,7 +659,7 @@
         <button class="res-filter" data-audience="phd"><span lang="en">PhD &amp; researchers</span><span lang="fr">Doctorat et recherche</span></button>
         <button class="res-filter" data-audience="students"><span lang="en">Students (BSc–MSc)</span><span lang="fr">Licence et master</span></button>
       </div>
-      <nav class="res-index" aria-label="Sections">
+      <nav class="res-index" id="res-index" aria-label="Sections">
         <a href="#res-01" data-jump="res-01" class="tile">
           <canvas class="tile-art" data-icon="survey" data-seed="7"></canvas>
           <span class="tile-meta mono"><span class="tile-n">01</span><span class="tile-c">14</span></span>
@@ -730,6 +730,7 @@
     <div class="block res-block" id="res-01">
       <div class="res-head"><canvas class="sec-art" data-icon="survey" data-seed="7" aria-hidden="true"></canvas>
         <h2 class="block-title"><span class="mono res-num">01</span><span lang="en">Data &amp; surveys</span><span lang="fr">Données et enquêtes</span></h2>
+        <button class="res-toggle" aria-expanded="false"><span class="res-n mono"></span><span class="res-plus" aria-hidden="true"></span></button>
       </div>
       <p class="res-intro"><span lang="en">Survey and event data I use, or come back to regularly. Most are free, but nearly all require you to register and to state what you will use them for.</span><span lang="fr">Les données d’enquête et d’événements que j’utilise, ou sur lesquelles je reviens régulièrement. La plupart sont gratuites, mais presque toutes demandent de créer un compte et de déclarer l’usage prévu.</span></p>
       <figure class="cov-map">
@@ -827,12 +828,14 @@
             <span class="mono dim res-tag"><span lang="en">Free</span><span lang="fr">Gratuit</span></span>
           </li>
         </ul>
+      <a class="res-up mono" href="#res-index" data-jump="res-index"><span lang="en">↑ Back to the index</span><span lang="fr">↑ Retour au sommaire</span></a>
       <p class="res-empty mono"><span lang="en">Nothing in this section for that audience yet.</span><span lang="fr">Rien dans cette rubrique pour ce public pour l’instant.</span></p>
     </div>
 
     <div class="block res-block" id="res-02">
       <div class="res-head"><canvas class="sec-art" data-icon="climate" data-seed="20" aria-hidden="true"></canvas>
         <h2 class="block-title"><span class="mono res-num">02</span><span lang="en">Geospatial &amp; climate data</span><span lang="fr">Données géospatiales et climat</span></h2>
+        <button class="res-toggle" aria-expanded="false"><span class="res-n mono"></span><span class="res-plus" aria-hidden="true"></span></button>
       </div>
       <p class="res-intro"><span lang="en">What you merge onto survey clusters once you have their GPS coordinates: weather, light, population, borders and historical ethnic boundaries.</span><span lang="fr">Ce que l’on apparie aux grappes d’enquête une fois qu’on a leurs coordonnées GPS : météo, lumière, population, frontières et limites ethniques historiques.</span></p>
       <figure class="grid-fig">
@@ -900,12 +903,14 @@
             <span class="mono dim res-tag"><span lang="en">Public domain</span><span lang="fr">Domaine public</span></span>
           </li>
         </ul>
+      <a class="res-up mono" href="#res-index" data-jump="res-index"><span lang="en">↑ Back to the index</span><span lang="fr">↑ Retour au sommaire</span></a>
       <p class="res-empty mono"><span lang="en">Nothing in this section for that audience yet.</span><span lang="fr">Rien dans cette rubrique pour ce public pour l’instant.</span></p>
     </div>
 
     <div class="block res-block" id="res-03">
       <div class="res-head"><canvas class="sec-art" data-icon="course" data-seed="33" aria-hidden="true"></canvas>
         <h2 class="block-title"><span class="mono res-num">03</span><span lang="en">Online courses</span><span lang="fr">Cours en ligne</span></h2>
+        <button class="res-toggle" aria-expanded="false"><span class="res-n mono"></span><span class="res-plus" aria-hidden="true"></span></button>
       </div>
       <p class="res-intro"><span lang="en">Courses and lecture series you can follow for free or at low cost, from first-year methods to the frontier of causal inference.</span><span lang="fr">Des cours et séries de conférences que l’on peut suivre gratuitement ou à faible coût, des méthodes de première année jusqu’à la frontière de l’inférence causale.</span></p>
         <ul class="res-list">
@@ -940,12 +945,14 @@
             <span class="mono dim res-tag"><span lang="en">Free</span><span lang="fr">Gratuit</span></span>
           </li>
         </ul>
+      <a class="res-up mono" href="#res-index" data-jump="res-index"><span lang="en">↑ Back to the index</span><span lang="fr">↑ Retour au sommaire</span></a>
       <p class="res-empty mono"><span lang="en">Nothing in this section for that audience yet.</span><span lang="fr">Rien dans cette rubrique pour ce public pour l’instant.</span></p>
     </div>
 
     <div class="block res-block" id="res-04">
       <div class="res-head"><canvas class="sec-art" data-icon="method" data-seed="46" aria-hidden="true"></canvas>
         <h2 class="block-title"><span class="mono res-num">04</span><span lang="en">Methods &amp; code</span><span lang="fr">Méthodes et codes</span></h2>
+        <button class="res-toggle" aria-expanded="false"><span class="res-n mono"></span><span class="res-plus" aria-hidden="true"></span></button>
       </div>
       <p class="res-intro"><span lang="en">The estimators I actually run, and where to find the packages. Most come with a replication example, which is the fastest way to understand what they do.</span><span lang="fr">Les estimateurs que j’utilise réellement, et où trouver les packages. La plupart sont fournis avec un exemple de réplication, ce qui reste le moyen le plus rapide de comprendre ce qu’ils font.</span></p>
         <ul class="res-list">
@@ -992,12 +999,14 @@
             <span class="mono dim res-tag"><span lang="en">Free</span><span lang="fr">Gratuit</span></span>
           </li>
         </ul>
+      <a class="res-up mono" href="#res-index" data-jump="res-index"><span lang="en">↑ Back to the index</span><span lang="fr">↑ Retour au sommaire</span></a>
       <p class="res-empty mono"><span lang="en">Nothing in this section for that audience yet.</span><span lang="fr">Rien dans cette rubrique pour ce public pour l’instant.</span></p>
     </div>
 
     <div class="block res-block" id="res-05">
       <div class="res-head"><canvas class="sec-art" data-icon="school" data-seed="59" aria-hidden="true"></canvas>
         <h2 class="block-title"><span class="mono res-num">05</span><span lang="en">Summer schools</span><span lang="fr">Écoles d’été</span></h2>
+        <button class="res-toggle" aria-expanded="false"><span class="res-n mono"></span><span class="res-plus" aria-hidden="true"></span></button>
       </div>
       <p class="res-intro"><span lang="en">Intensive one- or two-week schools: the fastest way to pick up a method, and to meet people working on the same questions.</span><span lang="fr">Des écoles intensives d’une ou deux semaines : le moyen le plus rapide d’acquérir une méthode, et de rencontrer des gens qui travaillent sur les mêmes questions.</span></p>
         <ul class="res-list">
@@ -1020,12 +1029,14 @@
             <span class="res-tag"></span>
           </li>
         </ul>
+      <a class="res-up mono" href="#res-index" data-jump="res-index"><span lang="en">↑ Back to the index</span><span lang="fr">↑ Retour au sommaire</span></a>
       <p class="res-empty mono"><span lang="en">Nothing in this section for that audience yet.</span><span lang="fr">Rien dans cette rubrique pour ce public pour l’instant.</span></p>
     </div>
 
     <div class="block res-block" id="res-06">
       <div class="res-head"><canvas class="sec-art" data-icon="seminar" data-seed="72" aria-hidden="true"></canvas>
         <h2 class="block-title"><span class="mono res-num">06</span><span lang="en">Seminars</span><span lang="fr">Séminaires</span></h2>
+        <button class="res-toggle" aria-expanded="false"><span class="res-n mono"></span><span class="res-plus" aria-hidden="true"></span></button>
       </div>
       <p class="res-intro"><span lang="en">Research seminars, several of them open to outsiders and online. A good way to see work in progress long before it is published.</span><span lang="fr">Des séminaires de recherche, dont plusieurs ouverts à l’extérieur et en ligne. Un bon moyen de voir des travaux en cours bien avant leur publication.</span></p>
         <ul class="res-list">
@@ -1066,12 +1077,14 @@
             <span class="res-tag"></span>
           </li>
         </ul>
+      <a class="res-up mono" href="#res-index" data-jump="res-index"><span lang="en">↑ Back to the index</span><span lang="fr">↑ Retour au sommaire</span></a>
       <p class="res-empty mono"><span lang="en">Nothing in this section for that audience yet.</span><span lang="fr">Rien dans cette rubrique pour ce public pour l’instant.</span></p>
     </div>
 
     <div class="block res-block" id="res-07">
       <div class="res-head"><canvas class="sec-art" data-icon="network" data-seed="85" aria-hidden="true"></canvas>
         <h2 class="block-title"><span class="mono res-num">07</span><span lang="en">Associations &amp; networks</span><span lang="fr">Associations et réseaux</span></h2>
+        <button class="res-toggle" aria-expanded="false"><span class="res-n mono"></span><span class="res-plus" aria-hidden="true"></span></button>
       </div>
       <p class="res-intro"><span lang="en">Where economists meet, circulate calls for papers and answer each other’s questions. Most have a reduced membership rate for PhD students.</span><span lang="fr">Les lieux où les économistes se rencontrent, font circuler les appels à communications et s’entraident. La plupart ont un tarif d’adhésion réduit pour les doctorant·es.</span></p>
         <ul class="res-list">
@@ -1124,12 +1137,14 @@
             <span class="mono dim res-tag"><span lang="en">Free</span><span lang="fr">Gratuit</span></span>
           </li>
         </ul>
+      <a class="res-up mono" href="#res-index" data-jump="res-index"><span lang="en">↑ Back to the index</span><span lang="fr">↑ Retour au sommaire</span></a>
       <p class="res-empty mono"><span lang="en">Nothing in this section for that audience yet.</span><span lang="fr">Rien dans cette rubrique pour ce public pour l’instant.</span></p>
     </div>
 
     <div class="block res-block" id="res-08">
       <div class="res-head"><canvas class="sec-art" data-icon="books" data-seed="98" aria-hidden="true"></canvas>
         <h2 class="block-title"><span class="mono res-num">08</span><span lang="en">Books &amp; reading</span><span lang="fr">Livres et lectures</span></h2>
+        <button class="res-toggle" aria-expanded="false"><span class="res-n mono"></span><span class="res-plus" aria-hidden="true"></span></button>
       </div>
       <p class="res-intro"><span lang="en">The books I keep coming back to, from first-year reading to method references.</span><span lang="fr">Les livres sur lesquels je reviens régulièrement, des lectures de première année aux références de méthode.</span></p>
         <ul class="res-list">
@@ -1200,12 +1215,14 @@
             <span class="res-tag"></span>
           </li>
         </ul>
+      <a class="res-up mono" href="#res-index" data-jump="res-index"><span lang="en">↑ Back to the index</span><span lang="fr">↑ Retour au sommaire</span></a>
       <p class="res-empty mono"><span lang="en">Nothing in this section for that audience yet.</span><span lang="fr">Rien dans cette rubrique pour ce public pour l’instant.</span></p>
     </div>
 
     <div class="block res-block" id="res-09">
       <div class="res-head"><canvas class="sec-art" data-icon="media" data-seed="111" aria-hidden="true"></canvas>
         <h2 class="block-title"><span class="mono res-num">09</span><span lang="en">Blogs, videos &amp; newsletters</span><span lang="fr">Blogs, vidéos et newsletters</span></h2>
+        <button class="res-toggle" aria-expanded="false"><span class="res-n mono"></span><span class="res-plus" aria-hidden="true"></span></button>
       </div>
       <p class="res-intro"><span lang="en">What I read and watch to keep up: short pieces, summaries of new papers, and people who explain economics well to a wide audience.</span><span lang="fr">Ce que je lis et regarde pour me tenir au courant : des textes courts, des résumés d’articles récents, et des gens qui expliquent bien l’économie à un large public.</span></p>
         <ul class="res-list">
@@ -1252,12 +1269,14 @@
             <span class="mono dim res-tag"><span lang="en">Free</span><span lang="fr">Gratuit</span></span>
           </li>
         </ul>
+      <a class="res-up mono" href="#res-index" data-jump="res-index"><span lang="en">↑ Back to the index</span><span lang="fr">↑ Retour au sommaire</span></a>
       <p class="res-empty mono"><span lang="en">Nothing in this section for that audience yet.</span><span lang="fr">Rien dans cette rubrique pour ce public pour l’instant.</span></p>
     </div>
 
     <div class="block res-block" data-level="phd" id="res-10">
       <div class="res-head"><canvas class="sec-art" data-icon="conference" data-seed="124" aria-hidden="true"></canvas>
         <h2 class="block-title"><span class="mono res-num">10</span><span lang="en">Conferences &amp; workshops</span><span lang="fr">Conférences et ateliers</span></h2>
+        <button class="res-toggle" aria-expanded="false"><span class="res-n mono"></span><span class="res-plus" aria-hidden="true"></span></button>
       </div>
       <p class="res-intro">
         <span lang="en">Where to submit. “Deadline” is the period the call usually falls in, which holds from year to year; a date in red is a call that is open right now. “Next edition” is the next one confirmed on the official site — when nothing is announced yet, the last edition is shown in grey so you know where in the cycle you are. Always check the call itself.</span>
@@ -1556,12 +1575,14 @@
         <span lang="en">Checked against the official pages on 24 October 2026. Most conferences held in June or July publish their 2027 call between January and March, so an empty line here is normal at this time of year — the table will be brought up to date in early 2027, once most of the calls are out. The 2027 JDD (CERDI) and ICDE (Rennes) hosts come from the AFEDEV network and are not on afedev.fr yet. EUDN runs its PhD workshop through host universities; eudnet.net has not been updated in years, so watch the AFEDEV and EUDN mailing lists instead.</span>
         <span lang="fr">Vérifié sur les pages officielles le 24 octobre 2026. La plupart des conférences de juin-juillet publient leur appel 2027 entre janvier et mars : une ligne vide ici est donc normale à cette période de l’année — le tableau sera mis à jour début 2027, quand la plupart des appels auront circulé. Les hôtes 2027 des JDD (CERDI) et de l’ICDE (Rennes) viennent du réseau AFEDEV et ne sont pas encore sur afedev.fr. L’EUDN organise son atelier doctoral via les universités hôtes ; eudnet.net n’est plus mis à jour depuis des années, suivez plutôt les listes de diffusion de l’AFEDEV et de l’EUDN.</span>
       </p>
+      <a class="res-up mono" href="#res-index" data-jump="res-index"><span lang="en">↑ Back to the index</span><span lang="fr">↑ Retour au sommaire</span></a>
       <p class="res-empty mono"><span lang="en">Nothing in this section for that audience yet.</span><span lang="fr">Rien dans cette rubrique pour ce public pour l’instant.</span></p>
     </div>
 
     <div class="block res-block" id="res-11">
       <div class="res-head"><canvas class="sec-art" data-icon="funding" data-seed="151" aria-hidden="true"></canvas>
         <h2 class="block-title"><span class="mono res-num">11</span><span lang="en">Funding &amp; scholarships</span><span lang="fr">Financements et bourses</span> <span class="wip mono"><span lang="en">under construction</span><span lang="fr">en construction</span></span></h2>
+        <button class="res-toggle" aria-expanded="false"><span class="res-n mono"></span><span class="res-plus" aria-hidden="true"></span></button>
       </div>
       <p class="res-intro"><span lang="en">Still being built, but it already gathers a fair amount. The chips sort by type: <strong>Doctoral funding</strong> is what pays for the three years of the PhD itself, <strong>Research</strong> is what pays for the research during it — data, fieldwork, an assistant. <strong>Fieldwork</strong> funds surveys specifically, <strong>Visiting</strong> a stay in a laboratory abroad, <strong>Postdoc</strong> what comes after the thesis, and <strong>Directories</strong> are the catalogues that list everything else.</span><span lang="fr">Rubrique en construction, mais elle rassemble déjà pas mal de choses. Les pastilles trient par type : <strong>Bourse de thèse</strong>, c’est ce qui paie les trois ans du doctorat lui-même ; <strong>Recherche</strong>, ce qui paie la recherche pendant la thèse — les données, le terrain, un assistant. <strong>Terrain</strong> finance spécifiquement les enquêtes, <strong>Séjour</strong> un passage dans un laboratoire à l’étranger, <strong>Postdoc</strong> l’après-thèse, et <strong>Répertoires</strong> rassemble les annuaires qui recensent tout le reste.</span></p>
       <div class="kind-chips mono" role="group" aria-label="Type">
@@ -1735,12 +1756,14 @@
         <span lang="en">These two sections are still thin, and they will stay that way for a while — tracking calls and deadlines one by one takes a lot of time. If you know of a grant, a fellowship or a position that belongs here, <a href="mailto:hannabony@outlook.fr?subject=Toolkit%%20%%E2%%80%%94%%20funding%%20%%26%%20jobs">send it to me</a> and I will add it. Corrections are just as welcome.</span>
         <span lang="fr">Ces deux rubriques sont encore maigres, et elles le resteront un moment : répertorier les appels et les dates limites un par un prend beaucoup de temps. Si vous connaissez une bourse, un financement ou un poste qui a sa place ici, <a href="mailto:hannabony@outlook.fr?subject=Bo%%C3%%AEte%%20%%C3%%A0%%20outils%%20%%E2%%80%%94%%20financements%%20et%%20emplois">écrivez-moi</a>, je l’ajoute. Les corrections sont tout aussi bienvenues.</span>
       </p>
+      <a class="res-up mono" href="#res-index" data-jump="res-index"><span lang="en">↑ Back to the index</span><span lang="fr">↑ Retour au sommaire</span></a>
       <p class="res-empty mono"><span lang="en">Nothing in this section for that audience yet.</span><span lang="fr">Rien dans cette rubrique pour ce public pour l’instant.</span></p>
     </div>
 
     <div class="block res-block" id="res-12">
       <div class="res-head"><canvas class="sec-art" data-icon="jobs" data-seed="137" aria-hidden="true"></canvas>
         <h2 class="block-title"><span class="mono res-num">12</span><span lang="en">Jobs</span><span lang="fr">Emplois</span> <span class="wip mono"><span lang="en">under construction</span><span lang="fr">en construction</span></span></h2>
+        <button class="res-toggle" aria-expanded="false"><span class="res-n mono"></span><span class="res-plus" aria-hidden="true"></span></button>
       </div>
       <p class="res-intro"><span lang="en">Where positions are announced: the academic job market first, then pre-doctoral and research-assistant posts, then field and policy work.</span><span lang="fr">Où paraissent les postes : d’abord le marché académique, ensuite les postes de pré-doctorat et d’assistant de recherche, enfin le terrain et les politiques publiques.</span></p>
         <ul class="res-list">
@@ -1799,6 +1822,7 @@
             <span class="mono dim res-tag"><span lang="en">Listings</span><span lang="fr">Offres</span></span>
           </li>
         </ul>
+      <a class="res-up mono" href="#res-index" data-jump="res-index"><span lang="en">↑ Back to the index</span><span lang="fr">↑ Retour au sommaire</span></a>
       <p class="res-empty mono"><span lang="en">Nothing in this section for that audience yet.</span><span lang="fr">Rien dans cette rubrique pour ce public pour l’instant.</span></p>
     </div>
 
@@ -1837,7 +1861,7 @@
 
 <div id="toast" class="mono" role="status"></div>
 
-<script src="galerie-maps.js?v=20261024t"></script>
-<script src="galerie.js?v=20261024t"></script>
+<script src="galerie-maps.js?v=20261024x"></script>
+<script src="galerie.js?v=20261024x"></script>
 </body>
 </html>
