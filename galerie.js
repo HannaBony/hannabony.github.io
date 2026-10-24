@@ -121,6 +121,19 @@
   const names = views.map(v => v.dataset.view);
 
   const pageSub = document.getElementById("page-sub");
+  // Le titre peut tenir sur une ou deux lignes : on place le sous-titre d'apres sa hauteur reelle.
+  function placeSub() {
+    if (!pageSub.textContent) return;
+    requestAnimationFrame(() => {
+      // en chapeau, au-dessus du titre : la seule zone du bandeau qui reste unie
+      pageSub.style.top = Math.max(6, pageTitle.offsetTop - pageSub.offsetHeight - 14) + "px";
+    });
+  }
+  addEventListener("resize", placeSub);
+  if (document.fonts) document.fonts.ready.then(placeSub);
+  // Le titre change de hauteur quand il passe sur deux lignes ou que la police arrive :
+  // on suit sa boite plutot que de deviner le moment.
+  if (window.ResizeObserver) new ResizeObserver(placeSub).observe(pageTitle);
   function titleFor(view) {
     return view.dataset["title" + (root.lang === "fr" ? "Fr" : "En")] || "";
   }
@@ -135,6 +148,7 @@
     document.body.dataset.view = name;
     pageTitle.textContent = titleFor(view);
     pageSub.textContent = subFor(view);
+    placeSub();
     pageTitle.classList.remove("swap"); void pageTitle.offsetWidth; pageTitle.classList.add("swap");
     document.title = name === "home" ? "Hanna Bony" : titleFor(view) + " — Hanna Bony";
     if (scroll) window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
@@ -148,7 +162,7 @@
     const [en, fr] = langBtn.querySelectorAll("span");
     en.classList.toggle("on", l === "en"); fr.classList.toggle("on", l === "fr");
     const active = views.find(v => v.classList.contains("active"));
-    if (active) { pageTitle.textContent = titleFor(active); pageSub.textContent = subFor(active); }
+    if (active) { pageTitle.textContent = titleFor(active); pageSub.textContent = subFor(active); placeSub(); }
     if (redrawCoverage) redrawCoverage();
     if (redrawGrids) redrawGrids();
   }
@@ -424,6 +438,34 @@
       for (let x = W / 5; x < W; x += W / 5) { c.beginPath(); c.moveTo(x, 0); c.lineTo(x, H); c.stroke(); }
       for (let y = H / 4; y < H; y += H / 4) { c.beginPath(); c.moveTo(0, y); c.lineTo(W, y); c.stroke(); }
       c.fillStyle = acc; c.beginPath(); c.arc(W * .68, H * .76, 6, 0, Math.PI * 2); c.fill();
+    } else if (kind === "funding") {   // des piles de jetons
+      bands(8, H * .34);
+      const cols = 5, cw = (W - 44) / cols;
+      for (let i = 0; i < cols; i++) {
+        const n = 3 + Math.floor(r() * 6), cx = 30 + cw * i + cw * .5, rw = cw * .38, rh = rw * .34;
+        for (let k = 0; k < n; k++) {
+          const cy = H - 26 - k * rh * 1.25;
+          c.fillStyle = pick(i + k);
+          c.beginPath(); c.ellipse(cx, cy, rw, rh, 0, 0, Math.PI * 2); c.fill();
+          c.strokeStyle = "rgba(20,18,16,.45)"; c.lineWidth = 1; c.stroke();
+        }
+        c.fillStyle = i === 2 ? acc : "#3b1f17";
+        c.beginPath(); c.ellipse(cx, H - 26 - n * rh * 1.25, rw * .34, rh * .34, 0, 0, Math.PI * 2); c.fill();
+      }
+    } else if (kind === "jobs") {       // un tableau d'affichage
+      bands(8, H * .3);
+      for (let i = 0; i < 7; i++) {
+        const w = 44 + r() * 38, h = 32 + r() * 26;
+        const x = 12 + r() * (W - w - 24), y = 12 + r() * (H - h - 24);
+        c.save(); c.translate(x + w / 2, y + h / 2); c.rotate((r() - .5) * .22);
+        c.fillStyle = "#e9dfcc"; c.fillRect(-w / 2, -h / 2, w, h);
+        c.strokeStyle = "rgba(20,18,16,.4)"; c.lineWidth = 1; c.strokeRect(-w / 2, -h / 2, w, h);
+        c.fillStyle = pick(i + 1);
+        for (let l = 0; l < 3; l++) c.fillRect(-w / 2 + 6, -h / 2 + 8 + l * 7, (w - 12) * (.45 + r() * .55), 2.5);
+        c.fillStyle = i % 3 === 0 ? acc : "#3b1f17";
+        c.beginPath(); c.arc(0, -h / 2 + 5, 2.8, 0, Math.PI * 2); c.fill();
+        c.restore();
+      }
     } else if (kind === "conference") {  // épingles sur la carte
       bands(5, H * .56);
       const pins = [[70, 60], [128, 38], [186, 72], [240, 48], [100, 104], [206, 112]];
@@ -656,7 +698,7 @@
 
     function draw(key) {
       const g = GRIDS.find(x => x.k === key) || GRIDS[0];
-      const W = 380, H = 380, dpr = 2;
+      const W = 640, H = 640, dpr = 2;
       canvas.width = W * dpr; canvas.height = H * dpr;
       const c = canvas.getContext("2d"); c.setTransform(dpr, 0, 0, dpr, 0, 0);
       const acc = getComputedStyle(root).getPropertyValue("--accent").trim() || "#e0401f";
@@ -778,12 +820,35 @@
 
   /* ================= Ressources : filtre par public ================= */
   const resBlocks = [...document.querySelectorAll(".res-block")];
+  // L'etiquette visible est engendree depuis data-kind : les deux ne peuvent plus diverger.
+  const KIND_LABEL = {
+    these:      ["Doctoral funding", "Bourse de thèse"],
+    recherche:  ["Research", "Recherche"],
+    terrain:    ["Fieldwork", "Terrain"],
+    visiting:   ["Visiting", "Séjour"],
+    postdoc:    ["Postdoc", "Postdoc"],
+    repertoire: ["Directory", "Répertoire"],
+  };
+  document.querySelectorAll(".res-list li[data-kind]").forEach(li => {
+    const tag = li.querySelector(".res-tag");
+    if (!tag) return;
+    tag.innerHTML = li.dataset.kind.split(" ").filter(k => KIND_LABEL[k])
+      .map(k => `<span lang="en">${KIND_LABEL[k][0]}</span><span lang="fr">${KIND_LABEL[k][1]}</span>`)
+      .join(" · ");
+  });
+
+  let curAud = "all";
   function setAudience(aud) {
+    curAud = aud;
     document.querySelectorAll(".res-filter").forEach(b => b.classList.toggle("active", b.dataset.audience === aud));
     resBlocks.forEach(block => {
       let shown = 0;
+      const bar = block.querySelector(".kind-chips");
+      const kind = bar ? (bar.dataset.current || "all") : "all";
       block.querySelectorAll(".res-list li").forEach(li => {
-        const ok = aud === "all" || li.dataset.level.split(" ").includes(aud);
+        const okA = aud === "all" || li.dataset.level.split(" ").includes(aud);
+        const okK = kind === "all" || (li.dataset.kind || "").split(" ").includes(kind);
+        const ok = okA && okK;
         li.hidden = !ok;
         if (ok) shown++;
       });
@@ -800,6 +865,16 @@
   }
   document.querySelectorAll(".res-filter").forEach(b =>
     b.addEventListener("click", () => setAudience(b.dataset.audience)));
+  document.querySelectorAll(".kind-chips").forEach(bar => {
+    bar.dataset.current = "all";
+    bar.addEventListener("click", e => {
+      const b = e.target.closest(".kind-chip");
+      if (!b) return;
+      bar.dataset.current = b.dataset.kind;
+      bar.querySelectorAll(".kind-chip").forEach(x => x.classList.toggle("active", x === b));
+      setAudience(curAud);
+    });
+  });
   if (resBlocks.length) setAudience("all");
 
 
