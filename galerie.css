@@ -194,6 +194,7 @@ main { padding: 0 var(--gutter); }
 .talks { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
 .talks li { display: flex; justify-content: space-between; gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--line); font: 400 22px/1.2 var(--serif); }
 .talks li .mono { font-size: 11px; white-space: nowrap; }
+.talks .talk-yr { margin-left: 10px; padding-left: 10px; border-left: 1px solid var(--line); color: var(--accent); }
 
 /* ---------- Enseignement / CV ---------- */
 .courses, .entries { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
@@ -379,3 +380,160 @@ main { padding: 0 var(--gutter); }
   .stop-dot { position: absolute; left: -28px; top: 14px; margin: 0; }
 }
 @media (max-width: 900px) { .path::after { display: none; } }
+
+/* ---------- Ressources ---------- */
+.res-hint { color: var(--muted); margin: 18px 0 0; }
+.res-hint a { border-bottom: 1px solid var(--line); transition: color .3s, border-color .3s; }
+.res-hint a:hover { color: var(--accent); border-color: var(--accent); }
+.res-num { color: var(--accent); font-size: 12px; align-self: center; }
+.res-intro { margin: 0 0 4px; color: var(--muted); max-width: 62ch; font-size: 16px; }
+.res-todo { color: var(--muted); font-style: normal; margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--line); }
+.res-list { list-style: none; margin: 24px 0 0; padding: 0; border-top: 1px solid var(--ink); }
+.res-list li {
+  display: grid; grid-template-columns: 92px 1fr minmax(0, 1.4fr) auto; gap: 10px clamp(16px, 2.4vw, 36px);
+  align-items: start; padding: 18px 0; border-bottom: 1px solid var(--line);
+}
+.row-art {
+  width: 92px; height: auto; display: block; align-self: start; margin-top: 2px;
+  box-shadow: 0 1px 0 var(--line), 0 6px 14px rgba(20,18,16,.08);
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+.res-list li:hover .row-art { transform: translateY(-3px); box-shadow: 0 1px 0 var(--line), 0 12px 22px rgba(20,18,16,.16); }
+.res-title { font: 400 clamp(19px, 1.9vw, 26px)/1.12 var(--serif); letter-spacing: -.01em; }
+.res-title a { transition: color .3s; }
+.res-list li:hover .res-title a { color: var(--accent); }
+.res-desc { font-size: 15px; color: var(--muted); }
+.res-tag { text-align: right; font-size: 10px; white-space: nowrap; }
+.res-list:empty { display: none; }
+
+@media (max-width: 900px) {
+  .res-list li { grid-template-columns: 68px 1fr; gap: 6px 14px; }
+  .row-art { width: 68px; grid-row: span 3; }
+  .res-list li .res-desc, .res-list li .res-tag { grid-column: 2; }
+  .res-tag { text-align: left; }
+}
+
+/* ---------- Ressources : filtre par public ---------- */
+.res-filters { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 26px 0 0; }
+.res-filter { color: var(--muted); padding: 4px 0; position: relative; transition: color .3s; }
+.res-filter:hover, .res-filter.active { color: var(--ink); }
+.res-filter.active::before { content: "●"; color: var(--accent); position: absolute; left: -13px; font-size: 8px; top: 7px; }
+
+/* rubriques vides selon le filtre */
+.res-empty { display: none; color: var(--muted); margin: 0; padding-top: 16px; border-top: 1px solid var(--line); }
+.res-block.is-empty .res-list,
+.res-block.is-empty .res-table-wrap { display: none; }
+.res-block.is-empty .res-empty { display: block; }
+.res-list li[hidden] { display: none; }
+
+/* ---------- Ressources : tableau des conférences ---------- */
+.res-table-wrap { margin-top: 34px; }
+.res-table-note { color: var(--muted); margin: 0 0 14px; max-width: 70ch; }
+.res-table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 11px; }
+.res-table th, .res-table td { text-align: left; padding: 9px 14px 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.res-table thead th { border-bottom: 1px solid var(--ink); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-weight: 400; white-space: nowrap; }
+.res-table tbody th { font-family: var(--serif); font-size: 16px; font-weight: 400; letter-spacing: -.01em; padding-right: 22px; }
+.res-table .dl { color: var(--accent); white-space: nowrap; }
+.res-table .fee { white-space: nowrap; }
+.res-table tbody tr:hover td, .res-table tbody tr:hover th { background: color-mix(in srgb, var(--accent) 7%, transparent); }
+
+@media (max-width: 900px) {
+  .res-table-wrap { overflow-x: auto; margin-right: calc(-1 * var(--gutter)); padding-right: var(--gutter); }
+  .res-table { min-width: 680px; }
+}
+
+/* ---------- Ressources : crédits des livres ---------- */
+.res-meta { display: block; margin-top: 6px; font-size: 10.5px; color: var(--muted); text-transform: none; letter-spacing: .02em; line-height: 1.45; }
+
+/* ---------- Tableau des conférences : filtres et tri ---------- */
+.conf-chips { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 22px 0 6px; }
+.conf-chip { color: var(--muted); padding: 4px 0; position: relative; transition: color .3s; }
+.conf-chip:hover, .conf-chip.active { color: var(--ink); }
+.conf-chip.active::before { content: "●"; color: var(--accent); position: absolute; left: -13px; font-size: 8px; top: 7px; }
+.th-sort { display: inline-flex; align-items: baseline; gap: 6px; font: inherit; color: inherit; text-transform: inherit; letter-spacing: inherit; transition: color .3s; }
+.th-sort:hover { color: var(--ink); }
+.th-sort .arrow::after { content: "↕"; opacity: .4; font-size: 11px; }
+.th-sort.asc .arrow::after { content: "↑"; opacity: 1; color: var(--accent); }
+.th-sort.desc .arrow::after { content: "↓"; opacity: 1; color: var(--accent); }
+.res-table tbody tr[hidden] { display: none; }
+.res-table .dl-next { display: block; margin-top: 3px; color: var(--accent); font-weight: 500; }
+.res-table .nxt { white-space: nowrap; }
+.res-table .nxt-prev { display: block; margin-top: 3px; font-size: .82em; color: var(--muted); opacity: .75; }
+.res-table .nxt .dim { white-space: normal; }
+.conf-chip.conf-open::after { content: "●"; color: var(--accent); font-size: 7px; margin-left: 5px; vertical-align: 3px; }
+.res-table tbody tr[data-open] th { position: relative; }
+.res-table tbody tr[data-open] th::before { content: "●"; color: var(--accent); font-size: 7px; position: absolute; left: -12px; top: 13px; }
+
+/* ---------- Sous-titre de page ---------- */
+.page-sub {
+  position: absolute; left: var(--gutter); margin: 0;
+  top: calc(15vh + clamp(64px, 10vw, 170px) * .9);
+  font: italic 400 clamp(20px, 2.1vw, 30px)/1.2 var(--serif); color: var(--muted);
+}
+.page-sub:empty { display: none; }
+
+/* ---------- Sommaire : mur de vignettes ---------- */
+.res-index {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: clamp(16px, 2.2vw, 30px); margin: 34px 0 0;
+}
+.res-index .tile { display: flex; flex-direction: column; gap: 7px; }
+.tile-art {
+  width: 100%; max-width: 100%; height: auto; display: block;
+  box-shadow: 0 1px 0 var(--line), 0 14px 32px rgba(20,18,16,.12);
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+}
+.res-index .tile:hover .tile-art { transform: translateY(-6px); box-shadow: 0 1px 0 var(--line), 0 24px 44px rgba(20,18,16,.2); }
+.tile-meta { display: flex; justify-content: space-between; font-size: 10px; margin-top: 2px; }
+.tile-n { color: var(--accent); }
+.tile-c { color: var(--muted); font-variant-numeric: tabular-nums; }
+.tile-t { font: 400 17px/1.15 var(--serif); transition: color .3s; }
+.res-index .tile:hover .tile-t { color: var(--accent); }
+.res-index a[hidden] { display: none; }
+
+.res-block { scroll-margin-top: 80px; }
+
+@media (max-width: 900px) {
+  .page-sub { top: calc(18vh + clamp(64px, 10vw, 170px) * .85); font-size: 18px; }
+  .jump-t { font-size: 16px; }
+}
+
+@media (max-width: 900px) {
+  .jump-t { font-size: 16px; }
+}
+
+@media (max-width: 1100px) { .res-index { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .res-index { grid-template-columns: repeat(2, 1fr); } .tile-t { font-size: 15px; } }
+
+/* ---------- Vignette à côté du titre de rubrique ---------- */
+.res-head { display: flex; align-items: center; gap: clamp(14px, 1.8vw, 26px); margin-bottom: 18px; }
+.res-head .block-title { margin: 0; }
+.sec-art {
+  display: block; width: clamp(96px, 10vw, 140px); flex: 0 0 auto; height: auto;
+  box-shadow: 0 1px 0 var(--line), 0 10px 24px rgba(20,18,16,.1);
+}
+@media (max-width: 640px) { .res-head { gap: 12px; } .sec-art { width: 76px; } }
+
+/* ---------- Carte de couverture des bases ---------- */
+.cov-map { margin: 4px 0 30px; }
+.cov-chips { display: flex; flex-wrap: wrap; gap: 6px 22px; margin-bottom: 18px; }
+.cov-chip { color: var(--muted); padding: 4px 0; position: relative; transition: color .3s; }
+.cov-chip:hover, .cov-chip.active { color: var(--ink); }
+.cov-chip.active::before { content: "●"; color: var(--accent); position: absolute; left: -13px; font-size: 8px; top: 7px; }
+.cov-map canvas { width: 100%; max-width: 760px; height: auto; display: block; box-shadow: 0 1px 0 var(--line), 0 16px 36px rgba(20,18,16,.12); }
+.cov-map figcaption { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; font-size: 10px; max-width: 760px; }
+.cov-map figcaption .dim { max-width: 52ch; line-height: 1.6; }
+
+/* ---------- Comparaison des résolutions ---------- */
+.grid-fig { margin: 4px 0 30px; }
+.grid-chips { display: flex; flex-wrap: wrap; gap: 6px 22px; margin-bottom: 18px; }
+.grid-chip { color: var(--muted); padding: 4px 0; position: relative; transition: color .3s; }
+.grid-chip:hover, .grid-chip.active { color: var(--ink); }
+.grid-chip.active::before { content: "●"; color: var(--accent); position: absolute; left: -13px; font-size: 8px; top: 7px; }
+.grid-fig canvas { width: 100%; max-width: 380px; height: auto; display: block; box-shadow: 0 1px 0 var(--line), 0 16px 36px rgba(20,18,16,.12); }
+.grid-fig figcaption { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; font-size: 10px; }
+.grid-fig figcaption .dim { max-width: 58ch; line-height: 1.6; }
+
+/* Description de la base selectionnee, sous les figures interactives */
+.fig-desc { display: block; margin: 0; max-width: 62ch; color: var(--ink); line-height: 1.6; }
+.fig-desc:empty { display: none; }
