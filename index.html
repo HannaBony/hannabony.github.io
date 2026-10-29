@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="galerie.css?v=20261028">
+  <link rel="stylesheet" href="galerie.css?v=20261029">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23ece6db'/><path d='M0 22 L10 14 L16 8 L22 14 L32 20 V32 H0Z' fill='%236b2317'/><path d='M0 26 L10 19 L16 14 L22 19 L32 24 V32 H0Z' fill='%23c98a2b'/><path d='M0 29 L10 24 L16 20 L22 24 L32 28 V32 H0Z' fill='%23141210'/></svg>">
 </head>
 <body data-view="home">
@@ -662,7 +662,7 @@
       <nav class="res-index" id="res-index" aria-label="Sections">
         <a href="#res-01" data-jump="res-01" class="tile">
           <canvas class="tile-art" data-icon="survey" data-seed="7"></canvas>
-          <span class="tile-meta mono"><span class="tile-n">01</span><span class="tile-c">16</span></span>
+          <span class="tile-meta mono"><span class="tile-n">01</span><span class="tile-c">25</span></span>
           <span class="tile-t"><span lang="en">Data &amp; surveys</span><span lang="fr">Données et enquêtes</span></span>
         </a>
         <a href="#res-02" data-jump="res-02" class="tile">
@@ -733,6 +733,7 @@
         <button class="res-toggle" aria-expanded="false"><span class="res-n mono"></span><span class="res-plus" aria-hidden="true"></span></button>
       </div>
       <p class="res-intro"><span lang="en">Survey and event data I use, or come back to regularly. Most are free, but nearly all require you to register and to state what you will use them for.</span><span lang="fr">Les données d’enquête et d’événements que j’utilise, ou sur lesquelles je reviens régulièrement. La plupart sont gratuites, mais presque toutes demandent de créer un compte et de déclarer l’usage prévu.</span></p>
+      <h3 class="res-sub"><span class="res-sub-n mono">I</span><span lang="en">Developing countries</span><span lang="fr">Pays en développement</span></h3>
       <figure class="cov-map">
         <div class="cov-chips mono" role="group" aria-label="Base de données"></div>
         <canvas id="cov-canvas"></canvas>
@@ -828,6 +829,49 @@
             <span class="mono dim res-tag"><span lang="en">Free</span><span lang="fr">Gratuit</span></span>
           </li>
           <li data-level="phd students">
+            <canvas class="row-art" data-seed="658" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://proyectos.inei.gob.pe/microdatos/" target="_blank">INEI Microdatos — <span lang="en">Peru</span><span lang="fr">Pérou</span> ↗</a></span>
+            <span class="res-desc"><span lang="en">Peru’s statistics institute puts the microdata of all its surveys online, module by module, with the questionnaires and the variable dictionaries, in SPSS and Excel format: the ENAHO household survey, the ENDES demographic and health survey, the time-use survey, the agricultural and population censuses, and ENPOVE on the Venezuelan population living in the country. You pick a survey, a year and a period, and you download — no account, no form. One of the most open national portals in Latin America, and a useful yardstick for how little most countries release.</span><span lang="fr">L’institut de statistique péruvien met en ligne les microdonnées de toutes ses enquêtes, module par module, avec les questionnaires et les dictionnaires de variables, au format SPSS et Excel : l’enquête ménages ENAHO, l’enquête démographique et de santé ENDES, l’enquête emploi du temps, les recensements agricoles et de population, et ENPOVE sur la population vénézuélienne résidant dans le pays. On choisit une enquête, une année, une période, et on télécharge — sans compte et sans formulaire. L’un des portails nationaux les plus ouverts d’Amérique latine, et un bon point de comparaison pour mesurer à quel point la plupart des pays diffusent peu.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Free, no registration</span><span lang="fr">Gratuit, sans inscription</span></span>
+          </li>
+        </ul>
+      <h3 class="res-sub"><span class="res-sub-n mono">II</span><span lang="en">Europe</span><span lang="fr">Europe</span></h3>
+      <p class="res-note"><span lang="en">The comparable European surveys, and the routes into national administrative data — in France, Spain and the Nordic countries. The map works like the other one: pick a database to see which countries it covers.</span><span lang="fr">Les enquêtes européennes comparables, et les voies d’accès aux données administratives nationales — en France, en Espagne et dans les pays nordiques. La carte fonctionne comme l’autre : on choisit une base pour voir les pays qu’elle couvre.</span></p>
+      <figure class="cov-map cov-map-eu">
+        <div class="cov-chips mono" role="group" aria-label="Base de données"></div>
+        <canvas id="cov-canvas-eu"></canvas>
+        <figcaption class="mono">
+          <span class="cov-cap accent"></span>
+          <span class="cov-desc fig-desc"></span>
+          <span class="dim"><span lang="en">A country is coloured as soon as it has taken part in at least one wave, which is not the same as being there throughout — check the programme’s own participation table before you build a panel. Israel takes part in the ESS and in SHARE but falls outside the frame.</span><span lang="fr">Un pays est colorié dès qu’il a participé à au moins une vague, ce qui n’est pas la même chose qu’y être tout du long : vérifiez le tableau de participation du programme avant de construire un panel. Israël participe à l’ESS et à SHARE mais sort du cadre de la carte.</span></span>
+        </figcaption>
+      </figure>
+        <ul class="res-list">
+          <li data-level="phd students">
+            <canvas class="row-art" data-seed="602" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://www.europeansocialsurvey.org/" target="_blank">European Social Survey (ESS) ↗</a></span>
+            <span class="res-desc"><span lang="en">Attitudes, values and behaviour measured every two years since 2002, with a questionnaire deliberately kept identical from one country to the next — that is what makes it comparable. Trust in institutions, immigration, democracy, climate, gender roles. Thirty-nine countries have taken part in at least one round, very few in all of them, so read the participation table before planning anything longitudinal. Free, once you have registered on the data portal.</span><span lang="fr">Des attitudes, des valeurs et des comportements mesurés tous les deux ans depuis 2002, avec un questionnaire volontairement identique d’un pays à l’autre — c’est ce qui le rend comparable. Confiance dans les institutions, immigration, démocratie, climat, rôles de genre. Trente-neuf pays ont participé à au moins une vague, très peu à toutes, donc il faut lire le tableau de participation avant de prévoir quoi que ce soit de longitudinal. Gratuit, après inscription sur le portail de données.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Free, registration required</span><span lang="fr">Gratuit, inscription requise</span></span>
+          </li>
+          <li data-level="phd students">
+            <canvas class="row-art" data-seed="609" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://share-eric.eu/" target="_blank">SHARE ↗</a></span>
+            <span class="res-desc"><span lang="en">A panel on people aged fifty and over across twenty-eight countries, nine waves between 2004 and 2022: health, work and retirement, income, transfers between generations, plus two Corona questionnaires. The reference for anything on ageing in Europe. Free for scientific use worldwide, but each user registers individually and downloads from SHARE’s own research data centre.</span><span lang="fr">Un panel sur les cinquante ans et plus dans vingt-huit pays, neuf vagues entre 2004 et 2022 : santé, travail et retraite, revenus, transferts entre générations, et deux questionnaires Corona. La référence pour tout ce qui touche au vieillissement en Europe. Gratuit pour un usage scientifique partout dans le monde, mais chaque utilisateur s’inscrit individuellement et télécharge depuis leur propre centre de données.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Free, registration required</span><span lang="fr">Gratuit, inscription requise</span></span>
+          </li>
+          <li data-level="phd students">
+            <canvas class="row-art" data-seed="616" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://ec.europa.eu/eurostat/web/microdata/european-union-statistics-on-income-and-living-conditions" target="_blank">EU-SILC ↗</a></span>
+            <span class="res-desc"><span lang="en">Eurostat’s reference source on income, poverty and living conditions, in a cross-sectional and a longitudinal version, harmonised by EU law. The scientific use files are partly anonymised — age is top-coded at eighty, region goes no finer than NUTS 1 — so check the recoding before promising anything geographic. Access is not a personal account: your institution has to be recognised as a research entity first. Count on a few months.</span><span lang="fr">La source de référence d’Eurostat sur les revenus, la pauvreté et les conditions de vie, en version transversale et longitudinale, harmonisée par un règlement européen. Les fichiers à usage scientifique sont partiellement anonymisés — l’âge est plafonné à quatre-vingts ans, la région ne descend pas sous la NUTS 1 — donc il faut vérifier les recodages avant de promettre quoi que ce soit de géographique. L’accès ne se fait pas à titre personnel : c’est l’établissement qui doit d’abord être reconnu comme entité de recherche. Compter quelques mois.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Access on request</span><span lang="fr">Accès sur demande</span></span>
+          </li>
+          <li data-level="phd students">
+            <canvas class="row-art" data-seed="623" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://www.gesis.org/en/eurobarometer-data-service" target="_blank">Eurobaromètre — GESIS ↗</a></span>
+            <span class="res-desc"><span lang="en">The Commission’s opinion surveys since 1974, the longest comparable series in Europe. The Commission publishes the reports, but the microdata are archived and distributed by GESIS, and that is where the SPSS and Stata files are — which is why people who only look at europa.eu conclude the data are not available. Free after a free registration. A few topical modules stay under embargo for a while.</span><span lang="fr">Les sondages d’opinion de la Commission depuis 1974, la plus longue série comparable en Europe. La Commission publie les rapports, mais les microdonnées sont archivées et diffusées par GESIS, et c’est là que se trouvent les fichiers SPSS et Stata — ce qui explique que les gens qui ne regardent que europa.eu concluent que les données ne sont pas disponibles. Gratuit après une inscription gratuite. Quelques modules thématiques restent sous embargo pendant un temps.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Free, registration required</span><span lang="fr">Gratuit, inscription requise</span></span>
+          </li>
+          <li data-level="phd students">
             <canvas class="row-art" data-seed="567" aria-hidden="true"></canvas>
             <span class="res-title"><a href="https://data.progedo.fr/" target="_blank">Quetelet-Progedo Diffusion ↗</a></span>
             <span class="res-desc"><span lang="en">The microdata of French public statistics: INSEE’s surveys, those of the ministries’ statistical departments, and INED’s large demographic surveys. Free for researchers, doctoral students and students, but you create an account with an institutional address and describe the project. The richer “production et recherche” files also require clearance from the statistical secrecy committee, which is granted once and then holds for as long as you stay in an eligible institution; the most detailed confidential files go through the CASD instead, which charges.</span><span lang="fr">Les microdonnées de la statistique publique française : les enquêtes de l’INSEE, celles des services statistiques ministériels, et les grandes enquêtes démographiques de l’INED. Gratuit pour les chercheurs, doctorants et étudiants, mais il faut créer un compte avec une adresse institutionnelle et décrire son projet. Les fichiers « production et recherche », plus riches, demandent en plus une habilitation du Comité du secret statistique, obtenue une fois pour toutes tant qu’on reste rattaché à un établissement habilité ; les fichiers confidentiels les plus détaillés passent eux par le CASD, qui est payant.</span></span>
@@ -838,6 +882,30 @@
             <span class="res-title"><a href="https://catalogue.depp.education.fr/index.php/home" target="_blank"><span lang="en">Education data catalogue — DEPP</span><span lang="fr">Catalogue des données de l’éducation — DEPP</span> ↗</a></span>
             <span class="res-desc"><span lang="en">The catalogue of the French education ministry’s statistical department: its administrative and survey data on the school system — pupils and apprentices, assessments, exam results, staff, schools. It is a catalogue, not a download: you find the file and read its documentation here, then apply to the DEPP, which signs an agreement with the research team and takes several months, so plan it well before you need the data. Built as part of the IDEE programme, run with J-PAL Europe.</span><span lang="fr">Le catalogue du service statistique du ministère de l’Éducation : ses données administratives et d’enquête sur le système scolaire — élèves et apprentis, évaluations, résultats aux examens, personnels, établissements. C’est un catalogue, pas un téléchargement : on repère le fichier et on lit sa documentation ici, puis on dépose une demande auprès de la DEPP, qui signe une convention avec l’équipe et met plusieurs mois, donc il faut s’y prendre bien avant d’avoir besoin des données. Construit dans le cadre du programme IDEE, mené avec J-PAL Europe.</span></span>
             <span class="mono dim res-tag"><span lang="en">Catalogue, access on request</span><span lang="fr">Catalogue, accès sur demande</span></span>
+          </li>
+          <li data-level="phd students">
+            <canvas class="row-art" data-seed="630" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://data.progedo.fr/studies/doi/10.13144/lil-1575" target="_blank">TeO — Trajectoires et Origines ↗</a></span>
+            <span class="res-desc"><span lang="en">The INED–INSEE survey on migration, origins and discrimination in France: TeO1 in 2008–09, then TeO2 in 2019–20 with 27,181 respondents of working age. It is the French survey that genuinely lets you separate first, second and third generation. The research file comes through Quetelet-Progedo like any other; the complete files, with their contextual database, go through the CASD after clearance from the statistical secrecy committee.</span><span lang="fr">L’enquête Ined–Insee sur la migration, les origines et les discriminations en France : TeO1 en 2008-2009, puis TeO2 en 2019-2020 auprès de 27 181 personnes d’âge actif. C’est l’enquête française qui permet vraiment de distinguer première, deuxième et troisième génération. Le fichier de recherche passe par Quetelet-Progedo comme les autres ; les fichiers complets, avec leur base contextuelle, passent par le CASD après habilitation du Comité du secret statistique.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Free, clearance required</span><span lang="fr">Gratuit, sur habilitation</span></span>
+          </li>
+          <li data-level="phd students">
+            <canvas class="row-art" data-seed="637" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://microdata.no/en/" target="_blank">microdata.no ↗</a></span>
+            <span class="res-desc"><span lang="en">Norwegian register data from 1964 onwards, with no application to write: if your institution is registered, you log in and start analysing straight away, in the browser. Nothing is downloaded — you run scripts against the data, and only an aggregated export needs an application. Open to staff and students of registered universities, approved research institutions, ministries and directorates. The fastest route to population-register data in Europe, and the easiest place to find out what registers actually allow.</span><span lang="fr">Les données de registre norvégiennes depuis 1964, sans dossier à monter : si votre établissement est enregistré, vous vous connectez et vous analysez immédiatement, dans le navigateur. Rien ne se télécharge — on fait tourner des scripts sur les données, et seule une sortie agrégée demande une autorisation. Ouvert aux personnels et aux étudiants des universités enregistrées, des institutions de recherche agréées, des ministères et des directions. L’accès le plus rapide à des données de registre de population en Europe, et le plus simple pour découvrir ce que ces données permettent.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Instant access</span><span lang="fr">Accès immédiat</span></span>
+          </li>
+          <li data-level="phd students">
+            <canvas class="row-art" data-seed="644" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://www.scb.se/en/services/ordering-data-and-statistics/ordering-microdata/" target="_blank">Statistics Sweden — <span lang="en">register microdata</span><span lang="fr">microdonnées de registre</span> ↗</a></span>
+            <span class="res-desc"><span lang="en">Swedish population-register microdata, the model everyone cites: the whole population, every year, linkable from one register to the next. The obstacle is institutional rather than technical — Statistics Sweden only releases to a Swedish organisation that takes responsibility for the research, so in practice you need a host or a co-author there. Denmark and Finland work the same way, through Statistics Denmark and Statistics Finland’s FIONA remote system, and both charge real money, per user and per project.</span><span lang="fr">Les microdonnées de registre suédoises, le modèle que tout le monde cite : toute la population, chaque année, appariable d’un registre à l’autre. L’obstacle est institutionnel plus que technique — Statistics Sweden ne diffuse qu’à un organisme suédois qui se porte garant de la recherche, donc en pratique il faut un laboratoire d’accueil ou un co-auteur sur place. Le Danemark et la Finlande fonctionnent pareil, via Statistics Denmark et le système à distance FIONA de Statistics Finland, et les deux font payer, par utilisateur et par projet.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Paid, host institution required</span><span lang="fr">Payant, institution du pays requise</span></span>
+          </li>
+          <li data-level="phd students">
+            <canvas class="row-art" data-seed="651" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://es-datalab.es/" target="_blank">ES_DataLab — <span lang="en">Spain</span><span lang="fr">Espagne</span> ↗</a></span>
+            <span class="res-desc"><span lang="en">Spain’s secure microdata laboratory: the statistics institute, the tax agency, social security, the employment service and the Bank of Spain in one place, and crossable with one another. Two steps, and the first is not yours — your institution has to be recognised as a research entity, once and for all; then you submit a project for each request and work in their secure centres. Education is the gap: the education ministry is not one of the participating bodies, and on schooling it publishes aggregate tables only.</span><span lang="fr">Le laboratoire sécurisé de microdonnées espagnol : l’institut de statistique, le fisc, la sécurité sociale, le service de l’emploi et la Banque d’Espagne au même endroit, et appariables entre eux. Deux étapes, dont la première ne dépend pas de vous — l’établissement doit être reconnu comme entité de recherche, une fois pour toutes ; ensuite on dépose un projet par demande et on travaille dans leurs centres sécurisés. L’éducation est le point faible : le ministère de l’Éducation ne fait pas partie des organismes participants, et sur la scolarité il ne publie que des tableaux agrégés.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Accreditation required</span><span lang="fr">Sur accréditation</span></span>
           </li>
         </ul>
       <a class="res-up mono" href="#res-index" data-jump="res-index"><span lang="en">↑ Back to the index</span><span lang="fr">↑ Retour au sommaire</span></a>
@@ -1904,7 +1972,7 @@
 
 <div id="toast" class="mono" role="status"></div>
 
-<script src="galerie-maps.js?v=20261028"></script>
-<script src="galerie.js?v=20261028"></script>
+<script src="galerie-maps.js?v=20261029"></script>
+<script src="galerie.js?v=20261029"></script>
 </body>
 </html>

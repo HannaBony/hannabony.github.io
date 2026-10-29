@@ -388,6 +388,14 @@ main { padding: 0 var(--gutter); }
 .res-hint a:hover { color: var(--accent); border-color: var(--accent); }
 .res-num { color: var(--accent); font-size: 12px; align-self: center; }
 .res-intro { margin: 0 0 4px; color: var(--muted); max-width: 78ch; font-size: 17px; line-height: 1.55; }
+/* Sous-rubriques : la 01 est coupee en deux, chacune avec sa carte et sa liste */
+.res-sub { margin: 52px 0 10px; display: flex; align-items: baseline; gap: 14px;
+  font: 400 clamp(22px, 1.9vw, 30px)/1.15 var(--serif); letter-spacing: -.01em; }
+.res-sub:first-of-type { margin-top: 24px; }
+.res-sub .res-sub-n { flex: none; font: 500 11px/1 var(--mono); letter-spacing: .14em;
+  text-transform: uppercase; color: var(--accent); }
+/* Petite transition sous un sous-titre, plus discrete que l'intro de rubrique */
+.res-note { margin: 0 0 18px; color: var(--muted); max-width: 78ch; font-size: 15px; line-height: 1.6; }
 .res-todo { color: var(--muted); font-style: normal; margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--line); }
 .res-list { list-style: none; margin: 24px 0 0; padding: 0; border-top: 1px solid var(--ink); }
 .res-list li {
@@ -525,6 +533,18 @@ main { padding: 0 var(--gutter); }
 .cov-map figcaption { display: grid; grid-template-columns: 1fr 1fr; gap: 10px clamp(28px, 4vw, 64px); align-items: start; margin-top: 12px; font-size: 12px; max-width: 1100px; }
 .cov-map .cov-cap { grid-column: 1 / -1; }
 .cov-map figcaption .dim { max-width: none; line-height: 1.6; }
+
+/* Carte Europe : presque carrée, donc la légende passe à côté plutôt que dessous */
+.cov-map-eu { display: grid; grid-template-columns: 470px minmax(0, 1fr);
+  gap: 0 clamp(28px, 4vw, 64px); align-items: start; }
+.cov-map-eu .cov-chips { grid-column: 1 / -1; }
+.cov-map-eu canvas { max-width: 470px; }
+.cov-map-eu figcaption { display: flex; flex-direction: column; gap: 10px;
+  margin-top: 0; max-width: none; }
+@media (max-width: 900px) {
+  .cov-map-eu { grid-template-columns: 1fr; }
+  .cov-map-eu figcaption { margin-top: 12px; }
+}
 
 /* ---------- Comparaison des résolutions ---------- */
 .grid-fig { margin: 4px 0 30px; display: grid; grid-template-columns: minmax(0, 440px) minmax(0, 1fr); gap: 0 clamp(28px, 4vw, 64px); align-items: start; }

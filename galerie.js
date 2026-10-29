@@ -507,15 +507,27 @@
            en: "ETH Zurich’s data on politically relevant ethnic groups: their access to executive power and their settlement areas." },
     es: { fr: "Des enquêtes auprès des entreprises sur l’environnement des affaires, l’informalité et l’accès au crédit.",
           en: "Firm-level surveys on the business environment, informality and access to credit." },
+    ess: { fr: "Des attitudes et des valeurs mesurées tous les deux ans avec le même questionnaire : confiance, immigration, démocratie, climat. Israël participe aussi, hors cadre de la carte.",
+           en: "Attitudes and values measured every two years with the same questionnaire: trust, immigration, democracy, climate. Israel also takes part, outside the frame of this map." },
+    share: { fr: "Un panel sur les 50 ans et plus : santé, retraite, transferts entre générations. Israël participe aussi, hors cadre de la carte.",
+             en: "A panel on people aged 50 and over: health, retirement, transfers between generations. Israel also takes part, outside the frame of this map." },
+    silc: { fr: "La source officielle sur les revenus, la pauvreté et les conditions de vie dans l’Union. Plusieurs pays candidats participent également.",
+            en: "The official source on income, poverty and living conditions in the Union. Several candidate countries also take part." },
+    ebaro: { fr: "Les sondages d’opinion de la Commission depuis 1974 — la plus longue série comparable en Europe. Les pays candidats entrent et sortent selon les vagues.",
+             en: "The Commission’s opinion polls since 1974 — the longest comparable series in Europe. Candidate countries come and go depending on the wave." },
+    nat: { fr: "Les pays dont j’ai documenté ici une voie d’accès aux données administratives nationales. Ce ne sont pas les seuls à en avoir, seulement ceux dont la procédure est décrite plus bas.",
+           en: "The countries for which an access route to national administrative data is documented below. They are not the only ones that have such data, only the ones whose procedure is described here." },
   };
 
-  function initCoverage() {
-    const canvas = document.getElementById("cov-canvas");
-    const world = (window.MAPS || {}).world;
+  function initCoverage(canvasId, mapKey, width) {
+    const canvas = document.getElementById(canvasId);
+    const world = (window.MAPS || {})[mapKey];
     if (!canvas || !world || !world.coverage) return;
-    const chips = document.querySelector(".cov-chips");
-    const cap = document.querySelector(".cov-cap");
-    const desc = document.querySelector(".cov-desc");
+    const fig = canvas.closest("figure") || document;
+    const chips = fig.querySelector(".cov-chips");
+    const cap = fig.querySelector(".cov-cap");
+    const desc = fig.querySelector(".cov-desc");
+    if (!chips) return;
     const keys = Object.keys(world.coverage);
     let current = keys[0];
 
@@ -528,7 +540,7 @@
     const PAL = ["#cdb48c", "#c98a2b", "#a8431f", "#6b2317", "#3b1f17"];
     function draw(key) {
       const cov = world.coverage[key];
-      const W = 760, H = Math.round(760 * world.h / world.w), dpr = 2;
+      const W = width || 760, H = Math.round(W * world.h / world.w), dpr = 2;
       canvas.width = W * dpr; canvas.height = H * dpr;
       const c = canvas.getContext("2d"); c.setTransform(dpr, 0, 0, dpr, 0, 0);
       const acc = getComputedStyle(root).getPropertyValue("--accent").trim() || "#e0401f";
@@ -546,8 +558,9 @@
       c.restore();
       c.strokeStyle = "rgba(20,18,16,.5)"; c.lineWidth = 2; c.strokeRect(1, 1, W - 2, H - 2);
       const label = root.lang === "fr" ? cov.fr : cov.en;
-      const word = root.lang === "fr" ? "pays · depuis" : "countries · since";
-      cap.textContent = `${label} — ${cov.n} ${word} ${cov.since}`;
+      cap.textContent = cov.since
+        ? `${label} — ${cov.n} ${root.lang === "fr" ? "pays · depuis" : "countries · since"} ${cov.since}`
+        : `${label} — ${cov.n} ${root.lang === "fr" ? "pays" : "countries"}`;
       const d = COV_DESC[key];
       if (desc) desc.textContent = d ? (root.lang === "fr" ? d.fr : d.en) : "";
     }
@@ -563,7 +576,9 @@
     select(current);
     return () => draw(current);
   }
-  redrawCoverage = initCoverage();
+  const redrawWorld = initCoverage("cov-canvas", "world");
+  const redrawEurope = initCoverage("cov-canvas-eu", "europe", 470);
+  redrawCoverage = () => { if (redrawWorld) redrawWorld(); if (redrawEurope) redrawEurope(); };
 
 
   /* ================= Comparaison des resolutions ================= */
