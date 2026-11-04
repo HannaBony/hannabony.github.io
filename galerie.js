@@ -156,6 +156,8 @@
   addEventListener("hashchange", () => show(location.hash.slice(1), true));
 
   /* ================= Langue & thème ================= */
+  // Des bouts de page qui doivent se reecrire quand on change de langue s'inscrivent ici.
+  const langHooks = [];
   const langBtn = document.getElementById("lang-toggle");
   function setLang(l) {
     root.lang = l; store.set("lang", l);
@@ -165,6 +167,7 @@
     if (active) { pageTitle.textContent = titleFor(active); pageSub.textContent = subFor(active); placeSub(); }
     if (redrawCoverage) redrawCoverage();
     if (redrawGrids) redrawGrids();
+    langHooks.forEach(f => f());
   }
   setLang(store.get("lang") || ((navigator.language || "en").startsWith("fr") ? "fr" : "en"));
   langBtn.addEventListener("click", () => setLang(root.lang === "en" ? "fr" : "en"));
@@ -825,6 +828,87 @@
   const paintThumbs = () => document.querySelectorAll("canvas.row-art").forEach(drawThumb);
   paintThumbs();
   if (document.fonts) document.fonts.ready.then(paintThumbs);
+
+  /* ================= Papiers : trois filtres qui se croisent ================= */
+  const papList = document.getElementById("pap-list");
+  if (papList) {
+    const papItems = [...papList.children];
+    const papSel = { theme: "all", sub: "all", method: "all" };
+    const papN = document.getElementById("pap-n");
+    const papEmpty = document.getElementById("pap-empty");
+    const papSubRow = document.getElementById("pap-sub-row");
+
+    // Les compteurs sont calcules, pas ecrits en dur : ajouter un papier suffit.
+    document.querySelectorAll(".pap-f").forEach(b => {
+      const sup = b.querySelector("sup");
+      if (!sup) return;
+      const ax = b.dataset.axis, v = b.dataset.v;
+      if (v === "all") { sup.textContent = papItems.length; return; }
+      sup.textContent = ax === "sub"
+        ? papItems.filter(li => li.dataset.theme === b.dataset.parent && li.dataset.sub === v).length
+        : papItems.filter(li => li.dataset[ax] === v).length;
+    });
+
+    // La rangee des sous-themes n'a de sens qu'une fois un theme choisi.
+    const papSyncSub = () => {
+      const t = papSel.theme;
+      papSubRow.hidden = t === "all";
+      document.querySelectorAll(".pap-sub").forEach(b => {
+        // un sous-theme vide ne s'affiche pas : inutile de proposer un filtre a zero
+        const n = Number((b.querySelector("sup") || {}).textContent || 0);
+        b.hidden = !(b.dataset.parent === "all" || (b.dataset.parent === t && n > 0));
+      });
+      // le « tout » du sous-theme compte dans le theme choisi, pas dans la page entiere
+      const subAll = document.querySelector('.pap-sub[data-v="all"] sup');
+      if (subAll) subAll.textContent = papItems.filter(li => li.dataset.theme === t).length;
+    };
+
+    const papApply = () => {
+      let n = 0;
+      papItems.forEach(li => {
+        const ok = (papSel.theme === "all" || li.dataset.theme === papSel.theme)
+                && (papSel.sub === "all" || li.dataset.sub === papSel.sub)
+                && (papSel.method === "all" || li.dataset.method === papSel.method);
+        li.hidden = !ok;
+        if (ok) n++;
+      });
+      papN.textContent = n;
+      papEmpty.classList.toggle("on", n === 0);
+    };
+
+    document.querySelectorAll(".pap-f").forEach(b => b.addEventListener("click", () => {
+      const ax = b.dataset.axis;
+      papSel[ax] = b.dataset.v;
+      document.querySelectorAll('.pap-f[data-axis="' + ax + '"]')
+        .forEach(x => x.classList.toggle("active", x === b));
+      if (ax === "theme") {
+        // changer de theme remet le sous-theme a zero, sinon on garde un filtre invisible
+        papSel.sub = "all";
+        document.querySelectorAll(".pap-sub")
+          .forEach(x => x.classList.toggle("active", x.dataset.v === "all"));
+        papSyncSub();
+      }
+      papApply();
+    }));
+
+    papSyncSub();
+    papApply();
+  }
+
+  /* ================= Projet personnel : jours restants ================= */
+  // Se met a jour tout seul, et ne s'affiche plus une fois la date passee.
+  const soonLeft = document.getElementById("soon-left");
+  if (soonLeft) {
+    const paintSoon = () => {
+      const days = Math.ceil((Date.UTC(2026, 11, 10) - Date.now()) / 86400000);
+      soonLeft.textContent = days > 0
+        ? (root.lang === "fr" ? "dans " + days + " jour" + (days > 1 ? "s" : "")
+                              : "in " + days + " day" + (days > 1 ? "s" : ""))
+        : "";
+    };
+    paintSoon();
+    langHooks.push(paintSoon);
+  }
 
   /* ================= Sommaire des ressources ================= */
   // Replier / deplier une rubrique

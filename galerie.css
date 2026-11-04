@@ -155,6 +155,9 @@ main { padding: 0 var(--gutter); }
 }
 .doors a:first-child { padding-left: 0; }
 .doors a:last-child { border-right: 0; }
+.doors a:nth-child(4n) { border-right: 0; }
+.doors a:nth-child(n+5) { border-top: 1px solid var(--line); padding-left: 20px; }
+.doors a:nth-child(5) { padding-left: 0; }
 .doors a .mono { color: var(--accent); font-size: 14px; transition: transform .4s var(--ease); }
 .doors a:hover { color: var(--accent); }
 .doors a:hover .mono { transform: translateX(8px); }
@@ -610,3 +613,40 @@ main { padding: 0 var(--gutter); }
 .res-plus::after { transform: rotate(90deg); }
 .res-block.open .res-plus::after { transform: rotate(0); }
 .res-block.open .res-toggle { color: var(--accent); }
+
+/* ---------- Papiers ---------- */
+.pap-filters { margin: 26px 0 0; border-top: 1px solid var(--ink); }
+.pap-axis-row {
+  display: grid; grid-template-columns: 150px 1fr; gap: 8px clamp(16px, 2.4vw, 36px);
+  align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--line);
+}
+.pap-axis { font: 500 10.5px/1.6 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.pap-fs { display: flex; flex-wrap: wrap; gap: 5px 22px; }
+.pap-f { color: var(--muted); padding: 2px 0; position: relative; transition: color .3s; font-size: 11px; text-align: left; }
+.pap-f sup { font-size: 8px; }
+.pap-f:hover, .pap-f.active { color: var(--ink); }
+.pap-f.active::before { content: "\25CF"; color: var(--accent); position: absolute; left: -13px; font-size: 8px; top: 5px; }
+.pap-f[hidden], .pap-axis-row[hidden] { display: none; }
+.pap-axis-sub .pap-axis { color: var(--muted); }
+.pap-count { margin: 20px 0 0; font-size: 11px; color: var(--muted); letter-spacing: .08em; }
+.pap-count #pap-n { color: var(--accent); }
+.pap-cite { display: block; margin-top: 7px; font: 400 10.5px/1.6 var(--mono); letter-spacing: .04em; color: var(--accent); }
+.pap-empty { display: none; color: var(--muted); margin: 0; padding-top: 16px; border-top: 1px solid var(--line); }
+.pap-empty.on { display: block; }
+@media (max-width: 900px) {
+  .pap-axis-row { grid-template-columns: 1fr; }
+}
+
+/* ---------- Projet personnel : page d'attente ---------- */
+.soon { padding-top: 10px; }
+.soon-art { width: 150px; height: auto; display: block; margin-bottom: 30px;
+  box-shadow: 0 1px 0 var(--line), 0 10px 24px rgba(20, 18, 16, .12); }
+.soon-label { font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 14px; }
+.soon-date { font: 400 clamp(46px, 7vw, 104px)/1 var(--serif); letter-spacing: -.03em;
+  margin: 0; }
+.soon-left { font-size: 11px; color: var(--muted); margin: 14px 0 0; letter-spacing: .08em; }
+.soon-left:empty { display: none; }
+.soon-text { margin: 30px 0 0; max-width: 54ch; font-size: 17px; line-height: 1.6;
+  color: var(--muted); }
+.soon .res-up { margin-top: 44px; }

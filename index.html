@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="galerie.css?v=20261029">
+  <link rel="stylesheet" href="galerie.css?v=20261104">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23ece6db'/><path d='M0 22 L10 14 L16 8 L22 14 L32 20 V32 H0Z' fill='%236b2317'/><path d='M0 26 L10 19 L16 14 L22 19 L32 24 V32 H0Z' fill='%23c98a2b'/><path d='M0 29 L10 24 L16 20 L22 24 L32 28 V32 H0Z' fill='%23141210'/></svg>">
 </head>
 <body data-view="home">
@@ -32,6 +32,8 @@
     <a href="#teaching" data-tab="teaching"><span lang="en">Teaching</span><span lang="fr">Enseignement</span></a>
     <a href="#cv" data-tab="cv">CV</a>
     <a href="#resources" data-tab="resources"><span lang="en">Toolkit</span><span lang="fr">Boîte à outils</span></a>
+    <a href="#papers" data-tab="papers"><span lang="en">Nice papers</span><span lang="fr">Beaux papiers</span></a>
+    <a href="#project" data-tab="project"><span lang="en">Project</span><span lang="fr">Projet</span></a>
     <a href="#contact" data-tab="contact">Contact</a>
   </nav>
   <div class="nav-ctrl mono">
@@ -238,6 +240,8 @@
       <a href="#teaching"><span class="mono">→</span><span lang="en">Teaching</span><span lang="fr">Enseignement</span></a>
       <a href="#cv"><span class="mono">→</span>CV</a>
       <a href="#resources"><span class="mono">→</span><span lang="en">Toolkit</span><span lang="fr">Boîte à outils</span></a>
+      <a href="#papers"><span class="mono">→</span><span lang="en">Nice papers</span><span lang="fr">Beaux papiers</span></a>
+      <a href="#project"><span class="mono">→</span><span lang="en">Project</span><span lang="fr">Projet</span></a>
       <a href="#contact"><span class="mono">→</span>Contact</a>
     </nav>
   </section>
@@ -1960,6 +1964,797 @@
   </section>
 
   <!-- ================================================= CONTACT -->
+
+  <!-- ================================================= PAPIERS -->
+  <section class="view" data-view="papers" data-title-en="What I read" data-title-fr="Ce que je lis" data-sub-en="biased, and it shows" data-sub-fr="biais&eacute;, et &ccedil;a se voit">
+
+    <div class="block">
+      <p class="res-intro">
+        <span lang="en">Papers that I read and liked. This is not a reading list or a literature review. It is biased, but not only towards development and gender.</span>
+        <span lang="fr">Des papiers que j&rsquo;ai lus et aim&eacute;s. Ce n&rsquo;est pas une liste de lectures, ni une revue de litt&eacute;rature. C&rsquo;est biais&eacute;, mais pas seulement vers le d&eacute;veloppement et le genre.</span>
+      </p>
+      <p class="res-note">
+        <span lang="en">Everything here is either published in a general or field journal, or still a working paper, which is said plainly in the reference. Pick a topic and a second row of finer filters appears; the method filter combines with both. The last group is not about gender at all: it is the econometrics I actually use.</span>
+        <span lang="fr">Tout ce qui figure ici est soit publi&eacute; dans une revue g&eacute;n&eacute;raliste ou de champ, soit encore un document de travail, et c&rsquo;est alors dit dans la r&eacute;f&eacute;rence. Choisissez un th&egrave;me et une deuxi&egrave;me rang&eacute;e de filtres plus fins appara&icirc;t ; le filtre de m&eacute;thode se combine avec les deux. Le dernier groupe ne parle pas du tout de genre : c&rsquo;est l&rsquo;&eacute;conom&eacute;trie que j&rsquo;utilise vraiment.</span>
+      </p>
+
+      <div class="pap-filters">
+        <div class="pap-axis-row">
+          <span class="pap-axis"><span lang="en">Topic</span><span lang="fr">Th&egrave;me</span></span>
+          <div class="pap-fs mono">
+            <button class="pap-f active" data-axis="theme" data-v="all"><span lang="en">All</span><span lang="fr">Tout</span> <sup></sup></button>
+            <button class="pap-f" data-axis="theme" data-v="ipv"><span lang="en">Intimate partner violence</span><span lang="fr">Violences conjugales</span> <sup></sup></button>
+            <button class="pap-f" data-axis="theme" data-v="norms"><span lang="en">Norms &amp; attitudes</span><span lang="fr">Normes et attitudes</span> <sup></sup></button>
+            <button class="pap-f" data-axis="theme" data-v="family"><span lang="en">Marriage, fertility, family</span><span lang="fr">Mariage, fécondité, famille</span> <sup></sup></button>
+            <button class="pap-f" data-axis="theme" data-v="educ"><span lang="en">Education</span><span lang="fr">Éducation</span> <sup></sup></button>
+            <button class="pap-f" data-axis="theme" data-v="work"><span lang="en">Work &amp; income</span><span lang="fr">Travail et revenus</span> <sup></sup></button>
+            <button class="pap-f" data-axis="theme" data-v="migr">Migration <sup></sup></button>
+            <button class="pap-f" data-axis="theme" data-v="power"><span lang="en">Power, conflict, institutions</span><span lang="fr">Pouvoir, conflit, institutions</span> <sup></sup></button>
+            <button class="pap-f" data-axis="theme" data-v="measure"><span lang="en">Measurement</span><span lang="fr">Mesure</span> <sup></sup></button>
+            <button class="pap-f" data-axis="theme" data-v="tools"><span lang="en">Econometric toolkit</span><span lang="fr">Boîte à outils économétrique</span> <sup></sup></button>
+          </div>
+        </div>
+        <div class="pap-axis-row pap-axis-sub" id="pap-sub-row" hidden>
+          <span class="pap-axis"><span lang="en">Within</span><span lang="fr">Sous-th&egrave;me</span></span>
+          <div class="pap-fs mono">
+            <button class="pap-f pap-sub active" data-axis="sub" data-v="all" data-parent="all"><span lang="en">All</span><span lang="fr">Tout</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="cash" data-parent="ipv" hidden><span lang="en">Transfers &amp; income</span><span lang="fr">Transferts et revenus</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="emploi" data-parent="ipv" hidden><span lang="en">Work</span><span lang="fr">Emploi</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="educ" data-parent="ipv" hidden><span lang="en">Education</span><span lang="fr">Éducation</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="mariage" data-parent="ipv" hidden><span lang="en">Marriage &amp; marriage payments</span><span lang="fr">Mariage et transferts matrimoniaux</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="normes" data-parent="ipv" hidden><span lang="en">Norms &amp; attitudes</span><span lang="fr">Normes et attitudes</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="justice" data-parent="ipv" hidden><span lang="en">Police &amp; courts</span><span lang="fr">Police et justice</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="conflit" data-parent="ipv" hidden><span lang="en">Conflict</span><span lang="fr">Conflit</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="chocs" data-parent="ipv" hidden><span lang="en">Shocks &amp; triggers</span><span lang="fr">Chocs et déclencheurs</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="logement" data-parent="ipv" hidden><span lang="en">Housing</span><span lang="fr">Logement</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="revue" data-parent="norms" hidden><span lang="en">Overview</span><span lang="fr">Vue d’ensemble</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="medias" data-parent="norms" hidden><span lang="en">Media &amp; internet</span><span lang="fr">Médias et internet</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="ecole" data-parent="norms" hidden><span lang="en">School &amp; adolescence</span><span lang="fr">École et adolescence</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="croyances" data-parent="norms" hidden><span lang="en">Mistaken beliefs</span><span lang="fr">Croyances erronées</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="origines" data-parent="norms" hidden><span lang="en">Historical origins</span><span lang="fr">Origines historiques</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="identite" data-parent="norms" hidden><span lang="en">Gender identity</span><span lang="fr">Identité de genre</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="religion" data-parent="norms" hidden>Religion <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="fgc" data-parent="family" hidden><span lang="en">Female genital cutting</span><span lang="fr">Excision</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="mariageprecoce" data-parent="family" hidden><span lang="en">Child marriage</span><span lang="fr">Mariage précoce</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="transferts" data-parent="family" hidden><span lang="en">Dowry &amp; bride price</span><span lang="fr">Dot et prix de la fiancée</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="fecondite" data-parent="family" hidden><span lang="en">Fertility &amp; contraception</span><span lang="fr">Fécondité et contraception</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="fils" data-parent="family" hidden><span lang="en">Son preference</span><span lang="fr">Préférence pour les fils</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="structure" data-parent="family" hidden><span lang="en">Family structure</span><span lang="fr">Structure familiale</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="acces" data-parent="educ" hidden><span lang="en">Public resources &amp; access</span><span lang="fr">Moyens publics et accès</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="filles" data-parent="educ" hidden><span lang="en">Girls’ schooling</span><span lang="fr">Scolarisation des filles</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="incitations" data-parent="educ" hidden><span lang="en">Incentives &amp; programmes</span><span lang="fr">Incitations et programmes</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="retours" data-parent="educ" hidden><span lang="en">Returns to education</span><span lang="fr">Retours de l’éducation</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="revue" data-parent="work" hidden><span lang="en">Overview</span><span lang="fr">Vue d’ensemble</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="emploi" data-parent="work" hidden><span lang="en">Female employment</span><span lang="fr">Emploi féminin</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="ressources" data-parent="work" hidden><span lang="en">Control of resources</span><span lang="fr">Contrôle des ressources</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="garde" data-parent="work" hidden><span lang="en">Childcare</span><span lang="fr">Garde d’enfants</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="penalite" data-parent="work" hidden><span lang="en">Child penalty</span><span lang="fr">Pénalité liée à l’enfant</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="revue" data-parent="migr" hidden><span lang="en">Overview</span><span lang="fr">Vue d’ensemble</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="retour" data-parent="migr" hidden><span lang="en">Return migration</span><span lang="fr">Migration de retour</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="restes" data-parent="migr" hidden><span lang="en">Those who stay</span><span lang="fr">Celles et ceux qui restent</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="origine" data-parent="migr" hidden><span lang="en">Effects on the origin country</span><span lang="fr">Effets sur le pays d’origine</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="accueil" data-parent="migr" hidden><span lang="en">Attitudes in host countries</span><span lang="fr">Attitudes dans les pays d’accueil</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="representation" data-parent="power" hidden><span lang="en">Political representation</span><span lang="fr">Représentation politique</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="justice" data-parent="power" hidden><span lang="en">Police &amp; courts</span><span lang="fr">Police et justice</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="droit" data-parent="power" hidden><span lang="en">Law &amp; institutions</span><span lang="fr">Droit et institutions</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="etat" data-parent="power" hidden><span lang="en">State &amp; conflict</span><span lang="fr">État et conflit</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="colonisation" data-parent="power" hidden><span lang="en">Colonial legacies</span><span lang="fr">Héritages coloniaux</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="sante" data-parent="power" hidden><span lang="en">Health &amp; sex work</span><span lang="fr">Santé et travail du sexe</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="sousdecl" data-parent="measure" hidden><span lang="en">Under-reporting</span><span lang="fr">Sous-déclaration</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="liste" data-parent="measure" hidden><span lang="en">List experiment</span><span lang="fr">Expérience de liste</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="mode" data-parent="measure" hidden><span lang="en">Survey mode</span><span lang="fr">Mode d’enquête</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="did" data-parent="tools" hidden><span lang="en">Difference-in-differences</span><span lang="fr">Différences de différences</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="rd" data-parent="tools" hidden><span lang="en">Regression discontinuity</span><span lang="fr">Discontinuité</span> <sup></sup></button>
+            <button class="pap-f pap-sub" data-axis="sub" data-v="inference" data-parent="tools" hidden><span lang="en">Inference</span><span lang="fr">Inférence</span> <sup></sup></button>
+          </div>
+        </div>
+        <div class="pap-axis-row">
+          <span class="pap-axis"><span lang="en">Method</span><span lang="fr">M&eacute;thode</span></span>
+          <div class="pap-fs mono">
+            <button class="pap-f active" data-axis="method" data-v="all"><span lang="en">All</span><span lang="fr">Tout</span> <sup></sup></button>
+            <button class="pap-f" data-axis="method" data-v="rct"><span lang="en">Randomised experiment</span><span lang="fr">Expérience aléatoire</span> <sup></sup></button>
+            <button class="pap-f" data-axis="method" data-v="did"><span lang="en">Difference-in-differences</span><span lang="fr">Différences de différences</span> <sup></sup></button>
+            <button class="pap-f" data-axis="method" data-v="iv"><span lang="en">Instrument or natural experiment</span><span lang="fr">Instrument ou expérience naturelle</span> <sup></sup></button>
+            <button class="pap-f" data-axis="method" data-v="desc"><span lang="en">Descriptive &amp; measurement</span><span lang="fr">Descriptif et mesure</span> <sup></sup></button>
+            <button class="pap-f" data-axis="method" data-v="hist"><span lang="en">Historical &amp; comparative</span><span lang="fr">Historique et comparatif</span> <sup></sup></button>
+            <button class="pap-f" data-axis="method" data-v="struct"><span lang="en">Structural model</span><span lang="fr">Modèle structurel</span> <sup></sup></button>
+            <button class="pap-f" data-axis="method" data-v="theory"><span lang="en">Theory</span><span lang="fr">Théorie</span> <sup></sup></button>
+            <button class="pap-f" data-axis="method" data-v="survey"><span lang="en">Review</span><span lang="fr">Revue de littérature</span> <sup></sup></button>
+            <button class="pap-f" data-axis="method" data-v="tool"><span lang="en">Econometrics</span><span lang="fr">Économétrie</span> <sup></sup></button>
+          </div>
+        </div>
+      </div>
+
+      <p class="pap-count mono"><span id="pap-n"></span> <span lang="en">papers</span><span lang="fr">papiers</span></p>
+
+      <ul class="res-list" id="pap-list">
+          <li data-theme="ipv" data-sub="cash" data-method="rct">
+            <canvas class="row-art" data-icon="survey" data-seed="300" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/pol.5.1.179" target="_blank" rel="noopener">Public Transfers and Domestic Violence: The Roles of Private Information and Spousal Control ↗</a><span class="pap-cite mono">Gustavo Bobonis, Melissa González-Brenes &amp; Roberto Castro · AEJ: Economic Policy, 2013</span></span>
+            <span class="res-desc"><span lang="en">Progresa reduces physical violence but raises violent threats — the clearest demonstration that a transfer can move different forms of violence in opposite directions.</span><span lang="fr">Progresa réduit la violence physique mais augmente les menaces — la démonstration la plus nette qu’un transfert peut faire bouger différentes formes de violence en sens opposés.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · Mexico</span><span lang="fr">Expérience aléatoire · Mexique</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="cash" data-method="rct">
+            <canvas class="row-art" data-icon="survey" data-seed="307" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/app.20150048" target="_blank" rel="noopener">The Effect of Cash, Vouchers, and Food Transfers on Intimate Partner Violence ↗</a><span class="pap-cite mono">Melissa Hidrobo, Amber Peterman &amp; Lori Heise · AEJ: Applied Economics, 2016</span></span>
+            <span class="res-desc"><span lang="en">Three transfer modalities compared head to head in the same experiment, which is rare, and the reason this one is cited in every cash-and-violence discussion.</span><span lang="fr">Trois modalités de transfert comparées de front dans la même expérience, ce qui est rare, et la raison pour laquelle on le cite dans toute discussion sur l’argent et la violence.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · Ecuador</span><span lang="fr">Expérience aléatoire · Équateur</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="cash" data-method="rct">
+            <canvas class="row-art" data-icon="survey" data-seed="314" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.3386/w25627" target="_blank" rel="noopener">Income Changes and Intimate Partner Violence: Evidence from Unconditional Cash Transfers in Kenya ↗</a><span class="pap-cite mono">Johannes Haushofer, Charlotte Ringdal, Jeremy Shapiro &amp; Xiao Yu Wang · NBER working paper, 2019</span></span>
+            <span class="res-desc"><span lang="en">Transfers to the woman and to the man are randomised separately, so the effect of her income can be told apart from the effect of household income. Still a working paper.</span><span lang="fr">Les transferts à la femme et à l’homme sont tirés au sort séparément, ce qui permet de distinguer l’effet de son revenu de celui du revenu du ménage. Toujours un document de travail.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · Kenya</span><span lang="fr">Expérience aléatoire · Kenya</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="emploi" data-method="iv">
+            <canvas class="row-art" data-icon="survey" data-seed="321" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/aer.100.4.1847" target="_blank" rel="noopener">The Gender Wage Gap and Domestic Violence ↗</a><span class="pap-cite mono">Anna Aizer · American Economic Review, 2010</span></span>
+            <span class="res-desc"><span lang="en">The paper that made the bargaining argument credible: when the wage gap narrows in a local labour market, hospitalisations for assault on women fall.</span><span lang="fr">Le papier qui a rendu l’argument du pouvoir de négociation crédible : quand l’écart salarial se resserre sur un marché du travail local, les hospitalisations pour agression de femmes baissent.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Instrument or natural experiment · United States</span><span lang="fr">Instrument ou expérience naturelle · États-Unis</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="emploi" data-method="desc">
+            <canvas class="row-art" data-icon="survey" data-seed="328" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.worlddev.2013.10.028" target="_blank" rel="noopener">Women’s Access to Labor Market Opportunities, Control of Household Resources, and Domestic Violence ↗</a><span class="pap-cite mono">Rachel Heath · World Development, 2014</span></span>
+            <span class="res-desc"><span lang="en">Work raises violence for women who married young and with little schooling, and lowers it for the others. The paper that made me stop expecting a single sign.</span><span lang="fr">Le travail augmente la violence pour les femmes mariées jeunes et peu scolarisées, et la diminue pour les autres. Le papier qui m’a fait arrêter d’attendre un signe unique.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · Bangladesh</span><span lang="fr">Descriptif et mesure · Bangladesh</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="emploi" data-method="did">
+            <canvas class="row-art" data-icon="survey" data-seed="335" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.2139/ssrn.4794241" target="_blank" rel="noopener">Women’s Employment, Husbands’ Economic Self-Interest and Domestic Violence ↗</a><span class="pap-cite mono">Deniz Sanin · working paper, 2024</span></span>
+            <span class="res-desc"><span lang="en">The husband’s interest in his wife’s earnings as the mechanism, rather than her bargaining power alone. Check the current version before citing — it is still circulating.</span><span lang="fr">L’intérêt du mari pour les revenus de sa femme comme mécanisme, plutôt que son seul pouvoir de négociation. Vérifier la version en cours avant de citer, il circule encore.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · Rwanda</span><span lang="fr">Différences de différences · Rwanda</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="emploi" data-method="rct">
+            <canvas class="row-art" data-icon="survey" data-seed="342" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.3368/jhr.0721-11780r2" target="_blank" rel="noopener">Jobs and Intimate Partner Violence ↗</a><span class="pap-cite mono">Andreas Kotsadam &amp; Espen Villanger · Journal of Human Resources, 2022</span></span>
+            <span class="res-desc"><span lang="en">Randomised factory job offers, and what formal employment does to violence at home. The rare case where the job itself is the treatment.</span><span lang="fr">Des offres d’emploi en usine tirées au sort, et ce que l’emploi formel fait à la violence au foyer. Le cas rare où l’emploi lui-même est le traitement.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · Ethiopia</span><span lang="fr">Expérience aléatoire · Éthiopie</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="emploi" data-method="did">
+            <canvas class="row-art" data-icon="survey" data-seed="349" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1093/restud/rdaf004" target="_blank" rel="noopener">Job Displacement, Unemployment Benefits and Domestic Violence ↗</a><span class="pap-cite mono">Sonia Bhalotra, Diogo Britto, Paolo Pinotti &amp; Breno Sampaio · Review of Economic Studies, 2025</span></span>
+            <span class="res-desc"><span lang="en">Losing a job raises domestic violence, and unemployment insurance cushions it. The policy, not only the shock, turns out to matter.</span><span lang="fr">Perdre son emploi augmente les violences conjugales, et l’assurance chômage amortit le choc. C’est la politique publique, et pas seulement le choc, qui compte.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · Brazil</span><span lang="fr">Différences de différences · Brésil</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="educ" data-method="iv">
+            <canvas class="row-art" data-icon="survey" data-seed="356" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/app.20160278" target="_blank" rel="noopener">For Better or for Worse? Education and the Prevalence of Domestic Violence in Turkey ↗</a><span class="pap-cite mono">Bilge Erten &amp; Pınar Keskin · AEJ: Applied Economics, 2018</span></span>
+            <span class="res-desc"><span lang="en">The 1997 schooling reform as a lever: more education for women, less psychological violence, and no clean effect on physical violence. A useful reminder that education is not a single mechanism.</span><span lang="fr">La réforme scolaire de 1997 comme levier : plus d’éducation pour les femmes, moins de violence psychologique, et pas d’effet net sur la violence physique. Un rappel utile que l’éducation n’est pas un mécanisme unique.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Instrument or natural experiment · Turkey</span><span lang="fr">Instrument ou expérience naturelle · Turquie</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="educ" data-method="iv">
+            <canvas class="row-art" data-icon="survey" data-seed="363" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1093/wber/lhy021" target="_blank" rel="noopener">The Effect of Compulsory Schooling Expansion on Mothers’ Attitudes Toward Domestic Violence in Turkey ↗</a><span class="pap-cite mono">Selim Gulesci, Erik Meyersson &amp; Sofia Trommlerová · World Bank Economic Review, 2020</span></span>
+            <span class="res-desc"><span lang="en">Same reform, attitudes rather than victimisation — a good paper to read right after Erten and Keskin to see how much the outcome chosen drives the conclusion.</span><span lang="fr">La même réforme, mais sur les attitudes plutôt que sur la victimisation — à lire juste après Erten et Keskin pour voir à quel point le choix de la variable de résultat commande la conclusion.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Instrument or natural experiment · Turkey</span><span lang="fr">Instrument ou expérience naturelle · Turquie</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="mariage" data-method="did">
+            <canvas class="row-art" data-icon="survey" data-seed="370" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jdeveco.2019.102413" target="_blank" rel="noopener">The Price of Gold: Dowry and Death in India ↗</a><span class="pap-cite mono">Sonia Bhalotra, Abhishek Chakravarty &amp; Selim Gulesci · Journal of Development Economics, 2020</span></span>
+            <span class="res-desc"><span lang="en">Gold price shocks raise the cost of a dowry, and female infant deaths and dowry deaths follow. A brutal paper, and a very clean design.</span><span lang="fr">Les chocs du prix de l’or renchérissent la dot, et les décès de petites filles et les morts pour dot suivent. Un papier brutal, et un design très propre.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · India</span><span lang="fr">Différences de différences · Inde</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="mariage" data-method="desc">
+            <canvas class="row-art" data-icon="survey" data-seed="377" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://sites.google.com/view/suzanna-khalifa/research" target="_blank" rel="noopener">The Price of Silence: Marriage Transfers and Women’s Attitudes Toward Intimate Partner Violence ↗</a><span class="pap-cite mono">Suzanna Khalifa · working paper</span></span>
+            <span class="res-desc"><span lang="en">What marriage payments buy in terms of what a woman will say about violence. New draft announced.</span><span lang="fr">Ce que les transferts matrimoniaux achètent en matière de ce qu’une femme dira de la violence. Nouvelle version annoncée.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement</span><span lang="fr">Descriptif et mesure</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="mariage" data-method="desc">
+            <canvas class="row-art" data-icon="survey" data-seed="384" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/00028280260344588" target="_blank" rel="noopener">Terror as a Bargaining Instrument: A Case Study of Dowry Violence in Rural India ↗</a><span class="pap-cite mono">Francis Bloch &amp; Vijayendra Rao · American Economic Review, 2002</span></span>
+            <span class="res-desc"><span lang="en">Violence used deliberately to extract a further dowry payment. The paper that put violence inside the bargaining model rather than beside it.</span><span lang="fr">La violence employée délibérément pour extorquer un complément de dot. Le papier qui a mis la violence à l’intérieur du modèle de négociation plutôt qu’à côté.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · India</span><span lang="fr">Descriptif et mesure · Inde</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="normes" data-method="desc">
+            <canvas class="row-art" data-icon="survey" data-seed="391" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jebo.2020.07.024" target="_blank" rel="noopener">Gender Norms and Intimate Partner Violence ↗</a><span class="pap-cite mono">Libertad González &amp; Núria Rodríguez-Planas · Journal of Economic Behavior &amp; Organization, 2020</span></span>
+            <span class="res-desc"><span lang="en">Uses the norms of the country of origin to explain violence among immigrant couples in the United States, which separates the norm from the local environment.</span><span lang="fr">Utilise les normes du pays d’origine pour expliquer la violence dans les couples immigrés aux États-Unis, ce qui permet de séparer la norme de l’environnement local.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · Cross-country</span><span lang="fr">Descriptif et mesure · Transversal</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="normes" data-method="desc">
+            <canvas class="row-art" data-icon="survey" data-seed="398" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jdeveco.2025.103479" target="_blank" rel="noopener">What One Thinks, What One Says and What One Does: Male Justifications and Practices of Gender-Based Violence in Mali ↗</a><span class="pap-cite mono">Olivia Bertelli, Thomas Calvo, Emmanuelle Lavallée, Marion Mercier &amp; Sandrine Mesplé-Somps · Journal of Development Economics, 2025</span></span>
+            <span class="res-desc"><span lang="en">Separates what men justify, what they say out loud and what they do. Exactly the gap that makes the DHS attitude module so hard to interpret.</span><span lang="fr">Sépare ce que les hommes justifient, ce qu’ils disent à voix haute et ce qu’ils font. Précisément l’écart qui rend le module d’attitudes des EDS si difficile à interpréter.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement</span><span lang="fr">Descriptif et mesure</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="normes" data-method="hist">
+            <canvas class="row-art" data-icon="survey" data-seed="405" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1162/rest_a_00784" target="_blank" rel="noopener">Family Types and Intimate Partner Violence: A Historical Perspective ↗</a><span class="pap-cite mono">Ana Tur-Prats · Review of Economics and Statistics, 2019</span></span>
+            <span class="res-desc"><span lang="en">Historical household structure — nuclear or stem family — still predicts violence today. A long-run norms argument built on administrative data.</span><span lang="fr">La structure historique du ménage — famille nucléaire ou souche — prédit encore la violence aujourd’hui. Un argument de normes de longue durée, construit sur des données administratives.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Historical &amp; comparative · Spain</span><span lang="fr">Historique et comparatif · Espagne</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="normes" data-method="iv">
+            <canvas class="row-art" data-icon="survey" data-seed="412" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://eufrezza.github.io/research.html" target="_blank" rel="noopener">Accepting the Unacceptable: Does Intimate Partner Violence Shape the Tolerance of Violence? ↗</a><span class="pap-cite mono">Eugenia Frezza · working paper, 2025</span></span>
+            <span class="res-desc"><span lang="en">Whether living through violence changes what a woman is willing to call unacceptable, using variation in the minimum legal drinking age.</span><span lang="fr">Si vivre la violence change ce qu’une femme accepte d’appeler inacceptable, en exploitant la variation de l’âge légal de consommation d’alcool.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Instrument or natural experiment · India</span><span lang="fr">Instrument ou expérience naturelle · Inde</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="justice" data-method="did">
+            <canvas class="row-art" data-icon="survey" data-seed="419" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jpubeco.2024.105243" target="_blank" rel="noopener">Specialised Courts and the Reporting of Intimate Partner Violence ↗</a><span class="pap-cite mono">Jorge García-Hombrados, Marta Martínez-Matute &amp; Carmen Villa · Journal of Public Economics, 2024</span></span>
+            <span class="res-desc"><span lang="en">Specialised courts raise reporting. One of the few papers that looks at the institution receiving the complaint rather than at the couple.</span><span lang="fr">Les tribunaux spécialisés augmentent le signalement. Un des rares papiers qui regarde l’institution qui reçoit la plainte plutôt que le couple.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · Spain</span><span lang="fr">Différences de différences · Espagne</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="conflit" data-method="desc">
+            <canvas class="row-art" data-icon="survey" data-seed="426" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jdeveco.2016.08.001" target="_blank" rel="noopener">Civil Conflict, Domestic Violence and Intra-Household Bargaining in Post-Genocide Rwanda ↗</a><span class="pap-cite mono">Giulia La Mattina · Journal of Development Economics, 2017</span></span>
+            <span class="res-desc"><span lang="en">Women who married after the genocide, into a marriage market with far fewer men, face more violence. Bargaining power read through a demographic shock.</span><span lang="fr">Les femmes mariées après le génocide, sur un marché matrimonial où les hommes manquent, subissent davantage de violences. Le pouvoir de négociation lu à travers un choc démographique.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · Rwanda</span><span lang="fr">Descriptif et mesure · Rwanda</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="chocs" data-method="iv">
+            <canvas class="row-art" data-icon="survey" data-seed="433" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1093/qje/qjr001" target="_blank" rel="noopener">Family Violence and Football: The Effect of Unexpected Emotional Cues on Violent Behavior ↗</a><span class="pap-cite mono">David Card &amp; Gordon Dahl · Quarterly Journal of Economics, 2011</span></span>
+            <span class="res-desc"><span lang="en">An unexpected home defeat raises police reports of family violence that same evening. Emotional cues, identified down to the hour.</span><span lang="fr">Une défaite inattendue à domicile augmente les signalements de violences familiales le soir même. Des déclencheurs émotionnels, identifiés à l’heure près.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Instrument or natural experiment · United States</span><span lang="fr">Instrument ou expérience naturelle · États-Unis</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="chocs" data-method="did">
+            <canvas class="row-art" data-icon="survey" data-seed="440" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1162/rest_a_01412" target="_blank" rel="noopener">Dynamic Impacts of Lockdown on Domestic Violence ↗</a><span class="pap-cite mono">Sonia Bhalotra, Emilia Brito, Damian Clarke, Pilar Larroulet &amp; Francisco Pino · Review of Economics and Statistics, 2026</span></span>
+            <span class="res-desc"><span lang="en">Reports and helpline calls followed separately week by week. The dynamics say something the average effect hides entirely.</span><span lang="fr">Signalements et appels à l’aide suivis séparément, semaine après semaine. La dynamique dit quelque chose que l’effet moyen cache entièrement.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · Chile</span><span lang="fr">Différences de différences · Chili</span></span>
+          </li>
+          <li data-theme="ipv" data-sub="logement" data-method="did">
+            <canvas class="row-art" data-icon="survey" data-seed="447" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jhealeco.2025.103101" target="_blank" rel="noopener">Housing Affordability and Domestic Violence: The Case of San Francisco’s Rent Control Policies ↗</a><span class="pap-cite mono">Eilidh Geddes &amp; Nicole Holz · Journal of Health Economics, 2026</span></span>
+            <span class="res-desc"><span lang="en">The 1994 extension of rent control, read as an income shock: intimate partner violence falls by about a tenth. Housing policy turns out to be violence policy, even where nobody wrote it that way.</span><span lang="fr">L’extension du contrôle des loyers de 1994, lue comme un choc de revenu : les violences conjugales baissent d’environ un dixième. La politique du logement se révèle une politique de la violence, là même où personne ne l’avait écrit ainsi.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · United States</span><span lang="fr">Différences de différences · États-Unis</span></span>
+          </li>
+          <li data-theme="norms" data-sub="revue" data-method="survey">
+            <canvas class="row-art" data-icon="ethnic" data-seed="454" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1146/annurev-economics-080614-115404" target="_blank" rel="noopener">The Roots of Gender Inequality in Developing Countries ↗</a><span class="pap-cite mono">Seema Jayachandran · Annual Review of Economics, 2015</span></span>
+            <span class="res-desc"><span lang="en">The review I would hand to anyone starting on gender and development. It organises the field without flattening it.</span><span lang="fr">La revue que je donnerais à quiconque commence sur le genre et le développement. Elle organise le champ sans l’aplatir.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Review</span><span lang="fr">Revue de littérature</span></span>
+          </li>
+          <li data-theme="norms" data-sub="revue" data-method="survey">
+            <canvas class="row-art" data-icon="ethnic" data-seed="461" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1057/s41308-021-00140-w" target="_blank" rel="noopener">Social Norms as a Barrier to Women’s Employment in Developing Countries ↗</a><span class="pap-cite mono">Seema Jayachandran · IMF Economic Review, 2021</span></span>
+            <span class="res-desc"><span lang="en">Short, and it states plainly why raising the return to women’s work is not enough on its own.</span><span lang="fr">Court, et il dit clairement pourquoi augmenter le rendement du travail des femmes ne suffit pas à lui seul.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Review</span><span lang="fr">Revue de littérature</span></span>
+          </li>
+          <li data-theme="norms" data-sub="medias" data-method="did">
+            <canvas class="row-art" data-icon="ethnic" data-seed="468" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1162/qjec.2009.124.3.1057" target="_blank" rel="noopener">The Power of TV: Cable Television and Women’s Status in India ↗</a><span class="pap-cite mono">Robert Jensen &amp; Emily Oster · Quarterly Journal of Economics, 2009</span></span>
+            <span class="res-desc"><span lang="en">Cable arrives village by village, and reported acceptance of domestic violence falls. The paper that opened the whole media-and-norms literature.</span><span lang="fr">Le câble arrive village par village, et l’acceptation déclarée des violences domestiques baisse. Le papier qui a ouvert toute la littérature médias et normes.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · India</span><span lang="fr">Différences de différences · Inde</span></span>
+          </li>
+          <li data-theme="norms" data-sub="medias" data-method="did">
+            <canvas class="row-art" data-icon="ethnic" data-seed="475" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://eufrezza.github.io/research.html" target="_blank" rel="noopener">3G Expansion and Gender Norms in Africa ↗</a><span class="pap-cite mono">Eugenia Frezza &amp; Sonia Giurumescu · working paper</span></span>
+            <span class="res-desc"><span lang="en">Mobile internet arriving region by region, and what it does to the acceptability of domestic violence. Circulated earlier as “Fast Internet and Gender Norms”.</span><span lang="fr">L’internet mobile qui arrive région par région, et ce que cela fait à l’acceptabilité des violences domestiques. A circulé auparavant sous le titre « Fast Internet and Gender Norms ».</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · Sub-Saharan Africa</span><span lang="fr">Différences de différences · Afrique subsaharienne</span></span>
+          </li>
+          <li data-theme="norms" data-sub="ecole" data-method="rct">
+            <canvas class="row-art" data-icon="ethnic" data-seed="482" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/aer.20201112" target="_blank" rel="noopener">Reshaping Adolescents’ Gender Attitudes: Evidence from a School-Based Experiment in India ↗</a><span class="pap-cite mono">Diva Dhar, Tarun Jain &amp; Seema Jayachandran · American Economic Review, 2022</span></span>
+            <span class="res-desc"><span lang="en">Attitudes move, and behaviour partly follows, two years later. One of the few pieces of evidence that a norm can be shifted deliberately.</span><span lang="fr">Les attitudes bougent, et le comportement suit en partie, deux ans après. Une des rares preuves qu’on peut déplacer une norme volontairement.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · India</span><span lang="fr">Expérience aléatoire · Inde</span></span>
+          </li>
+          <li data-theme="norms" data-sub="ecole" data-method="rct">
+            <canvas class="row-art" data-icon="ethnic" data-seed="489" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/aer.20181805" target="_blank" rel="noopener">Interaction, Stereotypes, and Performance: Evidence from South Africa ↗</a><span class="pap-cite mono">Lucia Corno, Eliana La Ferrara &amp; Justine Burns · American Economic Review, 2022</span></span>
+            <span class="res-desc"><span lang="en">Randomly assigned roommates, and measured prejudice. On how contact changes a stereotype, and under which conditions it does not.</span><span lang="fr">Des colocataires tirés au sort, et des préjugés mesurés. Sur la manière dont le contact modifie un stéréotype, et les conditions où il ne le fait pas.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · South Africa</span><span lang="fr">Expérience aléatoire · Afrique du Sud</span></span>
+          </li>
+          <li data-theme="norms" data-sub="ecole" data-method="desc">
+            <canvas class="row-art" data-icon="ethnic" data-seed="496" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/aer.p20161121" target="_blank" rel="noopener">The Math Gender Gap: The Role of Culture ↗</a><span class="pap-cite mono">Natalia Nollenberger, Núria Rodríguez-Planas &amp; Almudena Sevilla · American Economic Review P&amp;P, 2016</span></span>
+            <span class="res-desc"><span lang="en">Uses second-generation immigrants to separate culture from school. Short, and a method that transfers to many other questions.</span><span lang="fr">Utilise les immigrés de deuxième génération pour séparer la culture de l’école. Court, et une méthode transposable à beaucoup d’autres questions.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · Cross-country</span><span lang="fr">Descriptif et mesure · Transversal</span></span>
+          </li>
+          <li data-theme="norms" data-sub="croyances" data-method="rct">
+            <canvas class="row-art" data-icon="ethnic" data-seed="503" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/aer.20180975" target="_blank" rel="noopener">Misperceived Social Norms: Women Working Outside the Home in Saudi Arabia ↗</a><span class="pap-cite mono">Leonardo Bursztyn, Alessandra González &amp; David Yanagizawa-Drott · American Economic Review, 2020</span></span>
+            <span class="res-desc"><span lang="en">Men privately support women working and wrongly think others do not. Correcting the belief changes their behaviour. The cleanest demonstration that a norm can be a misreading.</span><span lang="fr">Les hommes soutiennent en privé le travail des femmes et croient à tort que les autres non. Corriger la croyance change leur comportement. La démonstration la plus nette qu’une norme peut être une erreur de lecture.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · Saudi Arabia</span><span lang="fr">Expérience aléatoire · Arabie saoudite</span></span>
+          </li>
+          <li data-theme="norms" data-sub="origines" data-method="hist">
+            <canvas class="row-art" data-icon="ethnic" data-seed="510" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1093/qje/qjt005" target="_blank" rel="noopener">On the Origins of Gender Roles: Women and the Plough ↗</a><span class="pap-cite mono">Alberto Alesina, Paola Giuliano &amp; Nathan Nunn · Quarterly Journal of Economics, 2013</span></span>
+            <span class="res-desc"><span lang="en">Contested, and worth reading for that too: how far back can you push the origin of a norm before the argument stops holding?</span><span lang="fr">Contesté, et à lire aussi pour cela : jusqu’où peut-on remonter l’origine d’une norme avant que l’argument ne tienne plus ?</span></span>
+            <span class="mono dim res-tag"><span lang="en">Historical &amp; comparative</span><span lang="fr">Historique et comparatif</span></span>
+          </li>
+          <li data-theme="norms" data-sub="origines" data-method="hist">
+            <canvas class="row-art" data-icon="ethnic" data-seed="517" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1007/s10887-015-9119-y" target="_blank" rel="noopener">Modern Gender Roles and Agricultural History: The Neolithic Inheritance ↗</a><span class="pap-cite mono">Casper Worm Hansen, Peter Sandholt Jensen &amp; Christian Volmar Skovsgaard · Journal of Economic Growth, 2015</span></span>
+            <span class="res-desc"><span lang="en">Pushes the origin of gender roles back further than the plough, to the Neolithic transition. To read against Alesina, Giuliano and Nunn.</span><span lang="fr">Fait remonter l’origine des rôles de genre plus loin que la charrue, jusqu’à la transition néolithique. À lire face à Alesina, Giuliano et Nunn.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Historical &amp; comparative</span><span lang="fr">Historique et comparatif</span></span>
+          </li>
+          <li data-theme="norms" data-sub="identite" data-method="desc">
+            <canvas class="row-art" data-icon="ethnic" data-seed="524" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1093/qje/qjv001" target="_blank" rel="noopener">Gender Identity and Relative Income within Households ↗</a><span class="pap-cite mono">Marianne Bertrand, Emir Kamenica &amp; Jessica Pan · Quarterly Journal of Economics, 2015</span></span>
+            <span class="res-desc"><span lang="en">The discontinuity at the point where the wife earns more than the husband. A striking figure, and a lesson in how to read one.</span><span lang="fr">La discontinuité au point où la femme gagne plus que son mari. Une figure frappante, et une leçon sur la manière de la lire.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · United States</span><span lang="fr">Descriptif et mesure · États-Unis</span></span>
+          </li>
+          <li data-theme="norms" data-sub="religion" data-method="theory">
+            <canvas class="row-art" data-icon="ethnic" data-seed="531" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1093/qje/qjs045" target="_blank" rel="noopener">Veiling ↗</a><span class="pap-cite mono">Jean-Paul Carvalho · Quarterly Journal of Economics, 2012</span></span>
+            <span class="res-desc"><span lang="en">Veiling as a commitment device that lets women enter public space. A model that makes a practice legible without excusing it.</span><span lang="fr">Le voile comme dispositif d’engagement qui permet aux femmes d’entrer dans l’espace public. Un modèle qui rend une pratique lisible sans l’excuser.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Theory</span><span lang="fr">Théorie</span></span>
+          </li>
+          <li data-theme="norms" data-sub="religion" data-method="desc">
+            <canvas class="row-art" data-icon="ethnic" data-seed="538" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1111/ecoj.12416" target="_blank" rel="noopener">Education, Social Mobility and Religious Movements: The Islamic Revival in Egypt ↗</a><span class="pap-cite mono">Christine Binzel &amp; Jean-Paul Carvalho · Economic Journal, 2017</span></span>
+            <span class="res-desc"><span lang="en">Educated young people with blocked mobility turn to religious movements. An argument about frustrated expectations, not about belief.</span><span lang="fr">Des jeunes éduqués dont la mobilité est bloquée se tournent vers les mouvements religieux. Un argument sur les attentes déçues, pas sur la croyance.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · Egypt</span><span lang="fr">Descriptif et mesure · Égypte</span></span>
+          </li>
+          <li data-theme="family" data-sub="fgc" data-method="hist">
+            <canvas class="row-art" data-icon="network" data-seed="545" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1920/wp.ifs.2025.2225" target="_blank" rel="noopener">Female Genital Cutting and the Slave Trade ↗</a><span class="pap-cite mono">Lucia Corno, Eliana La Ferrara &amp; Alessandra Voena · IFS working paper, 2025</span></span>
+            <span class="res-desc"><span lang="en">Links cutting to slave-raiding routes. Still a working paper, and an argument I keep thinking about.</span><span lang="fr">Relie l’excision aux routes de la traite. Encore un document de travail, et un argument auquel je repense souvent.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Historical &amp; comparative · Sub-Saharan Africa</span><span lang="fr">Historique et comparatif · Afrique subsaharienne</span></span>
+          </li>
+          <li data-theme="family" data-sub="fgc" data-method="desc">
+            <canvas class="row-art" data-icon="network" data-seed="552" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://sites.google.com/view/suzanna-khalifa/research" target="_blank" rel="noopener">Female Genital Cutting and Bride Price ↗</a><span class="pap-cite mono">Suzanna Khalifa · working paper, revise and resubmit at the Quarterly Journal of Economics</span></span>
+            <span class="res-desc"><span lang="en">Why cutting persists where marriage payments flow towards the bride’s family. Best job market paper, European Economic Association.</span><span lang="fr">Pourquoi l’excision persiste là où les transferts matrimoniaux vont vers la famille de l’épouse. Meilleur job market paper de l’European Economic Association.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement</span><span lang="fr">Descriptif et mesure</span></span>
+          </li>
+          <li data-theme="family" data-sub="fgc" data-method="desc">
+            <canvas class="row-art" data-icon="network" data-seed="559" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jebo.2020.05.016" target="_blank" rel="noopener">Persistent Norms and Tipping Points: The Case of Female Genital Cutting ↗</a><span class="pap-cite mono">Lindsey Novak · Journal of Economic Behavior &amp; Organization, 2020</span></span>
+            <span class="res-desc"><span lang="en">Tests the tipping-point story directly: does cutting collapse once enough families abandon it, or not?</span><span lang="fr">Teste directement l’hypothèse du point de bascule : l’excision s’effondre-t-elle une fois qu’assez de familles l’abandonnent, ou non ?</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · Senegal</span><span lang="fr">Descriptif et mesure · Sénégal</span></span>
+          </li>
+          <li data-theme="family" data-sub="fgc" data-method="did">
+            <canvas class="row-art" data-icon="network" data-seed="566" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1093/wber/lhac021" target="_blank" rel="noopener">Legal Bans, Female Genital Cutting, and Education: Evidence from Senegal ↗</a><span class="pap-cite mono">Jorge García-Hombrados &amp; Alfonso Salgado · World Bank Economic Review, 2022</span></span>
+            <span class="res-desc"><span lang="en">A ban that reduces cutting and raises schooling at the same time. The rare case where the law does what it was meant to do.</span><span lang="fr">Une interdiction qui réduit l’excision et augmente la scolarisation en même temps. Le cas rare où la loi fait ce qu’elle était censée faire.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · Senegal</span><span lang="fr">Différences de différences · Sénégal</span></span>
+          </li>
+          <li data-theme="family" data-sub="fgc" data-method="did">
+            <canvas class="row-art" data-icon="network" data-seed="573" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://www.iza.org/publications/dp/18524" target="_blank" rel="noopener">Shifting the Value of Norms: Fast Internet, Premarital Sex, and the Erosion of Female Genital Cutting ↗</a><span class="pap-cite mono">Jorge García-Hombrados, Daniel Pérez-Parra &amp; Riccardo Ciacci · IZA discussion paper, 2026</span></span>
+            <span class="res-desc"><span lang="en">The staggered arrival of 3G reduces cutting — but not through anti-FGC messaging. It works by lowering the stigma on premarital sex, which is what the practice was meant to enforce. A harmful norm falls when its purpose loses value.</span><span lang="fr">L’arrivée échelonnée de la 3G fait reculer l’excision — mais pas par les campagnes en ligne. Elle agit en abaissant le stigmate du rapport prénuptial, ce que la pratique était censée faire respecter. Une norme néfaste tombe quand sa fonction perd sa valeur.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · Nigeria</span><span lang="fr">Différences de différences · Nigeria</span></span>
+          </li>
+          <li data-theme="family" data-sub="mariageprecoce" data-method="struct">
+            <canvas class="row-art" data-icon="network" data-seed="580" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jdeveco.2023.103047" target="_blank" rel="noopener">Child Marriage as Informal Insurance: Empirical Evidence and Policy Simulations ↗</a><span class="pap-cite mono">Lucia Corno &amp; Alessandra Voena · Journal of Development Economics, 2023</span></span>
+            <span class="res-desc"><span lang="en">Takes the insurance argument seriously enough to simulate what a ban would do. Good for seeing what a model adds to a reduced form.</span><span lang="fr">Prend l’argument assurantiel suffisamment au sérieux pour simuler ce que ferait une interdiction. Utile pour voir ce qu’un modèle ajoute à une forme réduite.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Structural model</span><span lang="fr">Modèle structurel</span></span>
+          </li>
+          <li data-theme="family" data-sub="mariageprecoce" data-method="iv">
+            <canvas class="row-art" data-icon="network" data-seed="587" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1086/593333" target="_blank" rel="noopener">Early Marriage, Age of Menarche, and Female Schooling Attainment in Bangladesh ↗</a><span class="pap-cite mono">Erica Field &amp; Attila Ambrus · Journal of Political Economy, 2008</span></span>
+            <span class="res-desc"><span lang="en">Age at menarche as a source of variation in age at marriage. An instrument you have to think hard about, which is the point.</span><span lang="fr">L’âge des premières règles comme source de variation de l’âge au mariage. Un instrument sur lequel il faut réfléchir longuement, et c’est tout l’intérêt.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Instrument or natural experiment · Bangladesh</span><span lang="fr">Instrument ou expérience naturelle · Bangladesh</span></span>
+          </li>
+          <li data-theme="family" data-sub="mariageprecoce" data-method="iv">
+            <canvas class="row-art" data-icon="network" data-seed="594" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1007/s00148-021-00873-y" target="_blank" rel="noopener">Child Marriage and Infant Mortality: Causal Evidence from Ethiopia ↗</a><span class="pap-cite mono">Jorge García-Hombrados · Journal of Population Economics, 2021</span></span>
+            <span class="res-desc"><span lang="en">Measures what early marriage costs the next generation, not only the woman herself.</span><span lang="fr">Mesure ce que le mariage précoce coûte à la génération suivante, et pas seulement à la femme elle-même.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Instrument or natural experiment · Ethiopia</span><span lang="fr">Instrument ou expérience naturelle · Éthiopie</span></span>
+          </li>
+          <li data-theme="family" data-sub="transferts" data-method="iv">
+            <canvas class="row-art" data-icon="network" data-seed="601" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.3982/ecta15505" target="_blank" rel="noopener">Age of Marriage, Weather Shocks, and the Direction of Marriage Payments ↗</a><span class="pap-cite mono">Lucia Corno, Nicole Hildebrandt &amp; Alessandra Voena · Econometrica, 2020</span></span>
+            <span class="res-desc"><span lang="en">A drought advances marriage where bride price is paid and delays it where dowry is. The same shock, opposite signs, explained by one mechanism.</span><span lang="fr">Une sécheresse avance le mariage là où l’on paie un prix de la fiancée et le retarde là où l’on paie une dot. Le même choc, des signes opposés, expliqués par un seul mécanisme.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Instrument or natural experiment · Sub-Saharan Africa</span><span lang="fr">Instrument ou expérience naturelle · Afrique subsaharienne</span></span>
+          </li>
+          <li data-theme="family" data-sub="transferts" data-method="hist">
+            <canvas class="row-art" data-icon="network" data-seed="608" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1086/704572" target="_blank" rel="noopener">Bride Price and Female Education ↗</a><span class="pap-cite mono">Nava Ashraf, Natalie Bau, Nathan Nunn &amp; Alessandra Voena · Journal of Political Economy, 2020</span></span>
+            <span class="res-desc"><span lang="en">A school-building programme raises girls’ schooling only where bride price is practised, because the custom gives parents a reason to invest.</span><span lang="fr">Un programme de construction d’écoles augmente la scolarisation des filles seulement là où le prix de la fiancée se pratique, parce que la coutume donne aux parents une raison d’investir.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Historical &amp; comparative · Sub-Saharan Africa</span><span lang="fr">Historique et comparatif · Afrique subsaharienne</span></span>
+          </li>
+          <li data-theme="family" data-sub="transferts" data-method="survey">
+            <canvas class="row-art" data-icon="network" data-seed="615" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/jep.21.4.151" target="_blank" rel="noopener">The Economics of Dowry and Brideprice ↗</a><span class="pap-cite mono">Siwan Anderson · Journal of Economic Perspectives, 2007</span></span>
+            <span class="res-desc"><span lang="en">Twenty pages that organise marriage payments across the world. The piece I come back to whenever I mix up the two directions.</span><span lang="fr">Vingt pages qui organisent les paiements matrimoniaux à l’échelle du monde. Le texte sur lequel je reviens chaque fois que je confonds les deux sens.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Review</span><span lang="fr">Revue de littérature</span></span>
+          </li>
+          <li data-theme="family" data-sub="fecondite" data-method="rct">
+            <canvas class="row-art" data-icon="network" data-seed="622" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/aer.104.7.2210" target="_blank" rel="noopener">Household Bargaining and Excess Fertility: An Experimental Study in Zambia ↗</a><span class="pap-cite mono">Nava Ashraf, Erica Field &amp; Jean Lee · American Economic Review, 2014</span></span>
+            <span class="res-desc"><span lang="en">Giving contraception to the woman alone or to the couple produces different take-up and different wellbeing. The design makes disagreement inside the couple visible.</span><span lang="fr">Donner la contraception à la femme seule ou au couple produit un recours et un bien-être différents. Le design rend visible le désaccord à l’intérieur du couple.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · Zambia</span><span lang="fr">Expérience aléatoire · Zambie</span></span>
+          </li>
+          <li data-theme="family" data-sub="fecondite" data-method="rct">
+            <canvas class="row-art" data-icon="network" data-seed="629" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1093/qje/qjr032" target="_blank" rel="noopener">Cash or Condition? Evidence from a Cash Transfer Experiment ↗</a><span class="pap-cite mono">Sarah Baird, Craig McIntosh &amp; Berk Özler · Quarterly Journal of Economics, 2011</span></span>
+            <span class="res-desc"><span lang="en">Conditional and unconditional arms in the same experiment: the condition helps schooling, its absence helps marriage and pregnancy outcomes.</span><span lang="fr">Des bras conditionnel et inconditionnel dans la même expérience : la condition aide la scolarisation, son absence aide le mariage et les grossesses.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · Malawi</span><span lang="fr">Expérience aléatoire · Malawi</span></span>
+          </li>
+          <li data-theme="family" data-sub="fecondite" data-method="did">
+            <canvas class="row-art" data-icon="network" data-seed="636" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/app.4.4.1" target="_blank" rel="noopener">Soap Operas and Fertility: Evidence from Brazil ↗</a><span class="pap-cite mono">Eliana La Ferrara, Alberto Chong &amp; Suzanne Duryea · AEJ: Applied Economics, 2012</span></span>
+            <span class="res-desc"><span lang="en">The staggered arrival of a television network, and fertility falling where the small families of the novelas are watched.</span><span lang="fr">L’arrivée échelonnée d’un réseau de télévision, et la fécondité qui baisse là où l’on regarde les petites familles des telenovelas.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · Brazil</span><span lang="fr">Différences de différences · Brésil</span></span>
+          </li>
+          <li data-theme="family" data-sub="fils" data-method="desc">
+            <canvas class="row-art" data-icon="network" data-seed="643" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jdeveco.2016.01.004" target="_blank" rel="noopener">Sons as Widowhood Insurance: Evidence from Senegal ↗</a><span class="pap-cite mono">Sylvie Lambert &amp; Pauline Rossi · Journal of Development Economics, 2016</span></span>
+            <span class="res-desc"><span lang="en">Why a woman may want sons, stated as an economic problem rather than a preference. It reframes son preference entirely.</span><span lang="fr">Pourquoi une femme peut vouloir des fils, posé comme un problème économique plutôt que comme une préférence. Cela recadre entièrement la préférence pour les fils.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · Senegal</span><span lang="fr">Descriptif et mesure · Sénégal</span></span>
+          </li>
+          <li data-theme="family" data-sub="fils" data-method="desc">
+            <canvas class="row-art" data-icon="network" data-seed="650" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1093/qje/qjr029" target="_blank" rel="noopener">Why Do Mothers Breastfeed Girls Less Than Boys? ↗</a><span class="pap-cite mono">Seema Jayachandran &amp; Ilyana Kuziemko · Quarterly Journal of Economics, 2011</span></span>
+            <span class="res-desc"><span lang="en">Breastfeeding delays the next pregnancy, so wanting a son shortens a daughter’s feeding. Discrimination without anyone intending it.</span><span lang="fr">L’allaitement retarde la grossesse suivante, donc vouloir un fils raccourcit l’allaitement d’une fille. Une discrimination que personne n’a l’intention d’exercer.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · India</span><span lang="fr">Descriptif et mesure · Inde</span></span>
+          </li>
+          <li data-theme="family" data-sub="fils" data-method="did">
+            <canvas class="row-art" data-icon="network" data-seed="657" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1162/qjec.2008.123.3.1251" target="_blank" rel="noopener">Missing Women and the Price of Tea in China ↗</a><span class="pap-cite mono">Nancy Qian · Quarterly Journal of Economics, 2008</span></span>
+            <span class="res-desc"><span lang="en">Tea needs women’s labour, orchards need men’s: raising the relative value of female work raises female survival. A model of how to build an identification strategy out of a crop.</span><span lang="fr">Le thé demande du travail féminin, les vergers du travail masculin : augmenter la valeur relative du travail des femmes augmente la survie des filles. Un modèle de stratégie d’identification construite à partir d’une culture agricole.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · China</span><span lang="fr">Différences de différences · Chine</span></span>
+          </li>
+          <li data-theme="family" data-sub="fils" data-method="desc">
+            <canvas class="row-art" data-icon="network" data-seed="664" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/aer.20151282" target="_blank" rel="noopener">Why Are Indian Children So Short? The Role of Birth Order and Son Preference ↗</a><span class="pap-cite mono">Seema Jayachandran &amp; Rohini Pande · American Economic Review, 2017</span></span>
+            <span class="res-desc"><span lang="en">Indian children are shorter than African children, and the gap opens from the second birth onwards. Son preference, measured in centimetres.</span><span lang="fr">Les enfants indiens sont plus petits que les enfants africains, et l’écart s’ouvre à partir du deuxième enfant. La préférence pour les fils, mesurée en centimètres.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · India</span><span lang="fr">Descriptif et mesure · Inde</span></span>
+          </li>
+          <li data-theme="family" data-sub="structure" data-method="desc">
+            <canvas class="row-art" data-icon="network" data-seed="671" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1093/wber/lhz052" target="_blank" rel="noopener">Inequality, Poverty and the Intra-Household Allocation of Consumption in Senegal ↗</a><span class="pap-cite mono">Philippe De Vreyer &amp; Sylvie Lambert · World Bank Economic Review, 2021</span></span>
+            <span class="res-desc"><span lang="en">Measures consumption inside the household rather than assuming it is shared. A lot of poverty turns out to be invisible at household level.</span><span lang="fr">Mesure la consommation à l’intérieur du ménage au lieu de supposer qu’elle est partagée. Une grande part de la pauvreté se révèle invisible au niveau du ménage.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · Senegal</span><span lang="fr">Descriptif et mesure · Sénégal</span></span>
+          </li>
+          <li data-theme="family" data-sub="structure" data-method="desc">
+            <canvas class="row-art" data-icon="network" data-seed="678" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1162/rest_a_01326" target="_blank" rel="noopener">Sibling Differences in Genetic Propensity for Education ↗</a><span class="pap-cite mono">Anna Sanz-de-Galdeano &amp; Anastasia Terskaya · Review of Economics and Statistics, 2025</span></span>
+            <span class="res-desc"><span lang="en">Siblings differ in genetic propensity for schooling, and parents respond to the difference. A hard question handled carefully.</span><span lang="fr">Les frères et sœurs diffèrent par leur propension génétique à la scolarisation, et les parents réagissent à cette différence. Une question difficile traitée avec soin.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement</span><span lang="fr">Descriptif et mesure</span></span>
+          </li>
+          <li data-theme="family" data-sub="structure" data-method="hist">
+            <canvas class="row-art" data-icon="network" data-seed="685" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jdeveco.2015.06.005" target="_blank" rel="noopener">African Polygamy: Past and Present ↗</a><span class="pap-cite mono">James Fenske · Journal of Development Economics, 2015</span></span>
+            <span class="res-desc"><span lang="en">Why polygamy declines where it declines. The reference point before saying anything about co-wives.</span><span lang="fr">Pourquoi la polygamie recule là où elle recule. Le point de repère avant de dire quoi que ce soit sur les co-épouses.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Historical &amp; comparative · Sub-Saharan Africa</span><span lang="fr">Historique et comparatif · Afrique subsaharienne</span></span>
+          </li>
+          <li data-theme="educ" data-sub="acces" data-method="did">
+            <canvas class="row-art" data-icon="school" data-seed="692" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jce.2021.07.002" target="_blank" rel="noopener">Less Debt, More Schooling? Evidence from Cross-Country Micro Data ↗</a><span class="pap-cite mono">Marin Ferry, Marine de Talancé &amp; Miguel Niño-Zarazúa · Journal of Comparative Economics, 2022</span></span>
+            <span class="res-desc"><span lang="en">Debt relief frees public money and primary attendance rises — and the gains narrow gaps by wealth, religion, ethnicity and place. 177 DHS rounds stacked into a difference-in-differences, with a spatial discontinuity alongside.</span><span lang="fr">L’allègement de dette libère de l’argent public et la scolarisation primaire augmente — et les gains resserrent les écarts de richesse, de religion, d’ethnie et de territoire. 177 vagues d’EDS empilées en différences de différences, avec une discontinuité spatiale à côté.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · 44 low-income countries</span><span lang="fr">Différences de différences · 44 pays à faible revenu</span></span>
+          </li>
+          <li data-theme="educ" data-sub="filles" data-method="did">
+            <canvas class="row-art" data-icon="school" data-seed="699" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/app.20160004" target="_blank" rel="noopener">Cycling to School: Increasing Secondary School Enrollment for Girls in India ↗</a><span class="pap-cite mono">Karthik Muralidharan &amp; Nishith Prakash · AEJ: Applied Economics, 2017</span></span>
+            <span class="res-desc"><span lang="en">Give girls a bicycle and enrolment rises. Simple, cheap, and carefully shown not to be a story about something else.</span><span lang="fr">Donner un vélo aux filles et la scolarisation augmente. Simple, peu coûteux, et soigneusement démontré comme n’étant pas l’histoire d’autre chose.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · India</span><span lang="fr">Différences de différences · Inde</span></span>
+          </li>
+          <li data-theme="educ" data-sub="filles" data-method="rct">
+            <canvas class="row-art" data-icon="school" data-seed="706" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/app.5.3.27" target="_blank" rel="noopener">Bringing Education to Afghan Girls: A Randomized Controlled Trial of Village-Based Schools ↗</a><span class="pap-cite mono">Dana Burde &amp; Leigh Linden · AEJ: Applied Economics, 2013</span></span>
+            <span class="res-desc"><span lang="en">Distance to school as the binding constraint, and the gender gap closing almost entirely when the school is in the village.</span><span lang="fr">La distance à l’école comme contrainte déterminante, et l’écart entre filles et garçons qui disparaît presque quand l’école est dans le village.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · Afghanistan</span><span lang="fr">Expérience aléatoire · Afghanistan</span></span>
+          </li>
+          <li data-theme="educ" data-sub="filles" data-method="rct">
+            <canvas class="row-art" data-icon="school" data-seed="713" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/app.5.3.41" target="_blank" rel="noopener">The Effects of “Girl-Friendly” Schools: Evidence from the BRIGHT School Construction Program in Burkina Faso ↗</a><span class="pap-cite mono">Harounan Kazianga, Dan Levy, Leigh Linden &amp; Matt Sloan · AEJ: Applied Economics, 2013</span></span>
+            <span class="res-desc"><span lang="en">Schools designed for girls, evaluated as such. Useful for seeing what “gender-sensitive” means once it has to be measured.</span><span lang="fr">Des écoles conçues pour les filles, évaluées comme telles. Utile pour voir ce que « sensible au genre » veut dire une fois qu’il faut le mesurer.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · Burkina Faso</span><span lang="fr">Expérience aléatoire · Burkina Faso</span></span>
+          </li>
+          <li data-theme="educ" data-sub="incitations" data-method="rct">
+            <canvas class="row-art" data-icon="school" data-seed="720" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/app.4.4.121" target="_blank" rel="noopener">Longer-Term Impacts of Mentoring, Educational Services, and Incentives to Learn ↗</a><span class="pap-cite mono">Núria Rodríguez-Planas · AEJ: Applied Economics, 2012</span></span>
+            <span class="res-desc"><span lang="en">A long follow-up of a youth programme, with effects that diverge sharply between girls and boys.</span><span lang="fr">Un suivi long d’un programme pour les jeunes, dont les effets divergent nettement entre filles et garçons.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · United States</span><span lang="fr">Expérience aléatoire · États-Unis</span></span>
+          </li>
+          <li data-theme="educ" data-sub="incitations" data-method="rct">
+            <canvas class="row-art" data-icon="school" data-seed="727" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/aer.20121607" target="_blank" rel="noopener">Education, HIV, and Early Fertility: Experimental Evidence from Kenya ↗</a><span class="pap-cite mono">Esther Duflo, Pascaline Dupas &amp; Michael Kremer · American Economic Review, 2015</span></span>
+            <span class="res-desc"><span lang="en">Free uniforms and HIV education, crossed in the same experiment, with effects on pregnancy that go in different directions.</span><span lang="fr">Uniformes gratuits et éducation au VIH, croisés dans la même expérience, avec des effets sur les grossesses qui vont dans des sens différents.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · Kenya</span><span lang="fr">Expérience aléatoire · Kenya</span></span>
+          </li>
+          <li data-theme="educ" data-sub="retours" data-method="did">
+            <canvas class="row-art" data-icon="school" data-seed="734" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/aer.91.4.795" target="_blank" rel="noopener">Schooling and Labor Market Consequences of School Construction in Indonesia ↗</a><span class="pap-cite mono">Esther Duflo · American Economic Review, 2001</span></span>
+            <span class="res-desc"><span lang="en">The paper that taught a generation how to turn a building programme into an identification strategy.</span><span lang="fr">Le papier qui a appris à toute une génération comment transformer un programme de construction en stratégie d’identification.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · Indonesia</span><span lang="fr">Différences de différences · Indonésie</span></span>
+          </li>
+          <li data-theme="educ" data-sub="retours" data-method="rct">
+            <canvas class="row-art" data-icon="school" data-seed="741" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/aer.20241001" target="_blank" rel="noopener">Intergenerational Impacts of Secondary Education: Experimental Evidence from Ghana ↗</a><span class="pap-cite mono">Esther Duflo, Pascaline Dupas, Elizabeth Spelke &amp; Mark Walsh · American Economic Review, 2026</span></span>
+            <span class="res-desc"><span lang="en">A scholarship lottery followed long enough to see what it does to the next generation. The follow-up almost nobody manages to run.</span><span lang="fr">Une loterie de bourses suivie assez longtemps pour voir ce qu’elle fait à la génération suivante. Le suivi que presque personne ne parvient à mener.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · Ghana</span><span lang="fr">Expérience aléatoire · Ghana</span></span>
+          </li>
+          <li data-theme="work" data-sub="revue" data-method="survey">
+            <canvas class="row-art" data-icon="jobs" data-seed="748" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/jel.50.4.1051" target="_blank" rel="noopener">Women Empowerment and Economic Development ↗</a><span class="pap-cite mono">Esther Duflo · Journal of Economic Literature, 2012</span></span>
+            <span class="res-desc"><span lang="en">The article that states the two-way relationship without pretending it resolves it. Still the best starting point.</span><span lang="fr">L’article qui pose la relation à double sens sans prétendre la résoudre. Toujours le meilleur point de départ.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Review</span><span lang="fr">Revue de littérature</span></span>
+          </li>
+          <li data-theme="work" data-sub="emploi" data-method="did">
+            <canvas class="row-art" data-icon="jobs" data-seed="755" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jdeveco.2015.01.006" target="_blank" rel="noopener">Manufacturing Growth and the Lives of Bangladeshi Women ↗</a><span class="pap-cite mono">Rachel Heath &amp; A. Mushfiq Mobarak · Journal of Development Economics, 2015</span></span>
+            <span class="res-desc"><span lang="en">Garment factories delay marriage and keep girls in school longer. The paper to cite when someone says factory work only harms women.</span><span lang="fr">Les usines textiles retardent le mariage et maintiennent les filles plus longtemps à l’école. Le papier à citer quand on affirme que le travail en usine ne fait que nuire aux femmes.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · Bangladesh</span><span lang="fr">Différences de différences · Bangladesh</span></span>
+          </li>
+          <li data-theme="work" data-sub="emploi" data-method="rct">
+            <canvas class="row-art" data-icon="jobs" data-seed="762" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/app.20170416" target="_blank" rel="noopener">Women’s Empowerment in Action: Evidence from a Randomized Control Trial in Africa ↗</a><span class="pap-cite mono">Oriana Bandiera, Niklas Buehren, Robin Burgess, Markus Goldstein, Selim Gulesci, Imran Rasul &amp; Munshi Sulaiman · AEJ: Applied Economics, 2020</span></span>
+            <span class="res-desc"><span lang="en">Vocational and life-skills training together, with effects on income, pregnancy and reported coerced sex. A rare case where the violence outcome is not an afterthought.</span><span lang="fr">Formation professionnelle et compétences de vie ensemble, avec des effets sur le revenu, les grossesses et les rapports sexuels déclarés comme forcés. Un cas rare où la violence n’est pas une variable ajoutée après coup.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · Uganda</span><span lang="fr">Expérience aléatoire · Ouganda</span></span>
+          </li>
+          <li data-theme="work" data-sub="emploi" data-method="iv">
+            <canvas class="row-art" data-icon="jobs" data-seed="769" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/app.6.4.197" target="_blank" rel="noopener">Soil Endowments, Female Labor Force Participation, and the Demographic Deficit of Women in India ↗</a><span class="pap-cite mono">Eliana Carranza · AEJ: Applied Economics, 2014</span></span>
+            <span class="res-desc"><span lang="en">Soil type determines how much female labour the land needs, and where women are worth less they go missing.</span><span lang="fr">Le type de sol détermine la quantité de travail féminin dont la terre a besoin, et là où les femmes valent moins, elles disparaissent.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Instrument or natural experiment · India</span><span lang="fr">Instrument ou expérience naturelle · Inde</span></span>
+          </li>
+          <li data-theme="work" data-sub="emploi" data-method="iv">
+            <canvas class="row-art" data-icon="jobs" data-seed="776" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1086/668675" target="_blank" rel="noopener">Outsourcing Household Production: Foreign Domestic Workers and Native Labor Supply in Hong Kong ↗</a><span class="pap-cite mono">Patricia Cortés &amp; Jessica Pan · Journal of Labor Economics, 2013</span></span>
+            <span class="res-desc"><span lang="en">Who takes over the domestic work when a woman goes out to work. The question most empowerment papers leave unanswered.</span><span lang="fr">Qui reprend le travail domestique quand une femme part travailler. La question que la plupart des papiers sur l’autonomisation laissent sans réponse.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Instrument or natural experiment · Hong Kong</span><span lang="fr">Instrument ou expérience naturelle · Hong Kong</span></span>
+          </li>
+          <li data-theme="work" data-sub="ressources" data-method="rct">
+            <canvas class="row-art" data-icon="jobs" data-seed="783" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/aer.20200705" target="_blank" rel="noopener">On Her Own Account: How Strengthening Women’s Financial Control Impacts Labor Supply and Gender Norms ↗</a><span class="pap-cite mono">Erica Field, Rohini Pande, Natalia Rigol, Simone Schaner &amp; Charity Troyer Moore · American Economic Review, 2021</span></span>
+            <span class="res-desc"><span lang="en">Paying wages into her own account, rather than giving her money, changes labour supply and norms. The channel matters as much as the amount.</span><span lang="fr">Verser le salaire sur son propre compte, plutôt que lui donner de l’argent, change l’offre de travail et les normes. Le canal compte autant que le montant.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · India</span><span lang="fr">Expérience aléatoire · Inde</span></span>
+          </li>
+          <li data-theme="work" data-sub="ressources" data-method="iv">
+            <canvas class="row-art" data-icon="jobs" data-seed="790" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.worlddev.2012.12.018" target="_blank" rel="noopener">The Effect of Women’s Bargaining Power on Child Nutrition in Rural Senegal ↗</a><span class="pap-cite mono">Aurélia Lépine &amp; Eric Strobl · World Development, 2013</span></span>
+            <span class="res-desc"><span lang="en">Bargaining power measured carefully, and a nutrition outcome that is not self-reported. Both are harder than they look.</span><span lang="fr">Un pouvoir de négociation mesuré soigneusement, et une variable de nutrition qui n’est pas auto-déclarée. Les deux sont plus difficiles qu’il n’y paraît.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Instrument or natural experiment · Senegal</span><span lang="fr">Instrument ou expérience naturelle · Sénégal</span></span>
+          </li>
+          <li data-theme="work" data-sub="garde" data-method="rct">
+            <canvas class="row-art" data-icon="jobs" data-seed="797" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/app.20230227" target="_blank" rel="noopener">Childcare, Labor Supply, and Business Development: Experimental Evidence from Uganda ↗</a><span class="pap-cite mono">Kjetil Bjorvatn, Denise Ferris, Selim Gulesci, Arne Nasgowitz, Vincent Somville &amp; Lore Vandewalle · AEJ: Applied Economics, 2025</span></span>
+            <span class="res-desc"><span lang="en">Childcare compared with an equivalent cash grant. Seeing the two arms side by side tells you what the constraint actually is.</span><span lang="fr">La garde d’enfants comparée à une subvention en espèces équivalente. Voir les deux bras côte à côte dit quelle est réellement la contrainte.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · Uganda</span><span lang="fr">Expérience aléatoire · Ouganda</span></span>
+          </li>
+          <li data-theme="work" data-sub="penalite" data-method="did">
+            <canvas class="row-art" data-icon="jobs" data-seed="804" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/app.20180010" target="_blank" rel="noopener">Children and Gender Inequality: Evidence from Denmark ↗</a><span class="pap-cite mono">Henrik Kleven, Camille Landais &amp; Jakob Egholt Søgaard · AEJ: Applied Economics, 2019</span></span>
+            <span class="res-desc"><span lang="en">The child penalty, in one event-study figure that is hard to forget. Rich-country evidence, but the method travels.</span><span lang="fr">La pénalité liée à l’enfant, dans une figure d’étude d’événement difficile à oublier. Un terrain de pays riche, mais la méthode voyage.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · Denmark</span><span lang="fr">Différences de différences · Danemark</span></span>
+          </li>
+          <li data-theme="migr" data-sub="revue" data-method="survey">
+            <canvas class="row-art" data-icon="coast" data-seed="811" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/jep.25.3.83" target="_blank" rel="noopener">Economics and Emigration: Trillion-Dollar Bills on the Sidewalk? ↗</a><span class="pap-cite mono">Michael Clemens · Journal of Economic Perspectives, 2011</span></span>
+            <span class="res-desc"><span lang="en">The single clearest statement of what the gains from migration look like. A good place to start before anything else.</span><span lang="fr">L’exposé le plus clair de ce à quoi ressemblent les gains de la migration. Un bon point de départ avant toute chose.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Review</span><span lang="fr">Revue de littérature</span></span>
+          </li>
+          <li data-theme="migr" data-sub="revue" data-method="desc">
+            <canvas class="row-art" data-icon="coast" data-seed="818" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1111/j.1468-0297.2008.02135.x" target="_blank" rel="noopener">Brain Drain and Human Capital Formation in Developing Countries: Winners and Losers ↗</a><span class="pap-cite mono">Michel Beine, Frédéric Docquier &amp; Hillel Rapoport · Economic Journal, 2008</span></span>
+            <span class="res-desc"><span lang="en">The possibility that emigration raises education at home, and the conditions under which it does not.</span><span lang="fr">La possibilité que l’émigration augmente l’éducation au pays, et les conditions dans lesquelles ce n’est pas le cas.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement</span><span lang="fr">Descriptif et mesure</span></span>
+          </li>
+          <li data-theme="migr" data-sub="retour" data-method="iv">
+            <canvas class="row-art" data-icon="coast" data-seed="825" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jce.2014.01.001" target="_blank" rel="noopener">Do Return Migrants Transfer Political Norms to Their Origin Country? ↗</a><span class="pap-cite mono">Lisa Chauvet &amp; Marion Mercier · Journal of Comparative Economics, 2014</span></span>
+            <span class="res-desc"><span lang="en">Migration as a channel for norms rather than only for money. A question I would like to see asked about violence.</span><span lang="fr">La migration comme canal de transmission de normes et pas seulement d’argent. Une question que j’aimerais voir posée sur la violence.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Instrument or natural experiment · Mali</span><span lang="fr">Instrument ou expérience naturelle · Mali</span></span>
+          </li>
+          <li data-theme="migr" data-sub="retour" data-method="desc">
+            <canvas class="row-art" data-icon="coast" data-seed="832" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jdeveco.2016.04.005" target="_blank" rel="noopener">The Return of the Prodigy Son: Do Return Migrants Make Better Leaders? ↗</a><span class="pap-cite mono">Marion Mercier · Journal of Development Economics, 2016</span></span>
+            <span class="res-desc"><span lang="en">Whether having lived abroad changes how someone governs. The companion to her paper on political norms.</span><span lang="fr">Si avoir vécu à l’étranger change la manière de gouverner. Le pendant de son papier sur les normes politiques.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · Africa</span><span lang="fr">Descriptif et mesure · Afrique</span></span>
+          </li>
+          <li data-theme="migr" data-sub="restes" data-method="iv">
+            <canvas class="row-art" data-icon="coast" data-seed="839" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jdeveco.2010.11.002" target="_blank" rel="noopener">The Intergenerational Effects of Paternal Migration on Schooling and Work ↗</a><span class="pap-cite mono">Francisca Antman · Journal of Development Economics, 2011</span></span>
+            <span class="res-desc"><span lang="en">What happens to the children when the father leaves. Separates the money he sends from the absence itself.</span><span lang="fr">Ce qui arrive aux enfants quand le père part. Sépare l’argent qu’il envoie de l’absence elle-même.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Instrument or natural experiment · Mexico</span><span lang="fr">Instrument ou expérience naturelle · Mexique</span></span>
+          </li>
+          <li data-theme="migr" data-sub="restes" data-method="rct">
+            <canvas class="row-art" data-icon="coast" data-seed="846" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jdeveco.2023.103169" target="_blank" rel="noopener">With or Without Him? Experimental Evidence on Cash Grants and Gender-Sensitive Migration ↗</a><span class="pap-cite mono">Jules Gazeaud, Nausheen Khan, Eric Mvukiyehe &amp; Olivier Sterck · Journal of Development Economics, 2023</span></span>
+            <span class="res-desc"><span lang="en">What a grant does to who leaves and who stays, read through gender. Rare, because migration experiments rarely ask that.</span><span lang="fr">Ce qu’une subvention fait à qui part et qui reste, lu à travers le genre. Rare, parce que les expériences sur la migration posent rarement la question.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · Comoros</span><span lang="fr">Expérience aléatoire · Comores</span></span>
+          </li>
+          <li data-theme="migr" data-sub="origine" data-method="rct">
+            <canvas class="row-art" data-icon="coast" data-seed="853" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1162/rest_a_01041" target="_blank" rel="noopener">Cash Transfers and Migration: Theory and Evidence from a Randomized Controlled Trial ↗</a><span class="pap-cite mono">Jules Gazeaud, Eric Mvukiyehe &amp; Olivier Sterck · Review of Economics and Statistics, 2023</span></span>
+            <span class="res-desc"><span lang="en">Cash can finance departure rather than prevent it. A result that cuts against how transfers are usually sold.</span><span lang="fr">L’argent peut financer le départ plutôt que l’empêcher. Un résultat qui va à l’encontre de la manière dont on vend habituellement les transferts.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · Comoros</span><span lang="fr">Expérience aléatoire · Comores</span></span>
+          </li>
+          <li data-theme="migr" data-sub="origine" data-method="iv">
+            <canvas class="row-art" data-icon="coast" data-seed="860" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.3386/w29862" target="_blank" rel="noopener">Abundance from Abroad: Migrant Income and Long-Run Economic Development ↗</a><span class="pap-cite mono">Gaurav Khanna, Emir Murathanoglu, Caroline Theoharides &amp; Dean Yang · NBER working paper, 2022</span></span>
+            <span class="res-desc"><span lang="en">Follows migrant income all the way back into the origin economy, over decades.</span><span lang="fr">Suit le revenu des migrants jusque dans l’économie d’origine, sur plusieurs décennies.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Instrument or natural experiment · Philippines</span><span lang="fr">Instrument ou expérience naturelle · Philippines</span></span>
+          </li>
+          <li data-theme="migr" data-sub="accueil" data-method="did">
+            <canvas class="row-art" data-icon="coast" data-seed="867" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1093/ej/uead059" target="_blank" rel="noopener">The Usual Suspects: Offender Origin, Media Reporting and Natives’ Attitudes Towards Immigration ↗</a><span class="pap-cite mono">Sekou Keita, Thomas Renault &amp; Jérôme Valette · Economic Journal, 2024</span></span>
+            <span class="res-desc"><span lang="en">A German paper starts naming offenders’ origins systematically, and concern about immigration goes down, not up: once origins are always given, native crime becomes visible too. 400,000 crime articles matched to a household panel.</span><span lang="fr">Un journal allemand se met à nommer systématiquement l’origine des auteurs d’infractions, et l’inquiétude sur l’immigration baisse au lieu de monter : dès lors qu’on donne toujours l’origine, la délinquance des natifs devient visible aussi. 400 000 articles de faits divers appariés à un panel de ménages.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · Germany</span><span lang="fr">Différences de différences · Allemagne</span></span>
+          </li>
+          <li data-theme="power" data-sub="representation" data-method="rct">
+            <canvas class="row-art" data-icon="admin" data-seed="874" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1111/j.1468-0262.2004.00539.x" target="_blank" rel="noopener">Women as Policy Makers: Evidence from a Randomized Policy Experiment in India ↗</a><span class="pap-cite mono">Raghabendra Chattopadhyay &amp; Esther Duflo · Econometrica, 2004</span></span>
+            <span class="res-desc"><span lang="en">Randomised quotas for women village heads, and public spending that shifts accordingly. The founding paper of the political-representation literature.</span><span lang="fr">Des quotas tirés au sort pour les cheffes de village, et des dépenses publiques qui se déplacent en conséquence. Le papier fondateur de la littérature sur la représentation politique.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · India</span><span lang="fr">Expérience aléatoire · Inde</span></span>
+          </li>
+          <li data-theme="power" data-sub="representation" data-method="rct">
+            <canvas class="row-art" data-icon="admin" data-seed="881" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1162/qjec.2009.124.4.1497" target="_blank" rel="noopener">Powerful Women: Does Exposure Reduce Bias? ↗</a><span class="pap-cite mono">Lori Beaman, Raghabendra Chattopadhyay, Esther Duflo, Rohini Pande &amp; Petia Topalova · Quarterly Journal of Economics, 2009</span></span>
+            <span class="res-desc"><span lang="en">Two mandated terms are needed before prejudice moves. A direct answer to the question of how long a norm takes to shift.</span><span lang="fr">Il faut deux mandats imposés avant que les préjugés ne bougent. Une réponse directe à la question du temps nécessaire pour déplacer une norme.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · India</span><span lang="fr">Expérience aléatoire · Inde</span></span>
+          </li>
+          <li data-theme="power" data-sub="representation" data-method="did">
+            <canvas class="row-art" data-icon="admin" data-seed="888" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/app.4.4.165" target="_blank" rel="noopener">The Power of Political Voice: Women’s Political Representation and Crime in India ↗</a><span class="pap-cite mono">Lakshmi Iyer, Anandi Mani, Prachi Mishra &amp; Petia Topalova · AEJ: Applied Economics, 2012</span></span>
+            <span class="res-desc"><span lang="en">Reported crimes against women rise with women’s representation — and the paper is careful about why that is probably good news.</span><span lang="fr">Les crimes déclarés contre les femmes augmentent avec leur représentation — et le papier est rigoureux sur les raisons pour lesquelles c’est probablement une bonne nouvelle.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · India</span><span lang="fr">Différences de différences · Inde</span></span>
+          </li>
+          <li data-theme="power" data-sub="representation" data-method="desc">
+            <canvas class="row-art" data-icon="admin" data-seed="895" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.worlddev.2019.03.004" target="_blank" rel="noopener">The Road Not Taken: Gender Gaps Along Paths to Political Power ↗</a><span class="pap-cite mono">Lakshmi Iyer &amp; Anandi Mani · World Development, 2019</span></span>
+            <span class="res-desc"><span lang="en">Where women drop out along the path to office, step by step. Quotas are only one of the gates.</span><span lang="fr">Où les femmes décrochent le long du chemin vers le pouvoir, étape par étape. Les quotas ne sont qu’une porte parmi d’autres.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · India</span><span lang="fr">Descriptif et mesure · Inde</span></span>
+          </li>
+          <li data-theme="power" data-sub="justice" data-method="did">
+            <canvas class="row-art" data-icon="admin" data-seed="902" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.2139/ssrn.3827615" target="_blank" rel="noopener">Gender, Crime and Punishment: Evidence from Women Police Stations in India ↗</a><span class="pap-cite mono">Sofia Amaral, Sonia Bhalotra &amp; Nishith Prakash · working paper, 2021</span></span>
+            <span class="res-desc"><span lang="en">All-women police stations raise reporting of violence. Still unpublished, and already one of the most cited pieces on institutional response.</span><span lang="fr">Les commissariats tenus par des femmes augmentent le signalement des violences. Toujours non publié, et déjà une des références les plus citées sur la réponse institutionnelle.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · India</span><span lang="fr">Différences de différences · Inde</span></span>
+          </li>
+          <li data-theme="power" data-sub="justice" data-method="did">
+            <canvas class="row-art" data-icon="admin" data-seed="909" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.3386/w30855" target="_blank" rel="noopener">Deterrence or Backlash? Arrests and the Dynamics of Domestic Violence ↗</a><span class="pap-cite mono">Sofia Amaral, Gordon Dahl, Victoria Endl-Geyer, Timo Hener &amp; Helmut Rainer · NBER working paper, 2023</span></span>
+            <span class="res-desc"><span lang="en">Does arresting the abuser deter him, or provoke him? The question most policy papers step around, asked head on.</span><span lang="fr">Arrêter l’agresseur le dissuade-t-il, ou le provoque-t-il ? La question que la plupart des papiers de politique publique contournent, posée frontalement.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences</span><span lang="fr">Différences de différences</span></span>
+          </li>
+          <li data-theme="power" data-sub="justice" data-method="did">
+            <canvas class="row-art" data-icon="admin" data-seed="916" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1017/s0003055420000684" target="_blank" rel="noopener">Gender, Law Enforcement, and Access to Justice: Evidence from All-Women Police Stations in India ↗</a><span class="pap-cite mono">Nirvikar Jassal · American Political Science Review, 2020</span></span>
+            <span class="res-desc"><span lang="en">The political science counterpart to Amaral, Bhalotra and Prakash, with a different data source and the same question.</span><span lang="fr">Le pendant en science politique du papier d’Amaral, Bhalotra et Prakash, avec une autre source de données et la même question.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · India</span><span lang="fr">Différences de différences · Inde</span></span>
+          </li>
+          <li data-theme="power" data-sub="droit" data-method="hist">
+            <canvas class="row-art" data-icon="admin" data-seed="923" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/aer.20151047" target="_blank" rel="noopener">Legal Origins and Female HIV ↗</a><span class="pap-cite mono">Siwan Anderson · American Economic Review, 2018</span></span>
+            <span class="res-desc"><span lang="en">Family law inherited from colonisation, and women’s HIV risk today. An argument about institutions that holds together over a very long run.</span><span lang="fr">Le droit de la famille hérité de la colonisation, et le risque de VIH des femmes aujourd’hui. Un argument institutionnel qui tient sur une très longue période.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Historical &amp; comparative</span><span lang="fr">Historique et comparatif</span></span>
+          </li>
+          <li data-theme="power" data-sub="droit" data-method="theory">
+            <canvas class="row-art" data-icon="admin" data-seed="930" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1162/qjec.2009.124.4.1541" target="_blank" rel="noopener">Women’s Liberation: What’s in It for Men? ↗</a><span class="pap-cite mono">Matthias Doepke &amp; Michèle Tertilt · Quarterly Journal of Economics, 2009</span></span>
+            <span class="res-desc"><span lang="en">Why men would grant rights they could keep. A theory paper worth reading even if you never write a model yourself.</span><span lang="fr">Pourquoi des hommes accorderaient des droits qu’ils pourraient garder. Un papier théorique qui vaut la lecture même si on n’écrit jamais de modèle soi-même.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Theory</span><span lang="fr">Théorie</span></span>
+          </li>
+          <li data-theme="power" data-sub="etat" data-method="desc">
+            <canvas class="row-art" data-icon="admin" data-seed="937" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1086/703989" target="_blank" rel="noopener">On the Origins of States: Stationary Bandits and Taxation in Eastern Congo ↗</a><span class="pap-cite mono">Raúl Sánchez de la Sierra · Journal of Political Economy, 2020</span></span>
+            <span class="res-desc"><span lang="en">Armed groups start taxing when the goods are hard to hide. Extraordinary fieldwork, and a lesson in what you can learn by being there.</span><span lang="fr">Les groupes armés se mettent à taxer quand les biens sont difficiles à cacher. Un travail de terrain extraordinaire, et une leçon sur ce qu’on apprend en étant sur place.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · DR Congo</span><span lang="fr">Descriptif et mesure · RD Congo</span></span>
+          </li>
+          <li data-theme="power" data-sub="etat" data-method="desc">
+            <canvas class="row-art" data-icon="admin" data-seed="944" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jce.2020.04.005" target="_blank" rel="noopener">Violence Exposure and Poverty: Evidence from the Burundi Civil War ↗</a><span class="pap-cite mono">Marion Mercier, Rama Lionel Ngenzebuke &amp; Philip Verwimp · Journal of Comparative Economics, 2020</span></span>
+            <span class="res-desc"><span lang="en">Follows the same households over the war and after. The kind of panel that is almost impossible to build, and that changes what you can claim.</span><span lang="fr">Suit les mêmes ménages pendant la guerre et après. Le type de panel presque impossible à construire, et qui change ce qu’on peut affirmer.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · Burundi</span><span lang="fr">Descriptif et mesure · Burundi</span></span>
+          </li>
+          <li data-theme="power" data-sub="etat" data-method="did">
+            <canvas class="row-art" data-icon="admin" data-seed="951" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/aer.20180805" target="_blank" rel="noopener">Building Nations through Shared Experiences: Evidence from African Football ↗</a><span class="pap-cite mono">Emilio Depetris-Chauvin, Ruben Durante &amp; Filipe Campante · American Economic Review, 2020</span></span>
+            <span class="res-desc"><span lang="en">Interviewed days after a national team wins, people identify less with their ethnic group and trust other groups more; countries that barely qualify see less conflict for six months. National identity as something events produce, not something countries have.</span><span lang="fr">Interrogées quelques jours après une victoire de l’équipe nationale, les personnes s’identifient moins à leur groupe ethnique et font davantage confiance aux autres ; les pays qualifiés de justesse connaissent six mois de conflit en moins. L’identité nationale comme un produit des événements, non comme une propriété des pays.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Difference-in-differences · Africa</span><span lang="fr">Différences de différences · Afrique</span></span>
+          </li>
+          <li data-theme="power" data-sub="etat" data-method="iv">
+            <canvas class="row-art" data-icon="admin" data-seed="958" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://www.davidezufacchi.com/" target="_blank" rel="noopener">Digging Deeper: Mining Companies and Armed Bands in the DRC ↗</a><span class="pap-cite mono">Davide Zufacchi &amp; Eliana La Ferrara · working paper</span></span>
+            <span class="res-desc"><span lang="en">Armed violence pushes extraction out of industrial concessions and towards artisanal mining. The measurement is the clever part: nitrogen dioxide read from satellites as a high-frequency proxy for industrial activity. Still circulating — check the current version.</span><span lang="fr">La violence armée déplace l’extraction hors des concessions industrielles, vers l’exploitation artisanale. L’astuce est la mesure : le dioxyde d’azote lu par satellite comme indicateur à haute fréquence de l’activité industrielle. Encore en circulation — vérifier la version en cours.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Instrument or natural experiment · DR Congo</span><span lang="fr">Instrument ou expérience naturelle · RD Congo</span></span>
+          </li>
+          <li data-theme="power" data-sub="colonisation" data-method="hist">
+            <canvas class="row-art" data-icon="admin" data-seed="965" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jdeveco.2021.102666" target="_blank" rel="noopener">Colonialism and Female Empowerment: A Two-Sided Legacy ↗</a><span class="pap-cite mono">Eleonora Guarnieri &amp; Helmut Rainer · Journal of Development Economics, 2021</span></span>
+            <span class="res-desc"><span lang="en">British and French rule left Cameroonian women with different rights, and the border between the two is still visible in the data.</span><span lang="fr">Les administrations britannique et française ont laissé aux Camerounaises des droits différents, et la frontière entre les deux reste visible dans les données.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Historical &amp; comparative · Cameroon</span><span lang="fr">Historique et comparatif · Cameroun</span></span>
+          </li>
+          <li data-theme="power" data-sub="sante" data-method="desc">
+            <canvas class="row-art" data-icon="admin" data-seed="972" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1002/hec.3791" target="_blank" rel="noopener">The Effect of Sex Work Regulation on Health and Well-Being of Sex Workers ↗</a><span class="pap-cite mono">Seiro Ito, Aurélia Lépine &amp; Carole Treibich · Health Economics, 2018</span></span>
+            <span class="res-desc"><span lang="en">What registering officially does to women in a country where sex work is legal but stigmatised. Regulation as a treatment, not as a backdrop.</span><span lang="fr">Ce que l’enregistrement officiel fait aux femmes dans un pays où le travail du sexe est légal mais stigmatisé. La régulation comme traitement, et non comme toile de fond.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · Senegal</span><span lang="fr">Descriptif et mesure · Sénégal</span></span>
+          </li>
+          <li data-theme="measure" data-sub="sousdecl" data-method="desc">
+            <canvas class="row-art" data-icon="rdd" data-seed="979" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1002/hec.3835" target="_blank" rel="noopener">Estimating Misreporting in Condom Use and Its Determinants Among Sex Workers ↗</a><span class="pap-cite mono">Carole Treibich &amp; Aurélia Lépine · Health Economics, 2019</span></span>
+            <span class="res-desc"><span lang="en">How much a sensitive behaviour is over-reported, and by whom. The method transfers directly to a violence module.</span><span lang="fr">De combien un comportement sensible est sur-déclaré, et par qui. La méthode se transpose directement à un module sur les violences.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · Senegal</span><span lang="fr">Descriptif et mesure · Sénégal</span></span>
+          </li>
+          <li data-theme="measure" data-sub="liste" data-method="desc">
+            <canvas class="row-art" data-icon="rdd" data-seed="986" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.worlddev.2025.107151" target="_blank" rel="noopener">Attitudes and Behaviors in a Fragile State: A List Experiment in Mali ↗</a><span class="pap-cite mono">Olivia Bertelli, Thomas Calvo, Emmanuelle Lavallée, Marion Mercier &amp; Sandrine Mesplé-Somps · World Development, 2025</span></span>
+            <span class="res-desc"><span lang="en">The list experiment applied where direct questions fail hardest. The companion to their JDE paper, and the one that shows the method at work.</span><span lang="fr">L’expérience de liste appliquée là où les questions directes échouent le plus. Le pendant de leur papier au JDE, et celui qui montre la méthode à l’œuvre.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Descriptive &amp; measurement · Mali</span><span lang="fr">Descriptif et mesure · Mali</span></span>
+          </li>
+          <li data-theme="measure" data-sub="mode" data-method="rct">
+            <canvas class="row-art" data-icon="rdd" data-seed="993" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1093/wber/lhac022" target="_blank" rel="noopener">Method Matters: The Underreporting of Intimate Partner Violence ↗</a><span class="pap-cite mono">Claire Cullen · World Bank Economic Review, 2023</span></span>
+            <span class="res-desc"><span lang="en">Randomises how the question is asked and shows how much of the prevalence is an artefact of the survey method. To read before trusting any level.</span><span lang="fr">Tire au sort la manière de poser la question et montre quelle part de la prévalence est un artefact de la méthode d’enquête. À lire avant de croire un niveau.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · Nigeria</span><span lang="fr">Expérience aléatoire · Nigeria</span></span>
+          </li>
+          <li data-theme="measure" data-sub="mode" data-method="rct">
+            <canvas class="row-art" data-icon="rdd" data-seed="1000" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.2139/ssrn.3103802" target="_blank" rel="noopener">Misreporting in Sensitive Health Behaviors and Its Impact on Treatment Effects ↗</a><span class="pap-cite mono">Jorge Agüero &amp; Verónica Frisancho · working paper, 2018</span></span>
+            <span class="res-desc"><span lang="en">Compares a face-to-face module with a self-administered one, and shows misreporting moving the estimated treatment effect itself, not just the level.</span><span lang="fr">Compare un module en face-à-face et un module auto-administré, et montre que la sous-déclaration déplace l’effet de traitement estimé lui-même, pas seulement le niveau.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Randomised experiment · Peru</span><span lang="fr">Expérience aléatoire · Pérou</span></span>
+          </li>
+          <li data-theme="tools" data-sub="did" data-method="tool">
+            <canvas class="row-art" data-icon="method" data-seed="1007" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/aer.20181169" target="_blank" rel="noopener">Two-Way Fixed Effects Estimators with Heterogeneous Treatment Effects ↗</a><span class="pap-cite mono">Clément de Chaisemartin &amp; Xavier D’Haultfœuille · American Economic Review, 2020</span></span>
+            <span class="res-desc"><span lang="en">Why a two-way fixed effects coefficient can carry negative weights. The paper that made me rerun my own regressions.</span><span lang="fr">Pourquoi un coefficient à effets fixes bidirectionnels peut porter des poids négatifs. Le papier qui m’a fait relancer mes propres régressions.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Econometrics</span><span lang="fr">Économétrie</span></span>
+          </li>
+          <li data-theme="tools" data-sub="did" data-method="tool">
+            <canvas class="row-art" data-icon="method" data-seed="1014" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jeconom.2020.12.001" target="_blank" rel="noopener">Difference-in-Differences with Multiple Time Periods ↗</a><span class="pap-cite mono">Brantly Callaway &amp; Pedro H. C. Sant’Anna · Journal of Econometrics, 2021</span></span>
+            <span class="res-desc"><span lang="en">The estimator, and above all the discipline of defining the comparison group before estimating anything.</span><span lang="fr">L’estimateur, et surtout la discipline de définir le groupe de comparaison avant d’estimer quoi que ce soit.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Econometrics</span><span lang="fr">Économétrie</span></span>
+          </li>
+          <li data-theme="tools" data-sub="did" data-method="tool">
+            <canvas class="row-art" data-icon="method" data-seed="1021" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jeconom.2021.03.014" target="_blank" rel="noopener">Difference-in-Differences with Variation in Treatment Timing ↗</a><span class="pap-cite mono">Andrew Goodman-Bacon · Journal of Econometrics, 2021</span></span>
+            <span class="res-desc"><span lang="en">The decomposition that shows exactly which comparisons your coefficient is made of. Worth doing once on your own data.</span><span lang="fr">La décomposition qui montre exactement de quelles comparaisons votre coefficient est fait. À faire une fois sur ses propres données.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Econometrics</span><span lang="fr">Économétrie</span></span>
+          </li>
+          <li data-theme="tools" data-sub="did" data-method="tool">
+            <canvas class="row-art" data-icon="method" data-seed="1028" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1016/j.jeconom.2020.09.006" target="_blank" rel="noopener">Estimating Dynamic Treatment Effects in Event Studies with Heterogeneous Treatment Effects ↗</a><span class="pap-cite mono">Liyang Sun &amp; Sarah Abraham · Journal of Econometrics, 2021</span></span>
+            <span class="res-desc"><span lang="en">What the coefficients of an event study really estimate, and how to fix them.</span><span lang="fr">Ce qu’estiment réellement les coefficients d’une étude d’événement, et comment les corriger.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Econometrics</span><span lang="fr">Économétrie</span></span>
+          </li>
+          <li data-theme="tools" data-sub="did" data-method="tool">
+            <canvas class="row-art" data-icon="method" data-seed="1035" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1093/restud/rdae007" target="_blank" rel="noopener">Revisiting Event-Study Designs: Robust and Efficient Estimation ↗</a><span class="pap-cite mono">Kirill Borusyak, Xavier Jaravel &amp; Jann Spiess · Review of Economic Studies, 2024</span></span>
+            <span class="res-desc"><span lang="en">The imputation approach, and a clear account of what efficiency costs you here.</span><span lang="fr">L’approche par imputation, et un exposé clair de ce que l’efficacité coûte ici.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Econometrics</span><span lang="fr">Économétrie</span></span>
+          </li>
+          <li data-theme="tools" data-sub="did" data-method="tool">
+            <canvas class="row-art" data-icon="method" data-seed="1042" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/aeri.20210236" target="_blank" rel="noopener">Pretest with Caution: Event-Study Estimates after Testing for Parallel Trends ↗</a><span class="pap-cite mono">Jonathan Roth · AER: Insights, 2022</span></span>
+            <span class="res-desc"><span lang="en">Why passing a pre-trend test is weaker evidence than it feels. Short, and it changed how I read my own figures.</span><span lang="fr">Pourquoi réussir un test de pré-tendance est une preuve plus faible qu’on ne le croit. Court, et cela a changé la façon dont je lis mes propres figures.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Econometrics</span><span lang="fr">Économétrie</span></span>
+          </li>
+          <li data-theme="tools" data-sub="did" data-method="tool">
+            <canvas class="row-art" data-icon="method" data-seed="1049" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1093/restud/rdad018" target="_blank" rel="noopener">A More Credible Approach to Parallel Trends ↗</a><span class="pap-cite mono">Ashesh Rambachan &amp; Jonathan Roth · Review of Economic Studies, 2023</span></span>
+            <span class="res-desc"><span lang="en">Replaces the untestable assumption with a bound you state openly. The honest way out of the parallel-trends problem.</span><span lang="fr">Remplace l’hypothèse non testable par une borne qu’on annonce ouvertement. La sortie honnête du problème des tendances parallèles.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Econometrics</span><span lang="fr">Économétrie</span></span>
+          </li>
+          <li data-theme="tools" data-sub="rd" data-method="tool">
+            <canvas class="row-art" data-icon="method" data-seed="1056" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.3982/ecta11757" target="_blank" rel="noopener">Robust Nonparametric Confidence Intervals for Regression-Discontinuity Designs ↗</a><span class="pap-cite mono">Sebastián Calonico, Matias Cattaneo &amp; Rocío Titiunik · Econometrica, 2014</span></span>
+            <span class="res-desc"><span lang="en">The bias-corrected intervals behind rdrobust. If you run a discontinuity, you are using this paper.</span><span lang="fr">Les intervalles corrigés du biais derrière rdrobust. Si on estime une discontinuité, on utilise ce papier.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Econometrics</span><span lang="fr">Économétrie</span></span>
+          </li>
+          <li data-theme="tools" data-sub="rd" data-method="tool">
+            <canvas class="row-art" data-icon="method" data-seed="1063" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1257/jel.48.2.281" target="_blank" rel="noopener">Regression Discontinuity Designs in Economics ↗</a><span class="pap-cite mono">David Lee &amp; Thomas Lemieux · Journal of Economic Literature, 2010</span></span>
+            <span class="res-desc"><span lang="en">The practical guide I read before my first discontinuity, and still the clearest on what to show a referee.</span><span lang="fr">Le guide pratique que j’ai lu avant ma première discontinuité, et toujours le plus clair sur ce qu’il faut montrer à un rapporteur.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Econometrics</span><span lang="fr">Économétrie</span></span>
+          </li>
+          <li data-theme="tools" data-sub="inference" data-method="tool">
+            <canvas class="row-art" data-icon="method" data-seed="1070" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1198/016214508000000841" target="_blank" rel="noopener">Multiple Inference and Gender Differences in the Effects of Early Intervention ↗</a><span class="pap-cite mono">Michael Anderson · Journal of the American Statistical Association, 2008</span></span>
+            <span class="res-desc"><span lang="en">Sharpened q-values, for when you have many outcomes and want to keep being believed.</span><span lang="fr">Les q-values affinées, pour quand on a beaucoup de variables de résultat et qu’on veut rester crédible.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Econometrics</span><span lang="fr">Économétrie</span></span>
+          </li>
+          <li data-theme="tools" data-sub="inference" data-method="tool">
+            <canvas class="row-art" data-icon="method" data-seed="1077" aria-hidden="true"></canvas>
+            <span class="res-title"><a href="https://doi.org/10.1093/qje/qjy029" target="_blank" rel="noopener">Channeling Fisher: Randomization Tests and the Statistical Insignificance of Seemingly Significant Experimental Results ↗</a><span class="pap-cite mono">Alwyn Young · Quarterly Journal of Economics, 2019</span></span>
+            <span class="res-desc"><span lang="en">Re-runs a large number of published experiments with randomisation inference. Uncomfortable, and necessary.</span><span lang="fr">Relance un grand nombre d’expériences publiées avec de l’inférence par randomisation. Inconfortable, et nécessaire.</span></span>
+            <span class="mono dim res-tag"><span lang="en">Econometrics</span><span lang="fr">Économétrie</span></span>
+          </li>
+      </ul>
+      <p class="pap-empty" id="pap-empty">
+        <span lang="en">Nothing with this combination &mdash; try a wider method.</span>
+        <span lang="fr">Rien avec cette combinaison &mdash; essayez une m&eacute;thode plus large.</span>
+      </p>
+
+      <p class="res-hint">
+        <span lang="en">A paper that should be here? <a href="mailto:hannabony@outlook.fr">Write to me</a> &mdash; including, and especially, work far from my own topics.</span>
+        <span lang="fr">Un papier qui devrait y figurer ? <a href="mailto:hannabony@outlook.fr">&Eacute;crivez-moi</a> &mdash; y compris, et surtout, des travaux loin de mes propres sujets.</span>
+      </p>
+      <a class="res-up mono" href="#home">&larr; <span lang="en">Back to top</span><span lang="fr">Retour en haut</span></a>
+    </div>
+
+  </section>
+
   <section class="view" data-view="contact" data-title-en="Contact" data-title-fr="Contact">
     <button id="copy-mail" class="mail" data-mail="hannabony@outlook.fr">
       <span class="mail-text">hannabony<i>@</i>outlook.fr</span>
@@ -1992,7 +2787,7 @@
 
 <div id="toast" class="mono" role="status"></div>
 
-<script src="galerie-maps.js?v=20261029"></script>
-<script src="galerie.js?v=20261029"></script>
+<script src="galerie-maps.js?v=20261104"></script>
+<script src="galerie.js?v=20261104"></script>
 </body>
 </html>
