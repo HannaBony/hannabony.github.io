@@ -477,6 +477,34 @@
         c.beginPath(); c.arc(x, y, 11, Math.PI, 0); c.lineTo(x, y + 20); c.closePath(); c.fill();
         c.fillStyle = "#e9dfcc"; c.beginPath(); c.arc(x, y - 1, 4, 0, Math.PI * 2); c.fill();
       });
+    } else if (kind === "writing") {    // une feuille et un stylo pose en travers
+      // Tout ce qui bouge d'une vignette a l'autre vient de la graine : sans ca les
+      // vingt lignes d'une rubrique porteraient vingt fois exactement le meme dessin.
+      bands(4, H * .74);
+      const nl = 7 + Math.floor(r() * 3), ql = 1 + Math.floor(r() * (nl - 2));
+      c.save();
+      c.translate(W * (.40 + r() * .05), H * .48); c.rotate(-.14 + r() * .17);
+      const sw = 150, sh = 168;
+      c.fillStyle = "rgba(20,18,16,.18)";             // la feuille du dessous
+      c.fillRect(-sw / 2 + 9, -sh / 2 + 9, sw, sh);
+      c.fillStyle = "#e9dfcc"; c.fillRect(-sw / 2, -sh / 2, sw, sh);
+      c.strokeStyle = "rgba(20,18,16,.45)"; c.lineWidth = 1;
+      c.strokeRect(-sw / 2 + .5, -sh / 2 + .5, sw - 1, sh - 1);
+      for (let i = 0; i < nl; i++) {                  // des lignes ecrites, une seule reprise
+        c.fillStyle = i === ql ? acc : pick(i + 1);
+        c.fillRect(-sw / 2 + 18, -sh / 2 + 24 + i * 17, (sw - 36) * (.38 + r() * .62), 3);
+      }
+      c.restore();
+      c.save();
+      c.translate(W * (.64 + r() * .08), H * (.58 + r() * .08));
+      c.rotate(-.82 + r() * .26);                     // le stylo
+      c.fillStyle = pick(5); c.fillRect(-7, -66, 14, 104);
+      c.fillStyle = pick(1); c.fillRect(-7, -14, 14, 10);
+      c.fillStyle = acc;                              // la pointe
+      c.beginPath(); c.moveTo(-7, 38); c.lineTo(7, 38); c.lineTo(0, 62); c.closePath(); c.fill();
+      c.fillStyle = "rgba(233,223,204,.35)"; c.fillRect(-4, -62, 3, 96);
+      c.strokeStyle = "rgba(20,18,16,.45)"; c.lineWidth = 1; c.strokeRect(-7.5, -66.5, 15, 105);
+      c.restore();
     }
     c.strokeStyle = "rgba(20,18,16,.5)"; c.lineWidth = 2; c.strokeRect(1, 1, W - 2, H - 2);
   }

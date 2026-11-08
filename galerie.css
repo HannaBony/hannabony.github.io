@@ -389,6 +389,8 @@ main { padding: 0 var(--gutter); }
 .res-hint { color: var(--muted); margin: 18px 0 0; }
 .res-hint a { border-bottom: 1px solid var(--line); transition: color .3s, border-color .3s; }
 .res-hint a:hover { color: var(--accent); border-color: var(--accent); }
+/* Remerciements : pas en mono, qui mettrait tout en capitales — un merci se lit */
+.res-thanks { margin-top: 15px; font-size: 15px; line-height: 1.6; max-width: 74ch; }
 .res-num { color: var(--accent); font-size: 12px; align-self: center; }
 .res-intro { margin: 0 0 4px; color: var(--muted); max-width: 78ch; font-size: 17px; line-height: 1.55; }
 /* Sous-rubriques : la 01 est coupee en deux, chacune avec sa carte et sa liste */
