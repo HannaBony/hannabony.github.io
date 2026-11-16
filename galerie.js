@@ -150,7 +150,7 @@
     pageSub.textContent = subFor(view);
     placeSub();
     pageTitle.classList.remove("swap"); void pageTitle.offsetWidth; pageTitle.classList.add("swap");
-    document.title = name === "home" ? "Hanna Bony" : titleFor(view) + " — Hanna Bony";
+    document.title = name === "home" ? "Hanna Bony" : titleFor(view) + " · Hanna Bony";
     if (scroll) window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
   }
   addEventListener("hashchange", () => show(location.hash.slice(1), true));
@@ -532,8 +532,8 @@
             en: "The World Bank’s household panels: consumption, poverty and living standards, over several waves." },
     isa: { fr: "Le volet agricole du LSMS : des pays d’Afrique subsaharienne suivis dans la durée, avec des parcelles géolocalisées.",
            en: "The agricultural arm of the LSMS: sub-Saharan countries followed over time, with geolocated plots." },
-    ipums: { fr: "Des microdonnées de recensement harmonisées — utiles pour la migration et pour construire des variables de contexte.",
-             en: "Harmonised census microdata — useful for migration and for building context variables." },
+    ipums: { fr: "Des microdonnées de recensement harmonisées, utiles pour la migration et pour construire des variables de contexte.",
+             en: "Harmonised census microdata, useful for migration and for building context variables." },
     epr: { fr: "Les données de l’ETH Zurich sur les groupes ethniques politiquement pertinents : leur accès au pouvoir exécutif et leur zone de peuplement.",
            en: "ETH Zurich’s data on politically relevant ethnic groups: their access to executive power and their settlement areas." },
     es: { fr: "Des enquêtes auprès des entreprises sur l’environnement des affaires, l’informalité et l’accès au crédit.",
@@ -544,8 +544,10 @@
              en: "A panel on people aged 50 and over: health, retirement, transfers between generations. Israel also takes part, outside the frame of this map." },
     silc: { fr: "La source officielle sur les revenus, la pauvreté et les conditions de vie dans l’Union. Plusieurs pays candidats participent également.",
             en: "The official source on income, poverty and living conditions in the Union. Several candidate countries also take part." },
-    ebaro: { fr: "Les sondages d’opinion de la Commission depuis 1974 — la plus longue série comparable en Europe. Les pays candidats entrent et sortent selon les vagues.",
-             en: "The Commission’s opinion polls since 1974 — the longest comparable series in Europe. Candidate countries come and go depending on the wave." },
+    ebaro: { fr: "Les sondages d’opinion de la Commission depuis 1974 : la plus longue série comparable en Europe. Les pays candidats entrent et sortent selon les vagues.",
+             en: "The Commission’s opinion polls since 1974: the longest comparable series in Europe. Candidate countries come and go depending on the wave." },
+    atlas: { fr: "Le nombre d’enquêtes de panel que l’Atlas of Longitudinal Datasets recense dans chaque pays : cohortes, panels de ménages, biobanques, registres. Les États-Unis en comptent 585, le Royaume-Uni 318, le Tchad une. Ce n’est pas une carte de la population ni des besoins, c’est une carte de ce qui a été financé. Dix-neuf territoires trop petits pour être tracés manquent à l’appel, dont Singapour et ses vingt-six bases.",
+             en: "The number of panel studies the Atlas of Longitudinal Datasets records in each country: cohorts, household panels, biobanks, registries. The United States has 585, the United Kingdom 318, Chad one. This is not a map of population or of need, it is a map of what has been funded. Nineteen territories are too small to draw and are missing here, Singapore and its twenty-six datasets among them." },
     nat: { fr: "Les pays dont j’ai documenté ici une voie d’accès aux données administratives nationales. Ce ne sont pas les seuls à en avoir, seulement ceux dont la procédure est décrite plus bas.",
            en: "The countries for which an access route to national administrative data is documented below. They are not the only ones that have such data, only the ones whose procedure is described here." },
   };
@@ -576,22 +578,43 @@
       const c = canvas.getContext("2d"); c.setTransform(dpr, 0, 0, dpr, 0, 0);
       const acc = getComputedStyle(root).getPropertyValue("--accent").trim() || "#e0401f";
       c.fillStyle = "#e9dfcc"; c.fillRect(0, 0, W, H);
-      const s = W / world.w, set = new Set(cov.countries);
+      const cnt = cov.counts || null;
+      const s = W / world.w, set = new Set(cnt ? Object.keys(cnt) : cov.countries);
+      // Les rubriques ordinaires repondent oui ou non ; celle de l'Atlas porte un
+      // effectif par pays, et un effectif demande une echelle, pas la palette qui tourne.
+      const SEUILS = [1, 3, 10, 30, 100];
+      const palier = n => { let k = 0; while (k < SEUILS.length - 1 && n >= SEUILS[k + 1]) k++; return k; };
       c.save(); c.scale(s, s);
       let i = 0;
       for (const [name, d] of Object.entries(world.shapes)) {
         const p = new Path2D(d), on = set.has(name);
-        c.fillStyle = on ? (i++ % 7 === 3 ? acc : PAL[i % PAL.length]) : "#ddcfb6";
+        c.fillStyle = on
+          ? (cnt ? PAL[palier(cnt[name])] : (i++ % 7 === 3 ? acc : PAL[i % PAL.length]))
+          : "#ddcfb6";
         c.fill(p);
         c.strokeStyle = on ? "rgba(20,18,16,.55)" : "rgba(20,18,16,.18)";
         c.lineWidth = (on ? 1 : .6) / s; c.stroke(p);
       }
       c.restore();
+      if (cnt) {                                      // l'echelle, dans le Pacifique sud
+        const bw = Math.max(22, Math.round(W / 30)), bh = 9, x0 = 16, y0 = H - 26;
+        c.font = "9px ui-monospace, SFMono-Regular, Menlo, monospace";
+        c.textBaseline = "alphabetic";
+        c.fillStyle = "#141210";
+        c.fillText(root.lang === "fr" ? "bases par pays" : "datasets per country", x0, y0 - 5);
+        const bornes = ["1", "3", "10", "30", "100+"];
+        for (let k = 0; k < PAL.length; k++) {
+          c.fillStyle = PAL[k]; c.fillRect(x0 + k * bw, y0, bw, bh);
+          c.strokeStyle = "rgba(20,18,16,.45)"; c.lineWidth = .8;
+          c.strokeRect(x0 + k * bw + .5, y0 + .5, bw - 1, bh - 1);
+          c.fillStyle = "#141210"; c.fillText(bornes[k], x0 + k * bw, y0 + bh + 9);
+        }
+      }
       c.strokeStyle = "rgba(20,18,16,.5)"; c.lineWidth = 2; c.strokeRect(1, 1, W - 2, H - 2);
       const label = root.lang === "fr" ? cov.fr : cov.en;
       cap.textContent = cov.since
-        ? `${label} — ${cov.n} ${root.lang === "fr" ? "pays · depuis" : "countries · since"} ${cov.since}`
-        : `${label} — ${cov.n} ${root.lang === "fr" ? "pays" : "countries"}`;
+        ? `${label} · ${cov.n} ${root.lang === "fr" ? "pays · depuis" : "countries · since"} ${cov.since}`
+        : `${label} · ${cov.n} ${root.lang === "fr" ? "pays" : "countries"}`;
       const d = COV_DESC[key];
       if (desc) desc.textContent = d ? (root.lang === "fr" ? d.fr : d.en) : "";
     }
@@ -621,38 +644,38 @@
     { k: "era5", fr: "ERA5", en: "ERA5", m: 31000, lab: "0,25° ≈ 31 km", labEn: "0.25° ≈ 31 km" },
     { k: "spei", fr: "SPEI", en: "SPEI", m: 55000, lab: "0,5° ≈ 55 km", labEn: "0.5° ≈ 55 km" },
     { k: "gadm", fr: "GADM", en: "GADM", vec: "admin",
-      note: "limites administratives emboîtées — vecteur, pas de résolution",
-      noteEn: "nested administrative boundaries — vector, no resolution" },
+      note: "limites administratives emboîtées (vecteur, pas de résolution)",
+      noteEn: "nested administrative boundaries (vector, no resolution)" },
     { k: "ne", fr: "Natural Earth", en: "Natural Earth", vec: "coast",
-      note: "traits de côte, frontières, fleuves — vecteur au 1:10 m",
-      noteEn: "coastlines, borders, rivers — vector at 1:10 m" },
+      note: "traits de côte, frontières, fleuves (vecteur au 1:10 m)",
+      noteEn: "coastlines, borders, rivers (vector at 1:10 m)" },
     { k: "murdock", fr: "Carte de Murdock", en: "Murdock’s map", vec: "ethnic",
-      note: "territoires ethniques précoloniaux — polygones",
-      noteEn: "pre-colonial ethnic territories — polygons" },
+      note: "territoires ethniques précoloniaux (polygones)",
+      noteEn: "pre-colonial ethnic territories (polygons)" },
     { k: "dplace", fr: "D-PLACE", en: "D-PLACE", vec: "points",
-      note: "sociétés géoréférencées — points",
-      noteEn: "georeferenced societies — points" },
+      note: "sociétés géoréférencées (points)",
+      noteEn: "georeferenced societies (points)" },
   ];
   // Une phrase par base, affichee sous la figure des resolutions.
   const GRID_DESC = {
-    worldpop: { fr: "Des grilles de population à 100 m, estimées à partir du bâti et des recensements — pour compter les habitants dans un rayon donné.",
-          en: "Population grids at 100 m, estimated from built-up areas and censuses — to count people within a given radius." },
+    worldpop: { fr: "Des grilles de population à 100 m, estimées à partir du bâti et des recensements, pour compter les habitants dans un rayon donné.",
+          en: "Population grids at 100 m, estimated from built-up areas and censuses, to count people within a given radius." },
     viirs: { fr: "Des composites mensuels et annuels de lumières nocturnes, utilisés comme approximation de l’activité économique locale là où il n’existe pas de données de revenu.",
           en: "Monthly and annual night-light composites, used as a proxy for local economic activity where no income data exist." },
     chirps: { fr: "Les précipitations sur une grille de 0,05° depuis 1981, satellite et stations au sol combinés. La source standard pour les chocs pluviométriques en Afrique.",
           en: "Rainfall on a 0.05° grid since 1981, combining satellite imagery with station data. The standard source for rainfall shocks in Africa." },
     era5: { fr: "Une réanalyse horaire mondiale depuis 1940 : température, précipitations, vent. Plus lourde que CHIRPS, mais elle couvre tout.",
           en: "Hourly global reanalysis since 1940: temperature, precipitation, wind. Heavier than CHIRPS, but it covers everything." },
-    spei: { fr: "Un indice de sécheresse standardisé qui combine pluies et évapotranspiration — la façon habituelle de transformer une série de pluies en mesure de stress agricole.",
-          en: "A standardised drought index combining rainfall and evapotranspiration — the usual way to turn a rainfall series into a measure of agricultural stress." },
-    gadm: { fr: "Les limites administratives de tous les pays, du niveau national jusqu’au plus petit échelon — ce qui sert à agréger les données à un niveau donné.",
-          en: "Administrative boundaries for every country, from national down to the smallest tier — what you use to aggregate data at a given level." },
+    spei: { fr: "Un indice de sécheresse standardisé qui combine pluies et évapotranspiration : la façon habituelle de transformer une série de pluies en mesure de stress agricole.",
+          en: "A standardised drought index combining rainfall and evapotranspiration: the usual way to turn a rainfall series into a measure of agricultural stress." },
+    gadm: { fr: "Les limites administratives de tous les pays, du niveau national jusqu’au plus petit échelon, ce qui sert à agréger les données à un niveau donné.",
+          en: "Administrative boundaries for every country, from national down to the smallest tier, which is what you use to aggregate data at a given level." },
     ne: { fr: "Traits de côte, frontières, fleuves et villes au 1:10 m, dans le domaine public. C’est le fond de carte, pas une source de variables.",
           en: "Coastlines, borders, rivers and cities at 1:10 m, in the public domain. This is the base layer, not a source of variables." },
     murdock: { fr: "L’atlas ethnographique de Murdock cartographié : les territoires des groupes ethniques africains avant la colonisation. C’est un atlas d’ethnicité, pas une grille de données.",
           en: "Murdock’s Ethnographic Atlas mapped: the territories of African ethnic groups before colonisation. It is an atlas of ethnicity, not a data grid." },
-    dplace: { fr: "Des sociétés géoréférencées reliées à leurs pratiques culturelles — la version ouverte et étendue de l’atlas ethnographique.",
-          en: "Georeferenced societies linked to their cultural practices — the open, extended version of the ethnographic atlas." },
+    dplace: { fr: "Des sociétés géoréférencées reliées à leurs pratiques culturelles : la version ouverte et étendue de l’atlas ethnographique.",
+          en: "Georeferenced societies linked to their cultural practices: the open, extended version of the ethnographic atlas." },
   };
 
   function initGrids() {
@@ -782,13 +805,13 @@
       c.strokeStyle = "rgba(20,18,16,.5)"; c.lineWidth = 2; c.strokeRect(1, 1, W - 2, H - 2);
       const label = root.lang === "fr" ? g.fr : g.en;
       if (g.vec) {
-        cap.textContent = `${label} — ${root.lang === "fr" ? g.note : (g.noteEn || g.note)}`;
+        cap.textContent = `${label} · ${root.lang === "fr" ? g.note : (g.noteEn || g.note)}`;
       } else {
         const size = root.lang === "fr" ? g.lab : (g.labEn || g.lab);
         const word = root.lang === "fr"
           ? `${cells} × ${cells} cellules sur 50 km`
           : `${cells} × ${cells} cells across 50 km`;
-        cap.textContent = `${label} — ${size} · ${word}`;
+        cap.textContent = `${label} · ${size} · ${word}`;
       }
       const d = GRID_DESC[g.k];
       if (desc) desc.textContent = d ? (root.lang === "fr" ? d.fr : d.en) : "";
@@ -822,7 +845,8 @@
       const s = Math.min(W / world.w, H / world.h);
       const ox = (W - world.w * s) / 2, oy = (H - world.h * s) / 2;
       c.save(); c.translate(ox, oy); c.scale(s, s);
-      const set = new Set(world.coverage[covKey].countries);
+      const cv = world.coverage[covKey];                  // une rubrique chiffree
+      const set = new Set(cv.countries || Object.keys(cv.counts || {}));
       for (const [name, d] of Object.entries(world.shapes)) {
         const p = new Path2D(d);
         c.fillStyle = set.has(name) ? acc : "#ddcfb6"; c.fill(p);
